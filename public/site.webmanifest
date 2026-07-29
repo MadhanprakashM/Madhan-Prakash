@@ -1,0 +1,21 @@
+{
+  "name": "Madhan Prakash Portfolio",
+  "short_name": "MP Portfolio",
+  "description": "Digital Marketing & Business Analytics Portfolio of Madhan Prakash",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0b101c",
+  "theme_color": "#1e3a8a",
+  "icons": [
+    {
+      "src": "/favicon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
