@@ -11,7 +11,7 @@ export const personalInfo = {
   ],
   tagline: 'MBA Candidate specializing in Marketing and Business Analytics with hands-on experience in B2B sales, digital marketing, lead generation, and market research. Researched 500+ companies, generated 300+ qualified B2B leads, and executed Meta Ads campaigns achieving 2.5M+ views and 150+ product sales.',
   email: 'Madhanprakashoff@gmail.com',
-  phone: '+91 8015468846',
+  phone: '',
   linkedin: 'https://www.linkedin.com/in/madhanprakashofficial',
   linkedinUsername: 'madhanprakashofficial',
   instagram: 'https://www.instagram.com/madhanprakash_5/',
