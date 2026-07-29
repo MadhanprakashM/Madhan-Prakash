@@ -201,7 +201,7 @@ export default function Contact({ onOpenResume }: ContactProps) {
               <div className="max-w-md mx-auto pt-2">
                 <a
                   id="contact-action-resume-open-desktop"
-                  href="https://drive.google.com/file/d/1UIh4_RUz_8qIwTOwZKDi8s0iwmFNu_UT/view?usp=sharing"
+                  href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center w-full px-6 py-4 bg-brand-purple hover:bg-brand-purple-light text-white rounded-xl text-xs font-bold tracking-wide hover:scale-[1.02] hover:shadow-lg transition-all duration-250 ease-out active:scale-98 cursor-pointer shrink-0 min-h-[48px] uppercase tracking-wider"
@@ -342,7 +342,7 @@ export default function Contact({ onOpenResume }: ContactProps) {
             {/* 4. Resume download button */}
             <a
               id="contact-action-resume-open-mobile"
-              href="https://drive.google.com/file/d/1UIh4_RUz_8qIwTOwZKDi8s0iwmFNu_UT/view?usp=sharing"
+              href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center w-full px-6 py-4 bg-brand-purple hover:bg-brand-purple-light text-white rounded-xl text-xs font-bold tracking-wider uppercase transition-all duration-250 ease-out active:scale-98 cursor-pointer shrink-0 min-h-[48px] shadow-md"

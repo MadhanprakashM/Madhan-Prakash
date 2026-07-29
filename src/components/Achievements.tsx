@@ -107,11 +107,11 @@ export default function Achievements() {
     },
     {
       id: 'business_analytics',
-      targetValue: 850,
+      targetValue: 300,
       suffix: '+',
-      title: 'Logistics Leads Researched & Validated',
+      title: 'Qualified B2B Leads Generated',
       label: 'Business Analytics',
-      description: 'Identified and qualified high-intent commercial shipping prospects under market intelligent criteria.',
+      description: 'Researched 500+ companies and generated 300+ verified B2B leads using Apollo AI, LinkedIn, and IndiaMART.',
       icon: <BarChart2 className="w-5 h-5" />,
       brandColor: '#3B82F6', // Blue
     },

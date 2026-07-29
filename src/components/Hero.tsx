@@ -222,7 +222,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
 
               <a
                 id="hero-btn-resume"
-                href="https://drive.google.com/file/d/1UIh4_RUz_8qIwTOwZKDi8s0iwmFNu_UT/view?usp=sharing"
+                href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white/75 dark:bg-slate-900/75 border border-slate-200/60 dark:border-slate-800/60 text-brand-dark hover:border-brand-purple dark:hover:border-brand-purple-light hover:text-brand-purple dark:hover:text-brand-purple-light hover:bg-white dark:hover:bg-slate-800 rounded-full text-sm font-semibold hover:scale-[1.02] hover:shadow-md transition-all duration-250 ease-out cursor-pointer active:scale-98 group min-h-[48px]"
@@ -359,9 +359,9 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 <span className="text-sm">📊</span>
                 <div className="flex flex-col text-left leading-tight">
                   <span className="text-[11px] font-bold text-brand-dark">
-                    <AnimatedCounter target={850} suffix="+" duration={1200} />
+                    <AnimatedCounter target={300} suffix="+" duration={1200} />
                   </span>
-                  <span className="text-[9px] text-brand-paragraph font-medium">Leads Researched</span>
+                  <span className="text-[9px] text-brand-paragraph font-medium">Qualified B2B Leads</span>
                 </div>
               </motion.div>
 

@@ -167,7 +167,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
             {/* Resume Button */}
             <a
               id="nav-action-resume"
-              href="https://drive.google.com/file/d/1UIh4_RUz_8qIwTOwZKDi8s0iwmFNu_UT/view?usp=sharing"
+              href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-3 py-1.5 bg-slate-50 dark:bg-slate-900 border border-brand-border dark:border-slate-800 text-brand-paragraph dark:text-slate-300 hover:text-brand-purple hover:border-brand-purple/40 dark:hover:border-brand-purple hover:shadow-2xs rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer"
@@ -345,7 +345,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
 
               <a
                 id="mobile-nav-action-resume"
-                href="https://drive.google.com/file/d/1UIh4_RUz_8qIwTOwZKDi8s0iwmFNu_UT/view?usp=sharing"
+                href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
