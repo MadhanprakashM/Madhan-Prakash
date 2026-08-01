@@ -331,12 +331,20 @@ export const projects: Project[] = [
 
 export const certifications: Certification[] = [
   {
-    id: 'cert_hubspot_social',
-    title: 'Social Media Marketing Certification',
-    issuer: 'HubSpot Academy',
-    date: 'Jul 2026',
-    link: 'https://academy.hubspot.com/',
-    credentialId: '90689874d34842d490a3f008ed6b13c9'
+    id: 'cert_google_digital',
+    title: 'The Fundamentals of Digital Marketing',
+    issuer: 'Google Digital Unlocked',
+    date: 'May 2023',
+    link: 'https://learndigital.withgoogle.com/link/1tb5mplmosg',
+    credentialId: 'QZP MJ5 W2B'
+  },
+  {
+    id: 'cert_coursera_google_ads',
+    title: 'Google Ads for Beginners',
+    issuer: 'Coursera',
+    date: 'Aug 2026',
+    link: 'https://coursera.org/verify/B44ZWH4EHDB1',
+    credentialId: 'B44ZWH4EHDB1'
   },
   {
     id: 'cert_hubspot_digital',
@@ -347,12 +355,12 @@ export const certifications: Certification[] = [
     credentialId: '9ac9586049f34eb1b79215475869cae0'
   },
   {
-    id: 'cert_tacademy',
-    title: 'Professional Certification Training Programme in Digital Marketing',
-    issuer: 'T-Academy',
-    date: 'Aug 2024',
-    link: 'https://academy.thulija.com/',
-    credentialId: 'TA/2023/07/004'
+    id: 'cert_hubspot_social',
+    title: 'Social Media Marketing Certification',
+    issuer: 'HubSpot Academy',
+    date: 'Jul 2026',
+    link: 'https://academy.hubspot.com/',
+    credentialId: '90689874d34842d490a3f008ed6b13c9'
   },
   {
     id: 'cert_semrush_agency',
@@ -363,20 +371,20 @@ export const certifications: Certification[] = [
     credentialId: 'e89c0348a0'
   },
   {
-    id: 'cert_google_digital',
-    title: 'The Fundamentals of Digital Marketing',
-    issuer: 'Google Digital Unlocked',
-    date: 'May 2023',
-    link: 'https://learndigital.withgoogle.com/link/1tb5mplmosg',
-    credentialId: 'QZP MJ5 W2B'
-  },
-  {
     id: 'cert_nptel_design',
     title: 'Design Thinking – A Primer',
     issuer: 'IIT Madras (NPTEL SWAYAM)',
     date: 'Aug 2024',
     link: 'https://nptel.ac.in/noc/',
     credentialId: 'NPTEL24MG72S446700350'
+  },
+  {
+    id: 'cert_tacademy',
+    title: 'Professional Certification Training Programme in Digital Marketing',
+    issuer: 'T-Academy',
+    date: 'Aug 2024',
+    link: 'https://academy.thulija.com/',
+    credentialId: 'TA/2023/07/004'
   },
   {
     id: 'cert_linkedin_questions',
