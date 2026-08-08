@@ -137,7 +137,7 @@ export default function PersonalBrand() {
             {/* FRAMED LIVE PHOTO: Perfectly sized container, no overflow floating, fits stage photo brilliantly */}
             <div className="relative w-full h-64 sm:h-72 overflow-hidden rounded-xl border border-slate-200/50 dark:border-slate-850/60 shadow-sm">
               <img
-                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjTLf1BJRs4NHnXiaFM881iN5Ci7cZwUrBWkoxsLQg4C7oO2ccQJ_YsHCUw9rIagDISfjhNnhD4rLCj8mI8aWwvsoHPnUFd_DmUovv0h__DIufqkWC6jydMA5bfcszc2JAhfpp8LKeO1NzjDVKfKmFQ8wH1rWUVASx6i4sQli5yl_4rGyKoqrbiGL6nfy0/s3264/1000203247.png"
+                src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg-4FyOf7M9HVBTgzH9An8dxzvyt2r2r2hFrE2F3QKJrx0N4-Y2N2ZPwbycz63_tj4guDhTBI-dLnE64vMVx6OXEDdlXgzdpwuihWTyuSf1MuA0K29lbkrmt53aKFJxzlS_3TlM_MLTZy7mha_4CfJEnc8Tq2SNFpFelPIItxs2PpTJ9zsX6RrNjMZWYfU/s1086/1000209105.png"
                 alt="Madhan Prakash Speaking on Stage at Management Leadership Event"
                 loading="lazy"
                 decoding="async"

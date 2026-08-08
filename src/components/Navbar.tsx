@@ -87,7 +87,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
               <img
                 src={personalInfo.avatarUrl}
                 alt="M. Madhan Prakash - Digital Marketing & Analytics Portfolio"
-                loading="lazy"
+                loading="eager"
                 decoding="async"
                 referrerPolicy="no-referrer"
                 className="w-8 h-8 rounded-lg object-cover border border-brand-border/80 group-hover:scale-105 transition-transform"

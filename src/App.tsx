@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -11,10 +11,11 @@ import Achievements from './components/Achievements';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import ResumePreviewModal from './components/ResumePreviewModal';
 import ErrorBoundary from './components/ErrorBoundary';
 import NotFound from './components/NotFound';
 import PremiumBackground from './components/PremiumBackground';
+
+const ResumePreviewModal = lazy(() => import('./components/ResumePreviewModal'));
 
 export default function App() {
   const [showResumeModal, setShowResumeModal] = useState<boolean>(false);
@@ -161,7 +162,9 @@ export default function App() {
 
           {/* Interactive Resume Sheet Modal */}
           {showResumeModal && (
-            <ResumePreviewModal onClose={() => setShowResumeModal(false)} />
+            <Suspense fallback={<div className="fixed inset-0 z-100 flex items-center justify-center bg-slate-900/40 backdrop-blur-xs"><div className="w-8 h-8 rounded-full border-2 border-brand-purple border-t-transparent animate-spin" /></div>}>
+              <ResumePreviewModal onClose={() => setShowResumeModal(false)} />
+            </Suspense>
           )}
           
         </div>

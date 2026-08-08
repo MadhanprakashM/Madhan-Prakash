@@ -323,7 +323,8 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   <img
                     src={personalInfo.avatarUrl}
                     alt="M. Madhan Prakash - MBA Digital Marketing & Business Analytics Specialist"
-                    loading="lazy"
+                    loading="eager"
+                    fetchPriority="high"
                     decoding="async"
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500 ease-out"
