@@ -8,8 +8,13 @@
   "theme_color": "#6D28D9",
   "icons": [
     {
-      "src": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEin8OUn1K_sn9j6QoCP3L2QCCtwIIhLUap2PUM-_bVzG7mxhJKyMuZ7f4VvyMEp0mt8yf0TRVh41h2n1rRLkZ-K9B1iT6dNRlCWo3Gfo5HZdp1glZrGC6odHfkJpLrqPdVGO0HS7KOP55smYQ_jbuk8qtE-cD5l6_eqbv4GqxvIcZV8ITZtMTVwIft2mHQ/s3125/1000209222.png",
+      "src": "/favicon-192x192.png",
       "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
       "type": "image/png"
     }
   ]
