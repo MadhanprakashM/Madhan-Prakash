@@ -21,7 +21,7 @@ export const personalInfo = {
   location: 'Sivakasi, Tamil Nadu, India',
   address: 'Sivakasi, Tamil Nadu, India',
   avatarUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEij7PlnDYBCA7Au0BSXOvTk3u4IMytJyUPZpsmB3c9ax4q8P0W22SgT9Df9NSCaoz4CM4CuXh8HPV9mq1EtAt0LQB0px2VPSGg0Wmpum_e1bDlDc9sJC6uXi-1RlyzIqpk_7BDrnx03R4ATkoDa3cASXd7daqttVKziz3_gSXhIXDd6iDB1hOX4CQI5E2o',
-  aboutStory: 'MBA Candidate specializing in Marketing and Business Analytics with hands-on experience in B2B sales, digital marketing, lead generation, and market research. Researched 500+ companies across manufacturing sectors, generated 300+ qualified B2B leads using tools like Apollo AI, LinkedIn, and IndiaMART, and managed 4 Meta Ads campaigns that generated 2.5M+ views and 150+ product sales. Certified in Google Digital Marketing, HubSpot, and SEMrush.',
+  aboutStory: 'MBA Candidate specializing in Marketing and Business Analytics with hands-on experience in B2B sales, digital marketing, lead generation, and market research. Researched 500+ companies across manufacturing sectors, generated 300+ qualified B2B leads using tools like Apollo AI, LinkedIn, and IndiaMART, and managed 4 Meta Ads campaigns that generated 2.5M+ views and 150+ product sales. Certified in Google Digital Marketing, Google Ads AI-Powered Performance, HubSpot, and SEMrush.',
   hobbies: ['Digital Content Creation', 'Campaign Strategy', 'Audience Analytics', 'Video Editing'],
   languages: ['Tamil (Native)', 'English (Professional Working Proficiency)'],
   // Contact Form Provider configuration ('web3forms' or 'googleforms')
@@ -330,6 +330,14 @@ export const projects: Project[] = [
 ];
 
 export const certifications: Certification[] = [
+  {
+    id: 'cert_google_ai_ads',
+    title: 'AI-Powered Performance Ads Certification',
+    issuer: 'Google',
+    date: 'Aug 2026',
+    link: 'https://skillshop.credential.net/',
+    credentialId: '190989077'
+  },
   {
     id: 'cert_google_digital',
     title: 'The Fundamentals of Digital Marketing',
