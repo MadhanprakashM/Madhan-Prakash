@@ -327,6 +327,8 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                     fetchPriority="high"
                     decoding="async"
                     referrerPolicy="no-referrer"
+                    width="280"
+                    height="280"
                     className="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500 ease-out"
                   />
                 ) : (

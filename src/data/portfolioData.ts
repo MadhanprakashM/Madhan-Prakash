@@ -1,4 +1,5 @@
 import { Experience, Project, Certification, Achievement, Education, SkillGroup, Testimonial, BlogPost } from '../types';
+import { allCertifications } from './certificationsData';
 
 export const personalInfo = {
   name: 'M. Madhan Prakash',
@@ -328,8 +329,6 @@ export const projects: Project[] = [
     ]
   }
 ];
-
-import { allCertifications } from './certificationsData';
 
 export const certifications: Certification[] = allCertifications;
 

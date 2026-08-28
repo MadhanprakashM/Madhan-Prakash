@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Menu, X, Sparkles, Download, Linkedin, Youtube, Instagram, Mail, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { personalInfo } from '../data/portfolioData';
@@ -14,7 +14,8 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isVisible, setIsVisible] = useState(true);
-  const [lastScrollY, setLastScrollY] = useState(0);
+  const lastScrollYRef = useRef(0);
+  const tickingRef = useRef(false);
 
   useEffect(() => {
     if (isOpen) {
@@ -29,23 +30,30 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Add shadow/glass backdrop once scrolled past threshold
-      setScrolled(currentScrollY > 20);
+      if (!tickingRef.current) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+          const prevScrollY = lastScrollYRef.current;
 
-      // Hide navbar when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 80) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
+          // Add shadow/glass backdrop once scrolled past threshold
+          setScrolled(currentScrollY > 20);
+
+          // Hide navbar when scrolling down, show when scrolling up
+          if (currentScrollY > prevScrollY && currentScrollY > 80) {
+            setIsVisible(false);
+          } else {
+            setIsVisible(true);
+          }
+          lastScrollYRef.current = currentScrollY;
+          tickingRef.current = false;
+        });
+        tickingRef.current = true;
       }
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -90,6 +98,8 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
                 loading="eager"
                 decoding="async"
                 referrerPolicy="no-referrer"
+                width="32"
+                height="32"
                 className="w-8 h-8 rounded-lg object-cover border border-[#40534C]/20 dark:border-[#D6BD98]/25 group-hover:scale-105 transition-transform"
               />
             ) : (

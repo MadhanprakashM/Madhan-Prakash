@@ -58,9 +58,9 @@ export default function App() {
     document.title = 'M. Madhan Prakash | MBA Portfolio & Featured Work';
   }, []);
 
-  // Set up Intersection Observer to track scroll positions and activate the correct sticky navigation tab
+  // Set up a single unified Intersection Observer to track scroll positions efficiently
   useEffect(() => {
-    const sections = [
+    const sectionIds = [
       'home',
       'about',
       'brand',
@@ -73,30 +73,33 @@ export default function App() {
       'contact',
     ];
 
-    const observers = sections.map((id) => {
-      const el = document.getElementById(id);
-      if (!el) return null;
-
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setActiveSection(id);
-          }
-        },
-        {
-          rootMargin: '-80px 0px -50% 0px',
-          threshold: 0.15,
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find visible section with highest intersection ratio
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+        if (visibleEntries.length > 0) {
+          visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+          setActiveSection(visibleEntries[0].target.id);
         }
-      );
+      },
+      {
+        rootMargin: '-80px 0px -45% 0px',
+        threshold: [0.1, 0.25, 0.5],
+      }
+    );
 
-      observer.observe(el);
-      return { observer, el };
+    const elements: HTMLElement[] = [];
+    sectionIds.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        observer.observe(el);
+        elements.push(el);
+      }
     });
 
     return () => {
-      observers.forEach((obs) => {
-        if (obs) obs.observer.unobserve(obs.el);
-      });
+      elements.forEach((el) => observer.unobserve(el));
+      observer.disconnect();
     };
   }, []);
 

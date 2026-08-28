@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ais-pre-b7w3od6nyl22gkfuwqv2kt-311307284192.asia-southeast1.run.app/sitemap.xml
+Sitemap: https://madhan-prakash.vercel.app/sitemap.xml
+
