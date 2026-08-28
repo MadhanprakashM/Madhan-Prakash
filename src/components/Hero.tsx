@@ -106,22 +106,22 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
       {/* Floating ambient gradients creating professional parallax depth */}
       <motion.div 
         style={{ y: orb1Y, opacity: bgOpacity }}
-        className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-brand-purple/5 dark:bg-brand-purple/10 blur-3xl pointer-events-none"
+        className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-[#1A3636]/5 dark:bg-[#D6BD98]/5 blur-3xl pointer-events-none"
       />
       <motion.div 
         style={{ y: orb2Y, opacity: bgOpacity }}
-        className="absolute bottom-[15%] right-[-5%] w-[300px] h-[300px] rounded-full bg-amber-500/5 dark:bg-amber-500/10 blur-3xl pointer-events-none"
+        className="absolute bottom-[15%] right-[-5%] w-[300px] h-[300px] rounded-full bg-[#B38F6F]/5 dark:bg-[#B38F6F]/10 blur-3xl pointer-events-none"
       />
 
       {/* Rotating abstract vector pattern for modern engineering aesthetic */}
       <motion.div 
         style={{ y: orb3Y, opacity: bgOpacity }}
-        className="absolute top-[15%] right-[25%] w-[140px] h-[140px] rounded-full border border-brand-purple/5 dark:border-brand-purple/10 pointer-events-none hidden md:flex items-center justify-center opacity-40"
+        className="absolute top-[15%] right-[25%] w-[140px] h-[140px] rounded-full border border-[#1A3636]/10 dark:border-[#D6BD98]/15 pointer-events-none hidden md:flex items-center justify-center opacity-40"
       >
         <motion.div 
           animate={{ rotate: 360 }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="w-[100px] h-[100px] rounded-full border border-dashed border-brand-purple/10 dark:border-brand-purple/20"
+          className="w-[100px] h-[100px] rounded-full border border-dashed border-[#1A3636]/15 dark:border-[#D6BD98]/25"
         />
       </motion.div>
 
@@ -139,13 +139,13 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
             {/* Availability pill badge */}
             <motion.div 
               variants={itemVariants} 
-              className="inline-flex items-center space-x-2.5 px-4.5 py-2.5 bg-white/70 dark:bg-slate-900/70 border border-brand-purple/20 dark:border-brand-purple/30 rounded-full shadow-md backdrop-blur-lg relative overflow-hidden group select-none cursor-pointer"
+              className="inline-flex items-center space-x-2.5 px-4.5 py-2.5 bg-white/80 dark:bg-[#1A3636]/40 border border-[#1A3636]/20 dark:border-[#D6BD98]/30 rounded-full shadow-md backdrop-blur-lg relative overflow-hidden group select-none cursor-pointer"
               animate={{
-                borderColor: ["rgba(139, 92, 246, 0.2)", "rgba(139, 92, 246, 0.6)", "rgba(139, 92, 246, 0.2)"],
+                borderColor: ["rgba(26, 54, 54, 0.2)", "rgba(214, 189, 152, 0.6)", "rgba(26, 54, 54, 0.2)"],
                 boxShadow: [
-                  "0 4px 20px -2px rgba(139, 92, 246, 0.05), 0 2px 4px -1px rgba(139, 92, 246, 0.03)",
-                  "0 4px 20px 2px rgba(139, 92, 246, 0.15), 0 2px 8px 1px rgba(139, 92, 246, 0.08)",
-                  "0 4px 20px -2px rgba(139, 92, 246, 0.05), 0 2px 4px -1px rgba(139, 92, 246, 0.03)"
+                  "0 4px 20px -2px rgba(26, 54, 54, 0.05), 0 2px 4px -1px rgba(26, 54, 54, 0.03)",
+                  "0 4px 20px 2px rgba(214, 189, 152, 0.15), 0 2px 8px 1px rgba(214, 189, 152, 0.08)",
+                  "0 4px 20px -2px rgba(26, 54, 54, 0.05), 0 2px 4px -1px rgba(26, 54, 54, 0.03)"
                 ]
               }}
               transition={{
@@ -160,14 +160,14 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               </span>
               
               <span className="text-brand-dark font-sans text-xs font-bold tracking-wide flex items-center gap-1.5">
-                <span className="bg-brand-purple/10 text-brand-purple px-2 py-0.5 rounded-md text-[10px] font-extrabold tracking-wider uppercase">Active</span>
-                <span>Open to <span className="text-brand-purple font-extrabold bg-gradient-to-r from-brand-purple to-indigo-600 bg-clip-text text-transparent">Full-Time Marketing & Analytics Roles</span></span>
+                <span className="bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 text-[#1A3636] dark:text-[#D6BD98] px-2 py-0.5 rounded-md text-[10px] font-extrabold tracking-wider uppercase">Active</span>
+                <span>Open to <span className="text-[#1A3636] dark:text-[#D6BD98] font-extrabold bg-gradient-to-r from-[#1A3636] to-[#40534C] dark:from-[#D6BD98] dark:to-[#B38F6F] bg-clip-text text-transparent">Full-Time Marketing & Analytics Roles</span></span>
               </span>
             </motion.div>
 
             {/* Title block */}
             <div className="space-y-4">
-              <motion.span variants={itemVariants} className="block text-xs font-mono font-semibold tracking-[0.24em] text-brand-purple uppercase">
+              <motion.span variants={itemVariants} className="block text-xs font-mono font-semibold tracking-[0.24em] text-[#40534C] dark:text-[#D6BD98] uppercase">
                 MBA STUDENT • MARKETING & ANALYTICS
               </motion.span>
               
@@ -182,7 +182,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               <motion.p 
                 id="hero-subtitle" 
                 variants={itemVariants}
-                className="text-lg sm:text-[22px] font-sans font-bold text-brand-purple leading-[1.8] max-w-[650px] mx-auto lg:mx-0 tracking-wide"
+                className="text-lg sm:text-[22px] font-sans font-bold text-[#1A3636] dark:text-[#D6BD98] leading-[1.8] max-w-[650px] mx-auto lg:mx-0 tracking-wide"
               >
                 Digital Marketing | Business Analytics | Brand Strategy
               </motion.p>
@@ -202,7 +202,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               {['SEO Strategy', 'Meta Ads', 'Google Analytics', 'Lead Generation', 'Power BI'].map((badge) => (
                 <span 
                   key={badge} 
-                  className="px-4 py-2 bg-white/55 dark:bg-slate-900/55 border border-white/70 dark:border-slate-800/80 rounded-full text-xs font-semibold text-brand-paragraph dark:text-slate-300 shadow-3xs hover:border-brand-purple/20 transition-all duration-300"
+                  className="px-4 py-2 bg-white/60 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 rounded-full text-xs font-semibold text-brand-paragraph dark:text-[#A8B8AE] shadow-3xs hover:border-[#1A3636]/30 dark:hover:border-[#D6BD98]/40 transition-all duration-300"
                 >
                   {badge}
                 </span>
@@ -214,7 +214,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               <a
                 id="hero-btn-work"
                 href="#academic"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-brand-purple hover:bg-brand-purple-light text-white font-semibold rounded-full text-sm tracking-wider uppercase shadow-md hover:scale-[1.02] hover:shadow-lg transition-all duration-250 ease-out active:scale-98 group min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-[#F2F1ED] dark:text-[#161616] font-semibold rounded-full text-sm tracking-wider uppercase shadow-md hover:scale-[1.02] hover:shadow-lg transition-all duration-250 ease-out active:scale-98 group min-h-[48px]"
               >
                 <span>Explore Qualifications</span>
                 <ArrowRight className="w-4 h-4 ml-2 animate-pulse group-hover:translate-x-1 transition-transform duration-250" />
@@ -225,9 +225,9 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white/75 dark:bg-slate-900/75 border border-slate-200/60 dark:border-slate-800/60 text-brand-dark hover:border-brand-purple dark:hover:border-brand-purple-light hover:text-brand-purple dark:hover:text-brand-purple-light hover:bg-white dark:hover:bg-slate-800 rounded-full text-sm font-semibold hover:scale-[1.02] hover:shadow-md transition-all duration-250 ease-out cursor-pointer active:scale-98 group min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white/80 dark:bg-[#1A3636]/40 border border-[#40534C]/25 dark:border-[#D6BD98]/30 text-brand-dark hover:border-[#1A3636] dark:hover:border-[#D6BD98] hover:text-[#1A3636] dark:hover:text-[#D6BD98] hover:bg-white dark:hover:bg-[#1A3636]/70 rounded-full text-sm font-semibold hover:scale-[1.02] hover:shadow-md transition-all duration-250 ease-out cursor-pointer active:scale-98 group min-h-[48px]"
               >
-                <Download className="w-4 h-4 mr-2 text-brand-purple group-hover:-translate-y-0.5 group-hover:scale-110 transition-transform duration-250" />
+                <Download className="w-4 h-4 mr-2 text-[#1A3636] dark:text-[#D6BD98] group-hover:-translate-y-0.5 group-hover:scale-110 transition-transform duration-250" />
                 Download Resume
               </a>
             </motion.div>
@@ -307,18 +307,18 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-[105%] h-[105%] rounded-full border border-dashed border-brand-purple/15 dark:border-brand-purple/25 pointer-events-none"
+                  className="absolute w-[105%] h-[105%] rounded-full border border-dashed border-[#1A3636]/15 dark:border-[#D6BD98]/25 pointer-events-none"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-[115%] h-[115%] rounded-full border border-dashed border-brand-purple-light/10 dark:border-brand-purple-light/15 pointer-events-none"
+                  className="absolute w-[115%] h-[115%] rounded-full border border-dashed border-[#40534C]/10 dark:border-[#B38F6F]/20 pointer-events-none"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-brand-purple/10 to-brand-purple-light/5 blur-3xl rounded-full opacity-60 scale-110 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1A3636]/10 to-[#D6BD98]/10 blur-3xl rounded-full opacity-60 scale-110 pointer-events-none" />
               </div>
 
               {/* Central Floating portrait */}
-              <div className="relative w-[280px] h-[280px] rounded-full overflow-hidden border-2 border-white dark:border-slate-900 shadow-2xl group/image z-10 bg-white dark:bg-slate-900">
+              <div className="relative w-[280px] h-[280px] rounded-full overflow-hidden border-2 border-white dark:border-[#1A3636] shadow-2xl group/image z-10 bg-white dark:bg-[#1A3636]">
                 {personalInfo.avatarUrl ? (
                   <img
                     src={personalInfo.avatarUrl}
@@ -330,7 +330,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                     className="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500 ease-out"
                   />
                 ) : (
-                  <div className="w-full h-full bg-gradient-to-br from-brand-purple/20 to-brand-purple-light/10 flex items-center justify-center text-brand-purple font-display font-black text-4xl">
+                  <div className="w-full h-full bg-gradient-to-br from-[#1A3636]/20 to-[#D6BD98]/20 flex items-center justify-center text-[#1A3636] dark:text-[#D6BD98] font-display font-black text-4xl">
                     MP
                   </div>
                 )}
@@ -340,7 +340,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               <motion.div
                 animate={{ y: [0, -6, 0] }}
                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute top-1 -left-1 sm:-left-4 bg-white/95 dark:bg-slate-900/95 border border-brand-border backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+                className="absolute top-1 -left-1 sm:-left-4 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
               >
                 <span className="text-sm">🏆</span>
                 <div className="flex flex-col text-left leading-tight">
@@ -355,7 +355,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-                className="absolute top-16 -right-3 sm:-right-12 bg-white/95 dark:bg-slate-900/95 border border-brand-border backdrop-blur-md py-1.5 px-3.5 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+                className="absolute top-16 -right-3 sm:-right-12 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3.5 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
               >
                 <span className="text-sm">📊</span>
                 <div className="flex flex-col text-left leading-tight">
@@ -370,7 +370,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               <motion.div
                 animate={{ y: [0, 5, 0] }}
                 transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut" }}
-                className="absolute bottom-12 -left-3 sm:-left-12 bg-white/95 dark:bg-slate-900/95 border border-brand-border backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+                className="absolute bottom-12 -left-3 sm:-left-12 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
               >
                 <span className="text-sm">👥</span>
                 <div className="flex flex-col text-left leading-tight">
@@ -385,7 +385,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
               <motion.div
                 animate={{ y: [0, -5, 0] }}
                 transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
-                className="absolute bottom-6 -right-1 sm:-right-6 bg-white/95 dark:bg-slate-900/95 border border-brand-border backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+                className="absolute bottom-6 -right-1 sm:-right-6 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
               >
                 <span className="text-sm">📈</span>
                 <div className="flex flex-col text-left leading-tight">
@@ -396,28 +396,28 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
             </div>
 
             {/* Opportunities Card (Bento Style) */}
-            <div className="w-full max-w-[340px] bg-white/80 dark:bg-slate-900/80 border border-brand-border dark:border-slate-800 backdrop-blur-md p-5 rounded-[24px] shadow-sm flex flex-col text-left relative overflow-hidden group/opt hover:shadow-md transition-shadow">
+            <div className="w-full max-w-[340px] bg-white/80 dark:bg-[#1A3636]/70 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md p-5 rounded-[24px] shadow-sm flex flex-col text-left relative overflow-hidden group/opt hover:shadow-md transition-shadow">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-bold text-brand-purple tracking-wider uppercase">Available For</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-600 dark:text-emerald-400">
-                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[11px] font-bold text-[#1A3636] dark:text-[#D6BD98] tracking-wider uppercase">Available For</span>
+                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
+                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
                   Opportunities
                 </span>
               </div>
-              <h4 className="font-display font-extrabold text-brand-dark text-base mb-2 group-hover/opt:text-brand-purple transition-colors">
+              <h4 className="font-display font-extrabold text-brand-dark text-base mb-2 group-hover/opt:text-[#1A3636] dark:group-hover/opt:text-[#D6BD98] transition-colors">
                 Open to full-time roles & marketing collaborations.
               </h4>
               <p className="text-brand-paragraph text-xs font-medium mb-4 leading-relaxed">
                 Available to join immediately for data-driven, strategic B2B/B2C marketing or research positions.
               </p>
-              <div className="flex items-center justify-between border-t border-brand-border dark:border-slate-800 pt-3">
+              <div className="flex items-center justify-between border-t border-[#40534C]/15 dark:border-[#D6BD98]/20 pt-3">
                 <a 
                   href="#contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-brand-purple hover:text-brand-purple-light transition-colors"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1A3636] hover:text-[#40534C] dark:text-[#D6BD98] dark:hover:text-[#B38F6F] transition-colors"
                 >
                   Let's Talk ➔
                 </a>
-                <span className="text-[10px] font-mono font-bold text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+                <span className="text-[10px] font-mono font-bold text-[#677D6A] dark:text-[#A8B8AE] uppercase tracking-wider">
                   ⏱ Usually replies within 24 hrs
                 </span>
               </div>

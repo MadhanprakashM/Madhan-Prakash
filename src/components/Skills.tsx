@@ -28,44 +28,44 @@ export default function Skills() {
   // Helper to map category name to a Lucide icon
   const getCategoryIcon = (category: string) => {
     const name = category.toLowerCase();
-    if (name.includes('digital marketing')) return <Compass className="w-5 h-5 text-brand-purple" />;
-    if (name.includes('seo')) return <Search className="w-5 h-5 text-brand-purple" />;
-    if (name.includes('ai & productivity')) return <Sparkles className="w-5 h-5 text-brand-purple" />;
-    if (name.includes('design')) return <Video className="w-5 h-5 text-brand-purple" />;
-    if (name.includes('lead generation') || name.includes('research')) return <Target className="w-5 h-5 text-brand-purple" />;
-    if (name.includes('analytics')) return <BarChart2 className="w-5 h-5 text-brand-purple" />;
-    if (name.includes('logistics')) return <Truck className="w-5 h-5 text-brand-purple" />;
-    return <CheckCircle2 className="w-5 h-5 text-brand-purple" />;
+    if (name.includes('digital marketing')) return <Compass className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
+    if (name.includes('seo')) return <Search className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
+    if (name.includes('ai & productivity')) return <Sparkles className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
+    if (name.includes('design')) return <Video className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
+    if (name.includes('lead generation') || name.includes('research')) return <Target className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
+    if (name.includes('analytics')) return <BarChart2 className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
+    if (name.includes('logistics')) return <Truck className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
+    return <CheckCircle2 className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />;
   };
 
   const getChipColors = (category: string) => {
     const name = category.toLowerCase();
     if (name.includes('digital marketing')) {
-      // Pink
-      return 'bg-pink-50/70 text-pink-700 border-pink-100/50 dark:bg-pink-950/20 dark:text-pink-300 dark:border-pink-900/30';
+      // Warm Sand & Almond
+      return 'bg-[#B38F6F]/10 text-[#40534C] dark:text-[#D6BD98] border-[#B38F6F]/25 dark:bg-[#B38F6F]/15 dark:border-[#B38F6F]/30';
     }
     if (name.includes('analytics')) {
-      // Blue
-      return 'bg-blue-50/70 text-blue-700 border-blue-100/50 dark:bg-blue-950/20 dark:text-blue-300 dark:border-blue-900/30';
+      // Forest Roast
+      return 'bg-[#40534C]/10 text-[#1A3636] dark:text-[#D6BD98] border-[#40534C]/25 dark:bg-[#40534C]/20 dark:border-[#D6BD98]/25';
     }
     if (name.includes('research')) {
-      // Purple
-      return 'bg-purple-50/70 text-purple-700 border-purple-100/50 dark:bg-purple-950/20 dark:text-purple-300 dark:border-purple-900/30';
+      // Matcha
+      return 'bg-[#677D6A]/10 text-[#1A3636] dark:text-[#D6BD98] border-[#677D6A]/25 dark:bg-[#677D6A]/20 dark:border-[#677D6A]/30';
     }
     if (name.includes('content')) {
-      // Cyan
-      return 'bg-cyan-50/70 text-cyan-700 border-cyan-100/50 dark:bg-cyan-950/20 dark:text-cyan-300 dark:border-cyan-900/30';
+      // Almond Accent
+      return 'bg-[#D6BD98]/20 text-[#1A3636] dark:text-[#D6BD98] border-[#D6BD98]/40 dark:bg-[#D6BD98]/15 dark:border-[#D6BD98]/30';
     }
     if (name.includes('seo')) {
-      // Emerald
-      return 'bg-emerald-50/70 text-emerald-700 border-emerald-100/50 dark:bg-emerald-950/20 dark:text-emerald-300 dark:border-emerald-900/30';
+      // Matcha Deep
+      return 'bg-[#677D6A]/15 text-[#1A3636] dark:text-[#D6BD98] border-[#677D6A]/30 dark:bg-[#677D6A]/25 dark:border-[#677D6A]/40';
     }
     if (name.includes('design') || name.includes('creative')) {
-      // Violet
-      return 'bg-violet-50/70 text-violet-700 border-violet-100/50 dark:bg-violet-950/20 dark:text-violet-300 dark:border-violet-900/30';
+      // Warm Sand
+      return 'bg-[#B38F6F]/15 text-[#40534C] dark:text-[#D6BD98] border-[#B38F6F]/30 dark:bg-[#B38F6F]/20 dark:border-[#B38F6F]/40';
     }
-    // Default Orange/Amber
-    return 'bg-orange-50/70 text-orange-700 border-orange-100/50 dark:bg-orange-950/20 dark:text-orange-300 dark:border-orange-900/30';
+    // Default Forest
+    return 'bg-[#1A3636]/10 text-[#1A3636] dark:text-[#D6BD98] border-[#1A3636]/20 dark:bg-[#1A3636]/30 dark:border-[#D6BD98]/25';
   };
 
   const animateFadeUp = {
@@ -99,13 +99,13 @@ export default function Skills() {
           viewport={{ once: true, margin: "-100px" }}
           variants={animateFadeUp}
         >
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/60 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 rounded-full text-brand-purple text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/70 dark:bg-[#1A3636]/60 border border-[#40534C]/20 dark:border-[#D6BD98]/25 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
             <span>CORE EXPERTISE</span>
           </div>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-bold text-brand-dark tracking-[-0.03em]">
             Core Expertise
           </h2>
-          <div className="w-12 h-1 bg-brand-purple mx-auto rounded-full" />
+          <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
           <p className="text-slate-700/85 dark:text-slate-300/85 text-[16px] sm:text-[18px] font-sans font-normal leading-relaxed sm:leading-[1.9] max-w-[680px] mx-auto">
             Beautifully categorized skill groups highlighting practical tool proficiency and core strategic competencies.
           </p>
@@ -129,12 +129,12 @@ export default function Skills() {
               <div
                 id={`skills-group-${gIdx}`}
                 key={group.category}
-                className="p-5 sm:p-6 rounded-[24px] bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800/80 hover:bg-slate-50/25 dark:hover:bg-slate-950/25 hover:border-brand-purple/25 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-250 ease-out flex flex-col justify-between group"
+                className="p-5 sm:p-6 rounded-[24px] bg-white/80 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 hover:bg-white dark:hover:bg-[#1A3636]/70 hover:border-[#1A3636]/30 dark:hover:border-[#D6BD98]/40 hover:shadow-lg hover:-translate-y-1.5 transition-all duration-250 ease-out flex flex-col justify-between group backdrop-blur-md"
               >
                 <div>
                   {/* Group Header */}
-                  <div className="flex items-center space-x-3 pb-2 border-b border-slate-100 dark:border-slate-800/60 mb-4">
-                    <div className="p-2.5 bg-brand-purple/5 dark:bg-brand-purple/10 rounded-xl shrink-0 border border-brand-purple/10 dark:border-brand-purple/20 group-hover:rotate-6 group-hover:scale-105 transition-all duration-250 ease-out">
+                  <div className="flex items-center space-x-3 pb-2 border-b border-[#40534C]/10 dark:border-[#D6BD98]/15 mb-4">
+                    <div className="p-2.5 bg-[#1A3636]/5 dark:bg-[#D6BD98]/10 rounded-xl shrink-0 border border-[#1A3636]/10 dark:border-[#D6BD98]/20 group-hover:rotate-6 group-hover:scale-105 transition-all duration-250 ease-out">
                       {getCategoryIcon(group.category)}
                     </div>
                     <h3 className="font-display font-bold text-brand-dark text-base">

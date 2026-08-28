@@ -38,7 +38,7 @@ function KPICard({ kpi, cardVariants }: { kpi: KPIData; cardVariants: any }) {
         boxShadow: `0 16px 36px -12px ${kpi.brandColor}35`
       }}
       transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-      className="p-4.5 sm:p-5 lg:p-7 rounded-2xl lg:rounded-[24px] bg-white/70 dark:bg-slate-900/45 border border-slate-200/60 dark:border-slate-800/65 shadow-xs transition-all duration-300 flex flex-col justify-between group relative overflow-hidden text-left"
+      className="p-4.5 sm:p-5 lg:p-7 rounded-2xl lg:rounded-[24px] bg-white/80 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 shadow-xs transition-all duration-300 flex flex-col justify-between group relative overflow-hidden text-left backdrop-blur-md"
     >
       {/* Soft gradient glow in background */}
       <div 
@@ -57,7 +57,7 @@ function KPICard({ kpi, cardVariants }: { kpi: KPIData; cardVariants: any }) {
           <motion.div 
             className="p-2 sm:p-2.5 lg:p-3 rounded-xl border border-transparent transition-colors duration-300"
             style={{
-              backgroundColor: `${kpi.brandColor}12`,
+              backgroundColor: `${kpi.brandColor}15`,
               color: kpi.brandColor,
             }}
             whileHover={{ rotate: 10, scale: 1.1 }}
@@ -65,7 +65,7 @@ function KPICard({ kpi, cardVariants }: { kpi: KPIData; cardVariants: any }) {
             {React.cloneElement(kpi.icon as any, { className: 'w-4 h-4 lg:w-5 lg:h-5 text-current' })}
           </motion.div>
           
-          <span className="font-mono text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-slate-400 dark:text-slate-500 group-hover:text-brand-purple transition-colors">
+          <span className="font-mono text-[9px] sm:text-[10px] uppercase font-bold tracking-widest text-slate-400 dark:text-[#A8B8AE] group-hover:text-[#1A3636] dark:group-hover:text-[#D6BD98] transition-colors">
             {kpi.label}
           </span>
         </div>
@@ -79,13 +79,13 @@ function KPICard({ kpi, cardVariants }: { kpi: KPIData; cardVariants: any }) {
               duration={400}
             />
           </div>
-          <h3 className="text-xs sm:text-sm lg:text-base font-sans font-bold text-brand-dark tracking-tight leading-snug group-hover:text-brand-purple transition-colors duration-300">
+          <h3 className="text-xs sm:text-sm lg:text-base font-sans font-bold text-brand-dark tracking-tight leading-snug group-hover:text-[#1A3636] dark:group-hover:text-[#D6BD98] transition-colors duration-300">
             {kpi.title}
           </h3>
         </div>
 
         {/* Short description */}
-        <p className="text-slate-500 dark:text-slate-400 text-xs sm:text-[13px] leading-relaxed font-normal">
+        <p className="text-slate-500 dark:text-slate-300 text-xs sm:text-[13px] leading-relaxed font-normal">
           {kpi.description}
         </p>
       </div>
@@ -103,7 +103,7 @@ export default function Achievements() {
       label: 'Marketing Strategy',
       description: 'Prepared, submitted, and orally presented strategy papers at highly reputed regional business schools.',
       icon: <Presentation className="w-5 h-5" />,
-      brandColor: '#8B5CF6', // Purple
+      brandColor: '#1A3636', // Deep Forest
     },
     {
       id: 'business_analytics',
@@ -113,7 +113,7 @@ export default function Achievements() {
       label: 'Business Analytics',
       description: 'Researched 500+ companies and generated 300+ verified B2B leads using Apollo AI, LinkedIn, and IndiaMART.',
       icon: <BarChart2 className="w-5 h-5" />,
-      brandColor: '#3B82F6', // Blue
+      brandColor: '#677D6A', // Muted Matcha
     },
     {
       id: 'digital_marketing',
@@ -123,7 +123,7 @@ export default function Achievements() {
       label: 'Digital Marketing',
       description: 'Managed active advertising campaigns and engaged directly with inbound leads via direct sales chats.',
       icon: <ShoppingBag className="w-5 h-5" />,
-      brandColor: '#EC4899', // Pink
+      brandColor: '#B38F6F', // Warm Sand
     },
     {
       id: 'leadership',
@@ -133,7 +133,7 @@ export default function Achievements() {
       label: 'Leadership',
       description: 'Led planning committees, sponsor coordination, and venue logistics as Overall Coordinator for VIMSMART 2K26.',
       icon: <Users className="w-5 h-5" />,
-      brandColor: '#F97316', // Orange
+      brandColor: '#40534C', // Forest Roast
     },
     {
       id: 'seo_strategy',
@@ -143,7 +143,7 @@ export default function Achievements() {
       label: 'SEO',
       description: 'Leveraged key term queries, structured descriptions, and customized templates to scale content traffic.',
       icon: <Search className="w-5 h-5" />,
-      brandColor: '#10B981', // Emerald
+      brandColor: '#677D6A', // Muted Matcha
     },
     {
       id: 'content_marketing',
@@ -153,7 +153,7 @@ export default function Achievements() {
       label: 'Content Marketing',
       description: 'Produced, edited, and published custom video series using CapCut to maximize community engagement.',
       icon: <Video className="w-5 h-5" />,
-      brandColor: '#06B6D4', // Cyan
+      brandColor: '#B38F6F', // Warm Sand
     },
   ];
 
@@ -195,8 +195,8 @@ export default function Achievements() {
       <div className="absolute inset-0 matrix-grid-pattern opacity-30 pointer-events-none" />
 
       {/* Decorative ambient blurred spots */}
-      <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-brand-purple/5 blur-[100px] pointer-events-none" />
-      <div className="absolute bottom-1/3 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 rounded-full bg-indigo-500/5 blur-[100px] pointer-events-none" />
+      <div className="absolute top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full bg-[#1A3636]/5 dark:bg-[#D6BD98]/5 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-1/3 right-1/4 translate-x-1/2 translate-y-1/2 w-80 h-80 rounded-full bg-[#677D6A]/5 blur-[100px] pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -214,13 +214,13 @@ export default function Achievements() {
           viewport={{ once: true, margin: "-100px" }}
           variants={animateFadeUp}
         >
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/60 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800/80 rounded-full text-brand-purple text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/80 dark:bg-[#1A3636]/70 border border-[#40534C]/20 dark:border-[#D6BD98]/25 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
             <span>WHAT I BRING</span>
           </div>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-bold text-brand-dark tracking-[-0.03em] leading-tight">
             What I Bring
           </h2>
-          <div className="w-12 h-1 bg-brand-purple mx-auto rounded-full" />
+          <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
           <p className="text-slate-700/85 dark:text-slate-300/85 text-[16px] sm:text-[18px] font-sans font-normal leading-relaxed max-w-[680px] mx-auto">
             A verified showcase of professional milestones, digital expertise, and practical business value.
           </p>
@@ -246,10 +246,10 @@ export default function Achievements() {
         {/* Section divider and secondary heading for publications */}
         <div className="relative my-8 sm:my-10 md:my-12 flex items-center justify-center">
           <div className="absolute inset-0 flex items-center" aria-hidden="true">
-            <div className="w-full border-t border-slate-200/50 dark:border-slate-800/55" />
+            <div className="w-full border-t border-[#40534C]/15 dark:border-[#D6BD98]/20" />
           </div>
           <div className="relative px-6 bg-slate-50/5 dark:bg-slate-950/5 backdrop-blur-md rounded-full">
-            <span className="px-4 py-1.5 bg-white/80 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 rounded-full text-brand-purple text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] shadow-2xs">
+            <span className="px-4 py-1.5 bg-white/90 dark:bg-[#1A3636]/90 border border-[#40534C]/20 dark:border-[#D6BD98]/30 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-[10px] sm:text-xs font-bold uppercase tracking-[0.22em] shadow-2xs">
               Research Publications & Honors
             </span>
           </div>
@@ -269,7 +269,7 @@ export default function Achievements() {
                 id={`achievement-card-${ach.id}`}
                 key={ach.id}
                 variants={animateFadeUp}
-                className="p-5 sm:p-8 rounded-2xl bg-white/45 dark:bg-slate-900/40 border border-white/60 dark:border-slate-800/80 backdrop-blur-md hover:bg-white/75 dark:hover:bg-slate-900/80 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-250 ease-out flex flex-col justify-between"
+                className="p-5 sm:p-8 rounded-2xl bg-white/80 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 backdrop-blur-md hover:bg-white dark:hover:bg-[#1A3636]/80 hover:shadow-xl hover:-translate-y-1.5 transition-all duration-250 ease-out flex flex-col justify-between"
               >
                 <div className="space-y-4">
                   {/* Category Pill */}
@@ -278,25 +278,25 @@ export default function Achievements() {
                       const categoryMeta: Record<string, { label: string; styles: string }> = {
                         paper: {
                           label: 'Research Publication',
-                          styles: 'bg-indigo-50/80 dark:bg-indigo-950/40 border-indigo-200/60 dark:border-indigo-800/60 text-indigo-700 dark:text-indigo-300'
+                          styles: 'bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 border-[#1A3636]/20 dark:border-[#D6BD98]/30 text-[#1A3636] dark:text-[#D6BD98]'
                         },
                         leadership: {
                           label: 'Campus Leadership',
-                          styles: 'bg-amber-50/80 dark:bg-amber-950/40 border-amber-200/60 dark:border-amber-800/60 text-amber-700 dark:text-amber-300'
+                          styles: 'bg-[#40534C]/10 dark:bg-[#677D6A]/20 border-[#40534C]/20 dark:border-[#677D6A]/30 text-[#40534C] dark:text-[#D6BD98]'
                         },
                         competition: {
                           label: 'Competition Winner',
-                          styles: 'bg-emerald-50/80 dark:bg-emerald-950/40 border-emerald-200/60 dark:border-emerald-800/60 text-emerald-700 dark:text-emerald-300'
+                          styles: 'bg-[#677D6A]/10 dark:bg-[#677D6A]/20 border-[#677D6A]/20 dark:border-[#677D6A]/30 text-[#677D6A] dark:text-[#D6BD98]'
                         },
                         activity: {
                           label: 'Co-Curricular / Community',
-                          styles: 'bg-rose-50/80 dark:bg-rose-950/40 border-rose-200/60 dark:border-rose-800/60 text-rose-700 dark:text-rose-300'
+                          styles: 'bg-[#B38F6F]/10 dark:bg-[#B38F6F]/20 border-[#B38F6F]/20 dark:border-[#B38F6F]/30 text-[#B38F6F] dark:text-[#D6BD98]'
                         }
                       };
 
                       const currentMeta = categoryMeta[ach.category] || {
                         label: 'Leadership Award',
-                        styles: 'bg-amber-50/80 dark:bg-amber-950/40 border-amber-200/60 dark:border-amber-800/60 text-amber-700 dark:text-amber-300'
+                        styles: 'bg-[#40534C]/10 dark:bg-[#677D6A]/20 border-[#40534C]/20 dark:border-[#677D6A]/30 text-[#40534C] dark:text-[#D6BD98]'
                       };
 
                       return (
@@ -305,7 +305,7 @@ export default function Achievements() {
                         </span>
                       );
                     })()}
-                    <span className="text-xs text-brand-paragraph font-semibold">{ach.date}</span>
+                    <span className="text-xs text-slate-500 dark:text-[#A8B8AE] font-semibold">{ach.date}</span>
                   </div>
 
                   {/* Title and description */}
@@ -320,8 +320,8 @@ export default function Achievements() {
                 </div>
 
                 {/* Footer decorative accent */}
-                <div className="flex items-center space-x-1.5 text-brand-purple font-display font-bold text-[10px] tracking-widest uppercase border-t border-slate-100 dark:border-slate-800/60 mt-5 pt-3.5">
-                  <Sparkles className="w-3.5 h-3.5 animate-pulse" />
+                <div className="flex items-center space-x-1.5 text-[#1A3636] dark:text-[#D6BD98] font-display font-bold text-[10px] tracking-widest uppercase border-t border-[#40534C]/10 dark:border-[#D6BD98]/15 mt-5 pt-3.5">
+                  <Sparkles className="w-3.5 h-3.5 animate-pulse text-[#B38F6F] dark:text-[#D6BD98]" />
                   <span>Honored Achievement</span>
                 </div>
               </motion.div>

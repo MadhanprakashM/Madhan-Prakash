@@ -37,8 +37,24 @@ export interface Certification {
   title: string;
   issuer: string;
   date?: string;
+  year?: number | string | null;
   link?: string;
+  credentialUrl?: string;
   credentialId?: string;
+  description?: string;
+  category?: 'professional' | 'academic' | 'achievement' | 'participation' | 'review' | string;
+  categoryLabel?: string;
+  skills?: string[];
+  certificateUrl?: string;
+  thumbnail?: string;
+  fileType?: 'image' | 'pdf' | 'document';
+  issuedTo?: string;
+  expiryDate?: string;
+  verificationStatus?: 'verified' | 'pending';
+  status?: 'verified' | 'needs_verification' | string;
+  importance?: number;
+  featured?: boolean;
+  sourceFile?: string;
 }
 
 export interface Achievement {

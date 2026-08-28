@@ -14,7 +14,7 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
   return (
     <div
       id="resume-modal-backdrop"
-      className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-md overflow-y-auto animate-fade-in"
+      className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md overflow-y-auto animate-fade-in"
       onClick={(e) => {
         if ((e.target as HTMLElement).id === 'resume-modal-backdrop') {
           onClose();
@@ -23,19 +23,19 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
     >
       <div
         id="resume-modal-container"
-        className="w-full max-w-4xl bg-white dark:bg-slate-950 rounded-3xl shadow-2xl border border-slate-100 dark:border-slate-800 flex flex-col max-h-[90vh] overflow-hidden"
+        className="w-full max-w-4xl bg-white dark:bg-[#1A3636]/95 rounded-3xl shadow-2xl border border-slate-200 dark:border-[#D6BD98]/20 flex flex-col max-h-[90vh] overflow-hidden"
       >
         {/* Modal Controls Header - Hidden during print */}
-        <div className="p-4 sm:p-5 border-b border-brand-border flex items-center justify-between bg-slate-50 print:hidden shrink-0">
+        <div className="p-4 sm:p-5 border-b border-[#40534C]/15 dark:border-[#D6BD98]/15 flex items-center justify-between bg-slate-50 dark:bg-[#0F1D1D] print:hidden shrink-0">
           <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 rounded-lg bg-brand-purple flex items-center justify-center text-white font-display font-bold text-xs">
+            <div className="w-8 h-8 rounded-lg bg-[#1A3636] dark:bg-[#D6BD98] flex items-center justify-center text-white dark:text-[#1A3636] font-display font-bold text-xs">
               CV
             </div>
             <div>
-              <h3 className="font-display font-bold text-sm sm:text-base text-brand-dark leading-tight">
+              <h3 className="font-display font-bold text-sm sm:text-base text-brand-dark dark:text-[#F2F1ED] leading-tight">
                 M. Madhan Prakash Resume
               </h3>
-              <p className="text-[10px] sm:text-xs text-brand-paragraph font-medium">
+              <p className="text-[10px] sm:text-xs text-brand-paragraph dark:text-[#A8B8AE] font-medium">
                 Optimized for standard A4 layout printing and digital systems.
               </p>
             </div>
@@ -45,7 +45,7 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
             <button
               id="resume-modal-print-btn"
               onClick={handlePrint}
-              className="inline-flex items-center justify-center px-4 py-2 bg-brand-purple hover:bg-brand-purple-light text-white rounded-xl text-xs font-bold shadow-xs transition-colors focus:outline-none cursor-pointer"
+              className="inline-flex items-center justify-center px-4 py-2 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-white dark:text-[#1A3636] rounded-xl text-xs font-bold shadow-xs transition-colors focus:outline-none cursor-pointer"
             >
               <Printer className="w-4 h-4 mr-1.5" />
               Print / Save PDF
@@ -53,7 +53,7 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
             <button
               id="resume-modal-close-btn"
               onClick={onClose}
-              className="p-2 bg-white border border-brand-border text-brand-paragraph hover:text-brand-purple rounded-xl transition-all focus:outline-none cursor-pointer"
+              className="p-2 bg-white dark:bg-[#1A3636] border border-slate-200 dark:border-[#40534C] text-slate-500 dark:text-slate-300 hover:text-[#1A3636] dark:hover:text-[#D6BD98] rounded-xl transition-all focus:outline-none cursor-pointer"
               aria-label="Close resume preview"
             >
               <X className="w-4 h-4" />
@@ -68,13 +68,13 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
           <div className="max-w-3xl mx-auto space-y-8 print:text-black print:bg-white">
             
             {/* CV Header: Name & Contact Details */}
-            <div className="text-center sm:text-left border-b-2 border-brand-dark pb-5 space-y-4">
+            <div className="text-center sm:text-left border-b-2 border-[#1A3636] pb-5 space-y-4">
               <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
                 <div>
                   <h1 className="text-3xl sm:text-4xl font-display font-black text-brand-dark tracking-tight print:text-black">
                     M. MADHAN PRAKASH
                   </h1>
-                  <p className="text-xs sm:text-sm font-bold text-brand-purple mt-1 uppercase tracking-wider print:text-[#3B82F6]">
+                  <p className="text-xs sm:text-sm font-bold text-[#1A3636] mt-1 uppercase tracking-wider print:text-black">
                     MBA Student Specialized in Digital Marketing & Business Analytics
                   </p>
                 </div>
@@ -82,16 +82,16 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
                 <div className="text-xs text-brand-paragraph space-y-1 text-center sm:text-right font-medium shrink-0 print:text-black">
                   {personalInfo.phone && (
                     <p className="flex items-center justify-center sm:justify-end">
-                      <Phone className="w-3.5 h-3.5 mr-1.5 text-brand-purple" />
+                      <Phone className="w-3.5 h-3.5 mr-1.5 text-[#1A3636]" />
                       <span>{personalInfo.phone}</span>
                     </p>
                   )}
                   <p className="flex items-center justify-center sm:justify-end">
-                    <Mail className="w-3.5 h-3.5 mr-1.5 text-brand-purple" />
+                    <Mail className="w-3.5 h-3.5 mr-1.5 text-[#1A3636]" />
                     <span>{personalInfo.email}</span>
                   </p>
                   <p className="flex items-center justify-center sm:justify-end">
-                    <Linkedin className="w-3.5 h-3.5 mr-1.5 text-brand-purple" />
+                    <Linkedin className="w-3.5 h-3.5 mr-1.5 text-[#1A3636]" />
                     <span className="underline">{personalInfo.linkedinUsername}</span>
                   </p>
                   <p className="flex items-center justify-center sm:justify-end text-[10px] text-slate-400">
@@ -154,7 +154,7 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
                         href={cert.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="hover:text-brand-purple hover:underline transition-colors"
+                        className="hover:text-[#1A3636] hover:underline transition-colors"
                       >
                         <span className="font-semibold text-brand-dark print:text-black">{cert.title}</span> – Issued by {cert.issuer}
                       </a>

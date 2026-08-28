@@ -67,14 +67,14 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
       }`}
     >
       <div
-        className={`w-full rounded-2xl border border-slate-200/40 dark:border-slate-800/40 bg-white/60 dark:bg-slate-950/40 py-2.5 px-6 shadow-lg dark:shadow-black/20 backdrop-blur-xl transition-all duration-500 relative overflow-hidden ${
+        className={`w-full rounded-2xl border border-slate-300/60 dark:border-[#40534C]/50 bg-white/80 dark:bg-[#1A3636]/60 py-2.5 px-6 shadow-lg dark:shadow-black/20 backdrop-blur-xl transition-all duration-500 relative overflow-hidden ${
           scrolled 
-            ? 'shadow-xl shadow-brand-purple/[0.04] border-brand-purple/20 dark:border-brand-purple/35 bg-white/85 dark:bg-slate-900/80' 
-            : 'shadow-md shadow-slate-100/40 dark:shadow-black/10'
+            ? 'shadow-xl shadow-[#1A3636]/[0.06] border-[#1A3636]/25 dark:border-[#D6BD98]/30 bg-[#F2F1ED]/95 dark:bg-[#0F1D1D]/90' 
+            : 'shadow-md shadow-slate-200/40 dark:shadow-black/10'
         }`}
       >
         {/* Subtle top shine accent */}
-        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-brand-purple/35 to-transparent opacity-60" />
+        <div className="absolute top-0 inset-x-0 h-[1px] bg-gradient-to-r from-transparent via-[#1A3636]/30 dark:via-[#D6BD98]/35 to-transparent opacity-60" />
 
         <div className="flex items-center justify-between">
           {/* Logo on Left */}
@@ -90,19 +90,19 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
                 loading="eager"
                 decoding="async"
                 referrerPolicy="no-referrer"
-                className="w-8 h-8 rounded-lg object-cover border border-brand-border/80 group-hover:scale-105 transition-transform"
+                className="w-8 h-8 rounded-lg object-cover border border-[#40534C]/20 dark:border-[#D6BD98]/25 group-hover:scale-105 transition-transform"
               />
             ) : (
-              <div className="w-8 h-8 rounded-lg bg-brand-purple flex items-center justify-center text-white font-display font-bold text-sm shadow-xs">
+              <div className="w-8 h-8 rounded-lg bg-[#1A3636] dark:bg-[#D6BD98] text-[#F2F1ED] dark:text-[#161616] flex items-center justify-center font-display font-bold text-sm shadow-xs">
                 MP
               </div>
             )}
             <div className="flex flex-col shrink-0">
-              <span className="font-display font-bold text-brand-dark dark:text-slate-100 tracking-tight leading-tight text-sm whitespace-nowrap">
+              <span className="font-display font-bold text-brand-dark dark:text-[#F2F1ED] tracking-tight leading-tight text-sm whitespace-nowrap">
                 M. Madhan Prakash
               </span>
-              <span className="text-[10px] sm:text-xs text-brand-paragraph dark:text-slate-400 font-medium tracking-wide flex items-center whitespace-nowrap">
-                Digital Marketer <Sparkles className="w-2.5 h-2.5 ml-1 text-brand-purple-light animate-pulse" />
+              <span className="text-[10px] sm:text-xs text-brand-paragraph dark:text-[#A8B8AE] font-medium tracking-wide flex items-center whitespace-nowrap">
+                Digital Marketer <Sparkles className="w-2.5 h-2.5 ml-1 text-[#677D6A] dark:text-[#D6BD98] animate-pulse" />
               </span>
             </div>
           </a>
@@ -117,20 +117,20 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
                   key={item.name}
                   href={item.href}
                   className={`relative px-2.5 xl:px-3 py-1.5 text-[10px] xl:text-[11px] font-bold uppercase tracking-wider transition-all duration-300 cursor-pointer whitespace-nowrap ${
-                    isActive ? 'text-brand-purple' : 'text-brand-paragraph hover:text-brand-purple'
+                    isActive ? 'text-[#1A3636] dark:text-[#D6BD98]' : 'text-brand-paragraph hover:text-[#1A3636] dark:hover:text-[#D6BD98]'
                   }`}
                 >
                   <span className="relative z-10">{item.name}</span>
                   {isActive && (
                     <motion.div
                       layoutId="activeNavIndicator"
-                      className="absolute inset-0 bg-brand-purple/5 dark:bg-brand-purple/15 rounded-xl z-0"
+                      className="absolute inset-0 bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 rounded-xl z-0"
                       transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                     />
                   )}
                   {/* Subtle underline hover effect */}
                   {!isActive && (
-                    <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-brand-purple/40 scale-x-0 hover:scale-x-100 transition-transform origin-center duration-300 z-10" />
+                    <span className="absolute bottom-0 left-3 right-3 h-[1.5px] bg-[#1A3636]/40 dark:bg-[#D6BD98]/40 scale-x-0 hover:scale-x-100 transition-transform origin-center duration-300 z-10" />
                   )}
                 </a>
               );
@@ -141,7 +141,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
               onClick={toggleDarkMode}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="p-1.5 ml-1 rounded-xl text-brand-paragraph hover:text-brand-purple hover:bg-brand-purple/5 dark:hover:bg-brand-purple/10 transition-all cursor-pointer relative overflow-hidden flex items-center justify-center min-w-[32px] min-h-[32px] focus:outline-none"
+              className="p-1.5 ml-1 rounded-xl text-brand-paragraph hover:text-[#1A3636] dark:hover:text-[#D6BD98] hover:bg-[#1A3636]/5 dark:hover:bg-[#D6BD98]/10 transition-all cursor-pointer relative overflow-hidden flex items-center justify-center min-w-[32px] min-h-[32px] focus:outline-none"
               title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             >
               <AnimatePresence mode="wait" initial={false}>
@@ -153,16 +153,16 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
                   transition={{ duration: 0.35, ease: 'easeInOut' }}
                 >
                   {darkMode ? (
-                    <Sun className="w-3.5 h-3.5 text-amber-500 filter drop-shadow-[0_0_5px_rgba(245,158,11,0.5)]" />
+                    <Sun className="w-3.5 h-3.5 text-[#D6BD98] filter drop-shadow-[0_0_5px_rgba(214,189,152,0.5)]" />
                   ) : (
-                    <Moon className="w-3.5 h-3.5 text-brand-purple filter drop-shadow-[0_0_5px_rgba(124,58,237,0.35)]" />
+                    <Moon className="w-3.5 h-3.5 text-[#1A3636] filter drop-shadow-[0_0_5px_rgba(26,54,54,0.35)]" />
                   )}
                 </motion.div>
               </AnimatePresence>
             </motion.button>
 
             {/* Vertical Divider */}
-            <div className="h-4 w-px bg-slate-200/60 dark:bg-slate-800/80 mx-1.5" />
+            <div className="h-4 w-px bg-slate-300/60 dark:bg-slate-800/80 mx-1.5" />
 
             {/* Resume Button */}
             <a
@@ -170,9 +170,9 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
               href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-3 py-1.5 bg-slate-50 dark:bg-slate-900 border border-brand-border dark:border-slate-800 text-brand-paragraph dark:text-slate-300 hover:text-brand-purple hover:border-brand-purple/40 dark:hover:border-brand-purple hover:shadow-2xs rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer"
+              className="inline-flex items-center justify-center px-3 py-1.5 bg-white/70 dark:bg-[#1A3636]/60 border border-[#40534C]/25 dark:border-[#D6BD98]/30 text-brand-paragraph dark:text-[#F2F1ED] hover:text-[#1A3636] dark:hover:text-[#D6BD98] hover:border-[#1A3636]/40 dark:hover:border-[#D6BD98] hover:shadow-2xs rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer"
             >
-              <Download className="w-3 h-3 mr-1 text-brand-purple" />
+              <Download className="w-3 h-3 mr-1 text-[#1A3636] dark:text-[#D6BD98]" />
               Resume
             </a>
 
@@ -180,7 +180,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
             <a
               id="nav-action-connect"
               href="#contact"
-              className="inline-flex items-center justify-center px-4 py-1.5 bg-gradient-to-r from-brand-purple to-brand-purple-light hover:to-brand-purple text-white shadow-sm hover:shadow-md hover:shadow-brand-purple/15 hover:-translate-y-0.5 active:translate-y-0 rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer"
+              className="inline-flex items-center justify-center px-4 py-1.5 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-[#F2F1ED] dark:text-[#161616] shadow-sm hover:shadow-md hover:shadow-[#1A3636]/15 hover:-translate-y-0.5 active:translate-y-0 rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer"
             >
               Let's Connect
               <motion.span
@@ -212,9 +212,9 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
                   transition={{ duration: 0.35, ease: 'easeInOut' }}
                 >
                   {darkMode ? (
-                    <Sun className="w-4.5 h-4.5 text-amber-500 filter drop-shadow-[0_0_6px_rgba(245,158,11,0.5)]" />
+                    <Sun className="w-4.5 h-4.5 text-[#D6BD98] filter drop-shadow-[0_0_6px_rgba(214,189,152,0.5)]" />
                   ) : (
-                    <Moon className="w-4.5 h-4.5 text-indigo-500 dark:text-indigo-400 filter drop-shadow-[0_0_6px_rgba(124,58,237,0.35)]" />
+                    <Moon className="w-4.5 h-4.5 text-[#1A3636] filter drop-shadow-[0_0_6px_rgba(26,54,54,0.35)]" />
                   )}
                 </motion.div>
               </AnimatePresence>

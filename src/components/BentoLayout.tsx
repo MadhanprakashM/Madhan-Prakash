@@ -11,6 +11,8 @@ import {
   educationHistory, 
   testimonials 
 } from '../data/portfolioData';
+import { Certification } from '../types';
+import CertificationDetailModal from './CertificationDetailModal';
 import { 
   Download, 
   Mail, 
@@ -56,6 +58,7 @@ export default function BentoLayout({ darkMode, onToggleDarkMode, onOpenResume }
   const [activeSection, setActiveSection] = useState('home');
   const [activeProjectTab, setActiveProjectTab] = useState('all');
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
+  const [selectedCertification, setSelectedCertification] = useState<Certification | null>(null);
   const [careerTab, setCareerTab] = useState<'experience' | 'education'>('experience');
   
   // Contact Form states
@@ -1044,11 +1047,12 @@ export default function BentoLayout({ darkMode, onToggleDarkMode, onOpenResume }
                   {certifications.map((cert) => (
                     <div
                       key={cert.id}
-                      className="p-4 rounded-xl bg-white/40 dark:bg-white/[0.02] backdrop-blur-md border border-slate-200/30 dark:border-white/[0.05] hover:border-[#22D3EE]/30 dark:hover:border-[#22D3EE]/30 transition-all duration-300 shadow-inner flex flex-col justify-between"
+                      onClick={() => setSelectedCertification(cert)}
+                      className="p-4 rounded-xl bg-white/40 dark:bg-white/[0.02] backdrop-blur-md border border-slate-200/30 dark:border-white/[0.05] hover:border-[#22D3EE]/40 dark:hover:border-[#22D3EE]/40 transition-all duration-300 shadow-inner flex flex-col justify-between cursor-pointer group/cert text-left"
                     >
                       <div className="space-y-2">
                         <div className="flex items-start justify-between gap-3">
-                          <span className="text-xs font-semibold text-slate-900 dark:text-white leading-tight">
+                          <span className="text-xs font-semibold text-slate-900 dark:text-white leading-tight group-hover/cert:text-[#22D3EE] transition-colors">
                             {cert.title}
                           </span>
                         </div>
@@ -1056,25 +1060,16 @@ export default function BentoLayout({ darkMode, onToggleDarkMode, onOpenResume }
                         <div className="flex items-center justify-between text-[10px] text-slate-500 dark:text-slate-400 font-medium">
                           <span className="flex items-center">
                             {cert.issuer}
-                            {cert.link && (
-                              <a
-                                href={cert.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-[#3B82F6] dark:text-[#22D3EE] hover:underline ml-1 inline-flex p-0.5 rounded"
-                                title="Verify Credential"
-                              >
-                                <ExternalLink className="w-2.5 h-2.5" />
-                              </a>
-                            )}
                           </span>
                           <span className="font-mono text-[9px]">{cert.date}</span>
                         </div>
                       </div>
 
                       <div className="mt-2.5 pt-2 border-t border-slate-100 dark:border-white/[0.03] flex items-center justify-between text-[9px] font-mono text-slate-400 dark:text-slate-500">
-                        <span>Credential ID:</span>
-                        <span className="font-bold text-slate-500 dark:text-slate-400 select-all">{cert.credentialId}</span>
+                        <span>Credential ID: <span className="font-bold text-slate-500 dark:text-slate-400">{cert.credentialId || 'VERIFIED'}</span></span>
+                        <span className="text-[#3B82F6] dark:text-[#22D3EE] font-bold underline flex items-center">
+                          View Certificate
+                        </span>
                       </div>
                     </div>
                   ))}
@@ -1543,6 +1538,13 @@ export default function BentoLayout({ darkMode, onToggleDarkMode, onOpenResume }
           </div>
         </div>
       )}
+
+      {/* Certification Detail Modal */}
+      <CertificationDetailModal
+        isOpen={!!selectedCertification}
+        onClose={() => setSelectedCertification(null)}
+        certification={selectedCertification}
+      />
 
     </div>
   );

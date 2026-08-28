@@ -55,33 +55,33 @@ const academicProjects: Record<string, { title: string; desc: string; icon: Reac
     {
       title: 'Vettikaaran Marketing Campaign',
       desc: 'Ran targeted regional Meta ads campaigns and localized short-form videos to convert direct chat sales.',
-      icon: <ClipboardList className="w-4 h-4 text-brand-purple" />
+      icon: <ClipboardList className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
     },
     {
       title: 'VIMSMART 2K26 Intercollege Festival',
       desc: 'Organized and managed student teams, venue schedules, and regional college communication channels.',
-      icon: <Users className="w-4 h-4 text-brand-purple" />
+      icon: <Users className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
     }
   ],
   edu2: [
     {
       title: "Charavyuga Management Fest Leader (2k24 & 2k25)",
       desc: "Coordinated rounds and judged criteria for the inter-collegiate 'Best Manager' competition.",
-      icon: <Trophy className="w-4 h-4 text-amber-500" />
+      icon: <Trophy className="w-4 h-4 text-[#B38F6F]" />
     }
   ],
   edu3: [
     {
       title: "NSS School Campaigns",
       desc: "Organized public health awareness presentations and local cleanliness drives.",
-      icon: <Heart className="w-4 h-4 text-rose-500" />
+      icon: <Heart className="w-4 h-4 text-[#710014]" />
     }
   ],
   edu4: [
     {
       title: "JRC Civic Hygiene Initiatives",
       desc: "Conducted basic first aid workshops and community health education sessions.",
-      icon: <Users className="w-4 h-4 text-slate-500" />
+      icon: <Users className="w-4 h-4 text-[#677D6A]" />
     }
   ]
 };
@@ -140,27 +140,27 @@ const academicAchievements: Record<string, { title: string; award: string }[]> =
   ]
 };
 
-// Theme configuration for academic stages
+// Theme configuration for academic stages using the new palette
 const stageTheme: Record<string, { badge: string; accent: string; bg: string }> = {
   edu1: {
-    badge: 'bg-indigo-50 dark:bg-indigo-950/40 text-indigo-700 dark:text-indigo-300 border-indigo-200/50 dark:border-indigo-800/40',
-    accent: 'bg-indigo-600 dark:bg-indigo-400',
-    bg: 'from-indigo-50/50 dark:from-indigo-950/20 to-white dark:to-slate-900/10'
+    badge: 'bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 text-[#1A3636] dark:text-[#D6BD98] border-[#1A3636]/20 dark:border-[#D6BD98]/30',
+    accent: 'bg-[#1A3636] dark:bg-[#D6BD98]',
+    bg: 'from-[#1A3636]/10 dark:from-[#D6BD98]/10 to-transparent'
   },
   edu2: {
-    badge: 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 border-emerald-200/50 dark:border-emerald-800/40',
-    accent: 'bg-emerald-600 dark:bg-emerald-400',
-    bg: 'from-emerald-50/50 dark:from-emerald-950/20 to-white dark:to-slate-900/10'
+    badge: 'bg-[#40534C]/10 dark:bg-[#B38F6F]/15 text-[#40534C] dark:text-[#B38F6F] border-[#40534C]/20 dark:border-[#B38F6F]/30',
+    accent: 'bg-[#40534C] dark:bg-[#B38F6F]',
+    bg: 'from-[#40534C]/10 dark:from-[#B38F6F]/10 to-transparent'
   },
   edu3: {
-    badge: 'bg-amber-50 dark:bg-amber-950/40 text-amber-700 dark:text-amber-300 border-amber-200/50 dark:border-amber-800/40',
-    accent: 'bg-amber-500 dark:bg-amber-400',
-    bg: 'from-amber-50/50 dark:from-amber-950/20 to-white dark:to-slate-900/10'
+    badge: 'bg-[#677D6A]/10 dark:bg-[#677D6A]/20 text-[#677D6A] dark:text-[#A8B8AE] border-[#677D6A]/20 dark:border-[#677D6A]/30',
+    accent: 'bg-[#677D6A]',
+    bg: 'from-[#677D6A]/10 dark:from-[#677D6A]/10 to-transparent'
   },
   edu4: {
-    badge: 'bg-slate-50 dark:bg-slate-800/40 text-slate-700 dark:text-slate-300 border-slate-200/50 dark:border-slate-700/40',
-    accent: 'bg-slate-500 dark:bg-slate-400',
-    bg: 'from-slate-50/50 dark:from-slate-800/20 to-white dark:to-slate-900/10'
+    badge: 'bg-[#B38F6F]/10 dark:bg-[#B38F6F]/20 text-[#B38F6F] dark:text-[#D6BD98] border-[#B38F6F]/20 dark:border-[#B38F6F]/30',
+    accent: 'bg-[#B38F6F]',
+    bg: 'from-[#B38F6F]/10 dark:from-[#B38F6F]/10 to-transparent'
   }
 };
 
@@ -179,13 +179,13 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
   return (
     <div className="space-y-5 relative z-10 text-left">
       {/* MODULE 1: Education Headers */}
-      <div className="space-y-2 border-b border-slate-100 dark:border-slate-800/60 pb-4">
+      <div className="space-y-2 border-b border-[#40534C]/15 dark:border-[#D6BD98]/20 pb-4">
         <div className="flex flex-wrap items-center gap-2">
-          <div className="p-1.5 bg-brand-purple/5 dark:bg-brand-purple/10 text-brand-purple border border-brand-purple/10 dark:border-brand-purple/20 rounded-lg">
+          <div className="p-1.5 bg-[#1A3636]/5 dark:bg-[#D6BD98]/10 text-[#1A3636] dark:text-[#D6BD98] border border-[#1A3636]/10 dark:border-[#D6BD98]/20 rounded-lg">
             <GraduationCap className="w-4 h-4" />
           </div>
           <span className="text-[10px] font-bold uppercase tracking-widest text-brand-paragraph flex items-center">
-            <Calendar className="w-3 h-3 mr-1 text-brand-purple-light" />
+            <Calendar className="w-3 h-3 mr-1 text-[#677D6A] dark:text-[#D6BD98]" />
             {edu.period} • Grade: {edu.grade}
           </span>
         </div>
@@ -193,7 +193,7 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
           {edu.degree}
         </h3>
         <p className="text-brand-paragraph text-xs font-semibold flex items-center">
-          <MapPin className="w-3.5 h-3.5 mr-1 text-brand-purple shrink-0" />
+          <MapPin className="w-3.5 h-3.5 mr-1 text-[#1A3636] dark:text-[#D6BD98] shrink-0" />
           {edu.institution}
         </p>
       </div>
@@ -201,14 +201,14 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
       {/* MODULE 2: Key Highlights */}
       {edu.highlights && edu.highlights.length > 0 && (
         <div className="space-y-2">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-brand-purple pl-2">
-            <Award className="w-3.5 h-3.5 mr-1.5 text-brand-purple shrink-0" />
+          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
+            <Award className="w-3.5 h-3.5 mr-1.5 text-[#1A3636] dark:text-[#D6BD98] shrink-0" />
             Key Highlights
           </h4>
           <div className="space-y-1.5 pl-2">
             {edu.highlights.map((highlight, idx) => (
               <div key={idx} className="flex items-start text-xs text-brand-paragraph leading-relaxed">
-                <span className="w-1.5 h-1.5 bg-brand-success rounded-full mr-2 mt-1.5 shrink-0" />
+                <span className="w-1.5 h-1.5 bg-[#677D6A] dark:bg-[#D6BD98] rounded-full mr-2 mt-1.5 shrink-0" />
                 <span className="font-normal text-balance">{highlight}</span>
               </div>
             ))}
@@ -219,13 +219,13 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
       {/* MODULE 3: Projects */}
       {projects.length > 0 && (
         <div className="space-y-2">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-brand-purple pl-2">
-            <ClipboardList className="w-3.5 h-3.5 mr-1.5 text-brand-purple shrink-0" />
+          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
+            <ClipboardList className="w-3.5 h-3.5 mr-1.5 text-[#1A3636] dark:text-[#D6BD98] shrink-0" />
             Practical Projects & Initiatives
           </h4>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 pl-2">
             {projects.map((project, idx) => (
-              <div key={idx} className="p-3 bg-slate-50/60 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/50 rounded-lg">
+              <div key={idx} className="p-3 bg-white/60 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 rounded-lg">
                 <h5 className="font-display font-bold text-xs text-brand-dark mb-1 flex items-center gap-1.5">
                   {project.icon}
                   {project.title}
@@ -242,21 +242,21 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
       {/* MODULE 4: Research */}
       {research.length > 0 && (
         <div className="space-y-2">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-brand-purple pl-2">
-            <Search className="w-3.5 h-3.5 mr-1.5 text-brand-purple shrink-0" />
+          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
+            <Search className="w-3.5 h-3.5 mr-1.5 text-[#1A3636] dark:text-[#D6BD98] shrink-0" />
             Academic Research & Publications
           </h4>
           <div className="space-y-2 pl-2">
             {research.map((res, idx) => (
-              <div key={idx} className="p-3 bg-brand-purple/5 dark:bg-brand-purple/10 border border-brand-purple/10 dark:border-brand-purple/20 rounded-lg">
+              <div key={idx} className="p-3 bg-[#1A3636]/5 dark:bg-[#D6BD98]/10 border border-[#1A3636]/10 dark:border-[#D6BD98]/20 rounded-lg">
                 <h5 className="font-display font-bold text-xs text-brand-dark mb-1 flex items-center gap-1.5">
-                  <BookMarked className="w-3.5 h-3.5 text-brand-purple shrink-0" />
+                  <BookMarked className="w-3.5 h-3.5 text-[#1A3636] dark:text-[#D6BD98] shrink-0" />
                   {res.title}
                 </h5>
                 <p className="text-xs text-brand-paragraph leading-normal mb-1">
                   {res.desc}
                 </p>
-                <span className="text-[11px] font-mono text-brand-purple font-bold">
+                <span className="text-[11px] font-mono text-[#1A3636] dark:text-[#D6BD98] font-bold">
                   {res.pub}
                 </span>
               </div>
@@ -268,15 +268,15 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
       {/* MODULE 5: Skills Learned */}
       {coursework.length > 0 && (
         <div className="space-y-2">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-brand-purple pl-2">
-            <BookOpen className="w-3.5 h-3.5 mr-1.5 text-brand-purple-light shrink-0" />
+          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
+            <BookOpen className="w-3.5 h-3.5 mr-1.5 text-[#40534C] dark:text-[#D6BD98] shrink-0" />
             Skills Learned & Coursework
           </h4>
           <div className="flex flex-wrap gap-1.5 pl-2">
             {coursework.map((course, idx) => (
               <span
                 key={idx}
-                className="px-2.5 py-1 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-lg text-xs font-semibold text-brand-dark flex items-center space-x-1.5 shadow-3xs hover:border-brand-purple/20 transition-all duration-200"
+                className="px-2.5 py-1 bg-white dark:bg-[#1A3636]/60 border border-[#40534C]/15 dark:border-[#D6BD98]/20 rounded-lg text-xs font-semibold text-brand-dark flex items-center space-x-1.5 shadow-3xs hover:border-[#1A3636]/30 dark:hover:border-[#D6BD98]/40 transition-all duration-200"
               >
                 <span className={`w-1 h-1 rounded-full ${theme.accent} shrink-0`} />
                 <span>{course}</span>
@@ -289,14 +289,14 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
       {/* MODULE 6: Achievements */}
       {achievements.length > 0 && (
         <div className="space-y-2">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-brand-purple pl-2">
-            <Trophy className="w-3.5 h-3.5 mr-1.5 text-brand-purple shrink-0" />
+          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
+            <Trophy className="w-3.5 h-3.5 mr-1.5 text-[#B38F6F] shrink-0" />
             Achievements & Recognitions
           </h4>
           <div className="space-y-2 pl-2">
             {achievements.map((ach, idx) => (
-              <div key={idx} className="flex items-start gap-2.5 p-2 bg-amber-50/20 dark:bg-amber-950/20 border border-amber-200/20 dark:border-amber-800/20 rounded-lg text-xs">
-                <Trophy className="w-4 h-4 text-amber-500 shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-2.5 p-2 bg-[#B38F6F]/10 dark:bg-[#B38F6F]/15 border border-[#B38F6F]/20 rounded-lg text-xs">
+                <Trophy className="w-4 h-4 text-[#B38F6F] shrink-0 mt-0.5" />
                 <div className="space-y-0.5">
                   <h5 className="font-bold text-brand-dark">{ach.title}</h5>
                   <p className="text-xs text-brand-paragraph leading-normal">{ach.award}</p>
@@ -328,14 +328,14 @@ export default function Academic() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-5 md:mb-6 space-y-2 md:space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/70 dark:bg-slate-900/80 border border-slate-200/80 dark:border-slate-800/80 rounded-full text-brand-purple text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
-            <Sparkles className="w-3 h-3 text-brand-purple-light" />
+          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/70 dark:bg-[#1A3636]/60 border border-[#40534C]/20 dark:border-[#D6BD98]/25 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
+            <Sparkles className="w-3 h-3 text-[#677D6A] dark:text-[#D6BD98]" />
             <span>QUALIFICATIONS</span>
           </div>
           <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-bold text-brand-dark tracking-[-0.03em]">
             Academic Profile
           </h2>
-          <div className="w-12 h-1 bg-brand-purple mx-auto rounded-full" />
+          <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
           <p className="text-slate-700/85 dark:text-slate-300 text-[16px] sm:text-[18px] font-sans font-normal leading-relaxed sm:leading-[1.9] max-w-[680px] mx-auto">
             A comprehensive, structured showcase of my academic milestones, analytics coursework, and campus leadership.
           </p>
@@ -355,7 +355,7 @@ export default function Academic() {
           getId={(edu) => edu.id}
           getMobileTitle={(edu) => edu.degree}
           getMobileSubtitle={(edu) => edu.institution}
-          getMobileIcon={() => <GraduationCap className="w-4 h-4 text-brand-purple" />}
+          getMobileIcon={() => <GraduationCap className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />}
           getMobileHeaderRight={(edu) => {
             const theme = stageTheme[edu.id] || stageTheme.edu1;
             return (
@@ -371,17 +371,17 @@ export default function Academic() {
                 <div className="space-y-1.5 w-full text-left">
                   <div className="flex items-center justify-between">
                     <span className={`text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border ${
-                      isSelected ? theme.badge : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border-slate-200/60 dark:border-slate-800/60'
+                      isSelected ? theme.badge : 'bg-black/5 dark:bg-white/5 text-slate-500 dark:text-[#A8B8AE] border-[#40534C]/10 dark:border-[#D6BD98]/15'
                     }`}>
                       {edu.period}
                     </span>
                     <span className={`text-xs font-mono font-bold ${
-                      isSelected ? 'text-brand-purple' : 'text-slate-400 dark:text-slate-500'
+                      isSelected ? 'text-[#1A3636] dark:text-[#D6BD98]' : 'text-slate-400 dark:text-slate-500'
                     }`}>
                       {edu.grade}
                     </span>
                   </div>
-                  <h3 className="font-display font-bold text-sm sm:text-base tracking-tight text-brand-dark leading-snug group-hover:text-brand-purple transition-colors">
+                  <h3 className="font-display font-bold text-sm sm:text-base tracking-tight text-brand-dark leading-snug group-hover:text-[#1A3636] dark:group-hover:text-[#D6BD98] transition-colors">
                     {edu.degree}
                   </h3>
                   <p className="text-xs text-brand-paragraph font-medium leading-normal flex items-center">
@@ -391,7 +391,7 @@ export default function Academic() {
                 </div>
 
                 <span className={`text-[10px] font-bold pt-3 flex items-center transition-all ${
-                  isSelected ? 'text-brand-purple translate-x-1' : 'text-slate-500'
+                  isSelected ? 'text-[#1A3636] dark:text-[#D6BD98] translate-x-1' : 'text-slate-500'
                 }`}>
                   <span>Explore Profile Deep Dive</span>
                   <ChevronRight className="w-3.5 h-3.5 ml-0.5 shrink-0" />
