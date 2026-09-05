@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { 
   Download, 
   ArrowRight, 
@@ -6,7 +6,9 @@ import {
   Linkedin, 
   Youtube, 
   Instagram, 
-  Phone
+  Phone,
+  Sparkles,
+  ChevronDown
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'motion/react';
 import { personalInfo } from '../data/portfolioData';
@@ -18,6 +20,8 @@ interface HeroProps {
 
 export default function Hero({ onOpenResumeModal }: HeroProps) {
   const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
+  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const cardRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -31,213 +35,165 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
     return () => mediaQuery.removeEventListener('change', listener);
   }, []);
 
-  // Cinematic transition configs
+  // Subtle 3D portrait tilt on mouse move
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (prefersReducedMotion || !cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setMousePos({ x, y });
+  };
+
+  const handleMouseLeave = () => {
+    setMousePos({ x: 0, y: 0 });
+  };
+
+  // Parallax translation
+  const { scrollY } = useScroll();
+  const rawGridY = useTransform(scrollY, [0, 600], [0, -40]);
+  const gridY = prefersReducedMotion ? 0 : rawGridY;
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.12,
-        delayChildren: 0.1,
+        staggerChildren: 0.1,
+        delayChildren: 0.05,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 30, filter: 'blur(6px)' },
+    hidden: { opacity: 0, y: 24, filter: 'blur(4px)' },
     visible: {
       opacity: 1,
       y: 0,
       filter: 'blur(0px)',
       transition: {
-        duration: 0.75,
-        ease: [0.16, 1, 0.3, 1] as any, // Luxury cubic-bezier curve (easeOutExpo)
-      },
-    },
-  };
-
-  const widgetVariants = {
-    hidden: { opacity: 0, scale: 0.96, y: 20, filter: 'blur(8px)' },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      y: 0,
-      filter: 'blur(0px)',
-      transition: {
-        duration: 0.85,
-        delay: 0.3,
+        duration: 0.7,
         ease: [0.16, 1, 0.3, 1] as any,
       },
     },
   };
 
-  // Scroll-linked parallax setup for premium depth perspectives
-  const { scrollY } = useScroll();
-  
-  const rawGridY = useTransform(scrollY, [0, 800], [0, -60]);
-  const rawDotY = useTransform(scrollY, [0, 800], [0, -30]);
-  const rawOrb1Y = useTransform(scrollY, [0, 800], [0, -100]);
-  const rawOrb2Y = useTransform(scrollY, [0, 800], [0, 40]);
-  const rawOrb3Y = useTransform(scrollY, [0, 800], [0, -140]);
-  const rawBgOpacity = useTransform(scrollY, [0, 450], [1, 0]);
-
-  const gridY = prefersReducedMotion ? 0 : rawGridY;
-  const dotY = prefersReducedMotion ? 0 : rawDotY;
-  const orb1Y = prefersReducedMotion ? 0 : rawOrb1Y;
-  const orb2Y = prefersReducedMotion ? 0 : rawOrb2Y;
-  const orb3Y = prefersReducedMotion ? 0 : rawOrb3Y;
-  const bgOpacity = prefersReducedMotion ? 1 : rawBgOpacity;
-
   return (
     <section
       id="home"
-      className="relative min-h-[60vh] flex items-center justify-center pt-20 pb-8 lg:pt-24 lg:pb-10 overflow-hidden bg-transparent"
+      className="relative min-h-[85vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-28 lg:pb-16 overflow-hidden bg-transparent"
     >
-      {/* Subtle editor matrix layout grid with parallax translation */}
+      {/* Editorial matrix grid with subtle translation */}
       <motion.div 
         style={{ y: gridY }}
-        className="absolute -inset-y-12 inset-x-0 matrix-grid-pattern opacity-45 pointer-events-none" 
-      />
-      <motion.div 
-        style={{ y: dotY }}
-        className="absolute -inset-y-12 inset-x-0 matrix-dot-pattern opacity-30 pointer-events-none" 
+        className="absolute inset-0 matrix-grid-pattern opacity-30 pointer-events-none" 
       />
 
-      {/* Floating ambient gradients creating professional parallax depth */}
-      <motion.div 
-        style={{ y: orb1Y, opacity: bgOpacity }}
-        className="absolute top-[10%] left-[-10%] w-[350px] h-[350px] rounded-full bg-[#1A3636]/5 dark:bg-[#D6BD98]/5 blur-3xl pointer-events-none"
-      />
-      <motion.div 
-        style={{ y: orb2Y, opacity: bgOpacity }}
-        className="absolute bottom-[15%] right-[-5%] w-[300px] h-[300px] rounded-full bg-[#B38F6F]/5 dark:bg-[#B38F6F]/10 blur-3xl pointer-events-none"
-      />
+      {/* Floating ambient gradient orbs */}
+      <div className="absolute top-[10%] left-[-8%] w-[380px] h-[380px] rounded-full bg-[#1A3636]/5 dark:bg-[#D6BD98]/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-[10%] right-[-5%] w-[320px] h-[320px] rounded-full bg-[#D6BD98]/10 dark:bg-[#40534C]/10 blur-3xl pointer-events-none" />
 
-      {/* Rotating abstract vector pattern for modern engineering aesthetic */}
-      <motion.div 
-        style={{ y: orb3Y, opacity: bgOpacity }}
-        className="absolute top-[15%] right-[25%] w-[140px] h-[140px] rounded-full border border-[#1A3636]/10 dark:border-[#D6BD98]/15 pointer-events-none hidden md:flex items-center justify-center opacity-40"
-      >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 my-auto">
         <motion.div 
-          animate={{ rotate: 360 }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="w-[100px] h-[100px] rounded-full border border-dashed border-[#1A3636]/15 dark:border-[#D6BD98]/25"
-        />
-      </motion.div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <motion.div 
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           
-          {/* Left Side: Typography Stack */}
-          <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
+          {/* Left Column: Typography Stack */}
+          <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
             
-            {/* Availability pill badge */}
+            {/* Availability Pill Badge */}
             <motion.div 
               variants={itemVariants} 
-              className="inline-flex items-center space-x-2.5 px-4.5 py-2.5 bg-white/80 dark:bg-[#1A3636]/40 border border-[#1A3636]/20 dark:border-[#D6BD98]/30 rounded-full shadow-md backdrop-blur-lg relative overflow-hidden group select-none cursor-pointer"
-              animate={{
-                borderColor: ["rgba(26, 54, 54, 0.2)", "rgba(214, 189, 152, 0.6)", "rgba(26, 54, 54, 0.2)"],
-                boxShadow: [
-                  "0 4px 20px -2px rgba(26, 54, 54, 0.05), 0 2px 4px -1px rgba(26, 54, 54, 0.03)",
-                  "0 4px 20px 2px rgba(214, 189, 152, 0.15), 0 2px 8px 1px rgba(214, 189, 152, 0.08)",
-                  "0 4px 20px -2px rgba(26, 54, 54, 0.05), 0 2px 4px -1px rgba(26, 54, 54, 0.03)"
-                ]
-              }}
-              transition={{
-                duration: 2.5,
-                repeat: Infinity,
-                ease: "easeInOut"
-              }}
+              className="inline-flex items-center space-x-2.5 px-4 py-2 bg-white/85 dark:bg-[#1A3636]/50 border border-[#1A3636]/20 dark:border-[#D6BD98]/30 rounded-full shadow-sm backdrop-blur-md"
             >
-              <span className="relative flex h-2.5 w-2.5 shrink-0">
+              <span className="relative flex h-2 w-2 shrink-0">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
               </span>
               
-              <span className="text-brand-dark font-sans text-xs font-bold tracking-wide flex items-center gap-1.5">
-                <span className="bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 text-[#1A3636] dark:text-[#D6BD98] px-2 py-0.5 rounded-md text-[10px] font-extrabold tracking-wider uppercase">Active</span>
-                <span>Open to <span className="text-[#1A3636] dark:text-[#D6BD98] font-extrabold bg-gradient-to-r from-[#1A3636] to-[#40534C] dark:from-[#D6BD98] dark:to-[#B38F6F] bg-clip-text text-transparent">Full-Time Marketing & Analytics Roles</span></span>
+              <span className="text-brand-dark font-sans text-xs font-semibold tracking-wide flex items-center gap-1.5">
+                <span className="bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 text-[#1A3636] dark:text-[#D6BD98] px-2 py-0.5 rounded text-[10px] font-extrabold tracking-wider uppercase">Active</span>
+                <span>Open to <span className="text-[#1A3636] dark:text-[#D6BD98] font-bold">Marketing & Analytics Roles</span></span>
               </span>
             </motion.div>
 
-            {/* Title block */}
-            <div className="space-y-4">
-              <motion.span variants={itemVariants} className="block text-xs font-mono font-semibold tracking-[0.24em] text-[#40534C] dark:text-[#D6BD98] uppercase">
-                MBA STUDENT • MARKETING & ANALYTICS
+            {/* Title Block */}
+            <div className="space-y-2.5">
+              <motion.span 
+                variants={itemVariants} 
+                className="block text-xs font-mono font-bold tracking-[0.22em] text-[#40534C] dark:text-[#D6BD98] uppercase"
+              >
+                MBA MARKETING | ASPIRING MARKETER
               </motion.span>
               
               <motion.h1 
                 id="hero-title" 
                 variants={itemVariants}
-                className="text-3xl sm:text-5xl lg:text-[54px] font-display font-extrabold tracking-tight text-brand-dark leading-tight max-w-[15ch] mx-auto lg:mx-0"
+                className="text-4xl sm:text-6xl lg:text-[62px] font-display font-extrabold tracking-tight text-brand-dark leading-[1.08]"
               >
-                {personalInfo.name}
+                Madhan Prakash
               </motion.h1>
-              
-              <motion.p 
-                id="hero-subtitle" 
-                variants={itemVariants}
-                className="text-lg sm:text-[22px] font-sans font-bold text-[#1A3636] dark:text-[#D6BD98] leading-[1.8] max-w-[650px] mx-auto lg:mx-0 tracking-wide"
-              >
-                Digital Marketing | Business Analytics | Brand Strategy
-              </motion.p>
+
+              <motion.div variants={itemVariants} className="space-y-1 pt-1">
+                <p className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-[#1A3636] dark:text-[#D6BD98] tracking-tight">
+                  Turning Ideas into Impact
+                </p>
+                <p className="text-xs sm:text-sm font-mono font-semibold text-slate-500 dark:text-[#A8B8AE] tracking-wider uppercase">
+                  Marketing × Analytics × Business
+                </p>
+              </motion.div>
             </div>
 
-            {/* Dynamic visual copy */}
+            {/* Tagline Statement */}
             <motion.p 
               id="hero-tagline" 
               variants={itemVariants}
-              className="text-[18px] text-slate-700/85 dark:text-slate-300/85 max-w-[680px] mx-auto lg:mx-0 font-normal leading-[1.9] text-balance"
+              className="text-[16px] sm:text-[18px] text-slate-700/90 dark:text-slate-200/90 max-w-[620px] mx-auto lg:mx-0 font-normal leading-[1.8] text-balance"
             >
-              I'm an MBA student passionate about digital marketing, business analytics, and building practical marketing solutions. Through live projects, internships, and leadership experiences, I'm continuously learning how marketing creates real business growth.
+              I combine marketing creativity, data-driven insights, and business thinking to create meaningful impact. Passionate about building growth through digital campaigns, B2B pipelines, and measurable analytics.
             </motion.p>
 
-            {/* Strategic pill list */}
-            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-2">
-              {['SEO Strategy', 'Meta Ads', 'Google Analytics', 'Lead Generation', 'Power BI'].map((badge) => (
+            {/* Strategic Highlight Pills */}
+            <motion.div variants={itemVariants} className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
+              {['Digital Marketing', 'B2B Lead Gen', 'Meta Ads', 'Business Analytics', 'SEO Strategy', 'Power BI'].map((badge) => (
                 <span 
                   key={badge} 
-                  className="px-4 py-2 bg-white/60 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 rounded-full text-xs font-semibold text-brand-paragraph dark:text-[#A8B8AE] shadow-3xs hover:border-[#1A3636]/30 dark:hover:border-[#D6BD98]/40 transition-all duration-300"
+                  className="px-3.5 py-1.5 bg-white/70 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 rounded-full text-xs font-semibold text-brand-paragraph dark:text-[#A8B8AE] shadow-3xs"
                 >
                   {badge}
                 </span>
               ))}
             </motion.div>
 
-            {/* Primary Action Row */}
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+            {/* Primary Action Buttons */}
+            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3.5 pt-3">
               <a
                 id="hero-btn-work"
                 href="#academic"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-[#F2F1ED] dark:text-[#161616] font-semibold rounded-full text-sm tracking-wider uppercase shadow-md hover:scale-[1.02] hover:shadow-lg transition-all duration-250 ease-out active:scale-98 group min-h-[48px]"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-[#F2F1ED] dark:text-[#161616] font-semibold rounded-full text-sm tracking-wider uppercase shadow-md hover:scale-[1.02] hover:shadow-lg transition-all duration-250 ease-out active:scale-98 group min-h-[46px]"
               >
-                <span>Explore Qualifications</span>
-                <ArrowRight className="w-4 h-4 ml-2 animate-pulse group-hover:translate-x-1 transition-transform duration-250" />
+                <span>View My Journey</span>
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-250" />
               </a>
 
-              <a
+              <button
                 id="hero-btn-resume"
-                href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 bg-white/80 dark:bg-[#1A3636]/40 border border-[#40534C]/25 dark:border-[#D6BD98]/30 text-brand-dark hover:border-[#1A3636] dark:hover:border-[#D6BD98] hover:text-[#1A3636] dark:hover:text-[#D6BD98] hover:bg-white dark:hover:bg-[#1A3636]/70 rounded-full text-sm font-semibold hover:scale-[1.02] hover:shadow-md transition-all duration-250 ease-out cursor-pointer active:scale-98 group min-h-[48px]"
+                onClick={onOpenResumeModal}
+                className="w-full sm:w-auto inline-flex items-center justify-center px-7 py-3.5 bg-white/85 dark:bg-[#1A3636]/50 border border-[#40534C]/25 dark:border-[#D6BD98]/30 text-brand-dark hover:border-[#1A3636] dark:hover:border-[#D6BD98] hover:text-[#1A3636] dark:hover:text-[#D6BD98] rounded-full text-sm font-semibold hover:scale-[1.02] hover:shadow-md transition-all duration-250 ease-out cursor-pointer active:scale-98 group min-h-[46px]"
               >
-                <Download className="w-4 h-4 mr-2 text-[#1A3636] dark:text-[#D6BD98] group-hover:-translate-y-0.5 group-hover:scale-110 transition-transform duration-250" />
-                Download Resume
-              </a>
+                <Download className="w-4 h-4 mr-2 text-[#1A3636] dark:text-[#D6BD98] group-hover:-translate-y-0.5 transition-transform duration-250" />
+                View / Download Resume
+              </button>
             </motion.div>
 
             {/* Social Channels Row */}
             <motion.div 
               variants={itemVariants}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-3 pt-6"
+              className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5 pt-2"
             >
-              <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mr-1.5 select-none">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500 mr-1 select-none">
                 Connect:
               </span>
               {personalInfo.linkedin && (
@@ -245,10 +201,11 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   href={personalInfo.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-w-[48px] min-h-[48px] flex items-center justify-center sm:min-w-0 sm:min-h-0 sm:p-3 bg-white/70 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/80 hover:border-[#0077B5] dark:hover:border-[#3babeb] hover:bg-[#0077B5]/5 dark:hover:bg-[#0077B5]/10 text-[#0077B5] dark:text-[#3babeb] rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-3xs hover:shadow-2xs cursor-pointer"
+                  className="p-2.5 bg-white/70 dark:bg-[#1A3636]/40 border border-slate-200/60 dark:border-[#40534C]/30 hover:border-[#0077B5] text-[#0077B5] dark:text-[#3babeb] rounded-xl hover:scale-105 transition-all shadow-3xs cursor-pointer"
                   title="LinkedIn"
+                  aria-label="LinkedIn Profile"
                 >
-                  <Linkedin className="w-4.5 h-4.5" />
+                  <Linkedin className="w-4 h-4" />
                 </a>
               )}
               {personalInfo.youtube && (
@@ -256,10 +213,11 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   href={personalInfo.youtube}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-w-[48px] min-h-[48px] flex items-center justify-center sm:min-w-0 sm:min-h-0 sm:p-3 bg-white/70 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/80 hover:border-[#FF0000] dark:hover:border-[#ff3b3b] hover:bg-[#FF0000]/5 dark:hover:bg-[#FF0000]/10 text-[#FF0000] dark:text-[#ff3b3b] rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-3xs hover:shadow-2xs cursor-pointer"
+                  className="p-2.5 bg-white/70 dark:bg-[#1A3636]/40 border border-slate-200/60 dark:border-[#40534C]/30 hover:border-[#FF0000] text-[#FF0000] dark:text-[#ff3b3b] rounded-xl hover:scale-105 transition-all shadow-3xs cursor-pointer"
                   title="YouTube"
+                  aria-label="YouTube Channel"
                 >
-                  <Youtube className="w-4.5 h-4.5" />
+                  <Youtube className="w-4 h-4" />
                 </a>
               )}
               {personalInfo.instagram && (
@@ -267,58 +225,55 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                   href={personalInfo.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="min-w-[48px] min-h-[48px] flex items-center justify-center sm:min-w-0 sm:min-h-0 sm:p-3 bg-white/70 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/80 hover:border-[#E1306C] dark:hover:border-[#f25287] hover:bg-[#E1306C]/5 dark:hover:bg-[#E1306C]/10 text-[#E1306C] dark:text-[#f25287] rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-3xs hover:shadow-2xs cursor-pointer"
+                  className="p-2.5 bg-white/70 dark:bg-[#1A3636]/40 border border-slate-200/60 dark:border-[#40534C]/30 hover:border-[#E1306C] text-[#E1306C] dark:text-[#f25287] rounded-xl hover:scale-105 transition-all shadow-3xs cursor-pointer"
                   title="Instagram"
+                  aria-label="Instagram Profile"
                 >
-                  <Instagram className="w-4.5 h-4.5" />
+                  <Instagram className="w-4 h-4" />
                 </a>
               )}
               {personalInfo.email && (
                 <a
                   href={`mailto:${personalInfo.email}`}
-                  className="min-w-[48px] min-h-[48px] flex items-center justify-center sm:min-w-0 sm:min-h-0 sm:p-3 bg-white/70 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/80 hover:border-[#EA4335] dark:hover:border-[#ff5e50] hover:bg-[#EA4335]/5 dark:hover:bg-[#EA4335]/10 text-[#EA4335] dark:text-[#ff5e50] rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-3xs hover:shadow-2xs cursor-pointer"
+                  className="p-2.5 bg-white/70 dark:bg-[#1A3636]/40 border border-slate-200/60 dark:border-[#40534C]/30 hover:border-[#EA4335] text-[#EA4335] dark:text-[#ff5e50] rounded-xl hover:scale-105 transition-all shadow-3xs cursor-pointer"
                   title="Email"
+                  aria-label="Send Email"
                 >
-                  <Mail className="w-4.5 h-4.5" />
-                </a>
-              )}
-              {personalInfo.phone && (
-                <a
-                  href={`tel:${personalInfo.phone}`}
-                  className="min-w-[48px] min-h-[48px] flex items-center justify-center sm:min-w-0 sm:min-h-0 sm:p-3 bg-white/70 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/80 hover:border-emerald-600 dark:hover:border-emerald-400 hover:bg-emerald-600/5 dark:hover:bg-emerald-600/10 text-emerald-600 dark:text-emerald-400 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 shadow-3xs hover:shadow-2xs cursor-pointer"
-                  title="Phone"
-                >
-                  <Phone className="w-4.5 h-4.5" />
+                  <Mail className="w-4 h-4" />
                 </a>
               )}
             </motion.div>
           </div>
 
-          {/* Right Side: Luxury Portrait & Available Card */}
+          {/* Right Column: Prominent Portrait & 4 Floating Stat Chips */}
           <motion.div 
-            className="lg:col-span-5 flex flex-col items-center lg:items-end gap-8"
-            variants={widgetVariants}
+            className="lg:col-span-5 flex flex-col items-center justify-center"
+            variants={itemVariants}
           >
-            {/* Portrait area */}
-            <div className="relative w-full max-w-[340px] aspect-square flex items-center justify-center select-none">
-              
-              {/* Background gradient rings */}
-              <div className="absolute inset-0 flex items-center justify-center -z-10">
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-[105%] h-[105%] rounded-full border border-dashed border-[#1A3636]/15 dark:border-[#D6BD98]/25 pointer-events-none"
-                />
-                <motion.div
-                  animate={{ rotate: -360 }}
-                  transition={{ duration: 45, repeat: Infinity, ease: "linear" }}
-                  className="absolute w-[115%] h-[115%] rounded-full border border-dashed border-[#40534C]/10 dark:border-[#B38F6F]/20 pointer-events-none"
-                />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#1A3636]/10 to-[#D6BD98]/10 blur-3xl rounded-full opacity-60 scale-110 pointer-events-none" />
+            <div 
+              ref={cardRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              className="relative w-full max-w-[360px] aspect-square flex items-center justify-center select-none"
+              style={{
+                perspective: 1000,
+              }}
+            >
+              {/* Background ambient circular rings */}
+              <div className="absolute inset-0 flex items-center justify-center -z-10 pointer-events-none">
+                <div className="w-[110%] h-[110%] rounded-full border border-dashed border-[#1A3636]/15 dark:border-[#D6BD98]/20 animate-spin" style={{ animationDuration: '45s' }} />
+                <div className="absolute inset-4 bg-gradient-to-tr from-[#1A3636]/10 to-[#D6BD98]/15 blur-2xl rounded-full opacity-70" />
               </div>
 
-              {/* Central Floating portrait */}
-              <div className="relative w-[280px] h-[280px] rounded-full overflow-hidden border-2 border-white dark:border-[#1A3636] shadow-2xl group/image z-10 bg-white dark:bg-[#1A3636]">
+              {/* Portrait Container with 3D Tilt */}
+              <motion.div
+                animate={{
+                  rotateX: prefersReducedMotion ? 0 : -mousePos.y * 14,
+                  rotateY: prefersReducedMotion ? 0 : mousePos.x * 14,
+                }}
+                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
+                className="relative w-[280px] h-[280px] sm:w-[300px] sm:h-[300px] rounded-full overflow-hidden border-4 border-white/90 dark:border-[#1A3636] shadow-2xl z-10 bg-[#F2F1ED] dark:bg-[#1A3636] group"
+              >
                 {personalInfo.avatarUrl ? (
                   <img
                     src={personalInfo.avatarUrl}
@@ -327,54 +282,39 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                     fetchPriority="high"
                     decoding="async"
                     referrerPolicy="no-referrer"
-                    width="280"
-                    height="280"
-                    className="w-full h-full object-cover group-hover/image:scale-105 transition-transform duration-500 ease-out"
+                    width="300"
+                    height="300"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-[#1A3636]/20 to-[#D6BD98]/20 flex items-center justify-center text-[#1A3636] dark:text-[#D6BD98] font-display font-black text-4xl">
                     MP
                   </div>
                 )}
-              </div>
-
-              {/* Floating Chip 1: 🏆 Research Pubs */}
-              <motion.div
-                animate={{ y: [0, -6, 0] }}
-                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-                className="absolute top-1 -left-1 sm:-left-4 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
-              >
-                <span className="text-sm">🏆</span>
-                <div className="flex flex-col text-left leading-tight">
-                  <span className="text-[11px] font-bold text-brand-dark">
-                    <AnimatedCounter target={3} duration={1200} />
-                  </span>
-                  <span className="text-[9px] text-brand-paragraph font-medium">Research Pubs</span>
-                </div>
               </motion.div>
 
-              {/* Floating Chip 2: 📊 Leads */}
+              {/* Chip 1 (Top Left): 300+ Qualified Leads */}
               <motion.div
-                animate={{ y: [0, 6, 0] }}
-                transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
-                className="absolute top-16 -right-3 sm:-right-12 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3.5 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+                animate={{ y: [0, -5, 0] }}
+                transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                className="absolute top-2 -left-3 sm:-left-6 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/30 backdrop-blur-md py-1.5 px-3.5 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
               >
                 <span className="text-sm">📊</span>
                 <div className="flex flex-col text-left leading-tight">
                   <span className="text-[11px] font-bold text-brand-dark">
                     <AnimatedCounter target={300} suffix="+" duration={1200} />
                   </span>
-                  <span className="text-[9px] text-brand-paragraph font-medium">Qualified B2B Leads</span>
+                  <span className="text-[9px] text-brand-paragraph font-medium">Qualified Leads</span>
                 </div>
               </motion.div>
 
-              {/* Floating Chip 3: 👥 Units Sold */}
+              {/* Chip 2 (Top Right): 150+ Units Sold */}
               <motion.div
                 animate={{ y: [0, 5, 0] }}
-                transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut" }}
-                className="absolute bottom-12 -left-3 sm:-left-12 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+                transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut" }}
+                className="absolute top-14 -right-3 sm:-right-8 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/30 backdrop-blur-md py-1.5 px-3.5 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
               >
-                <span className="text-sm">👥</span>
+                <span className="text-sm">🛍️</span>
                 <div className="flex flex-col text-left leading-tight">
                   <span className="text-[11px] font-bold text-brand-dark">
                     <AnimatedCounter target={150} suffix="+" duration={1200} />
@@ -383,50 +323,62 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 </div>
               </motion.div>
 
-              {/* Floating Chip 4: 📈 MBA Marketing */}
+              {/* Chip 3 (Bottom Left): 3 Research Publications */}
               <motion.div
-                animate={{ y: [0, -5, 0] }}
-                transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
-                className="absolute bottom-6 -right-1 sm:-right-6 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md py-1.5 px-3 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+                animate={{ y: [0, 6, 0] }}
+                transition={{ repeat: Infinity, duration: 3.8, ease: "easeInOut" }}
+                className="absolute bottom-10 -left-2 sm:-left-6 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/30 backdrop-blur-md py-1.5 px-3.5 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
               >
-                <span className="text-sm">📈</span>
+                <span className="text-sm">🏆</span>
                 <div className="flex flex-col text-left leading-tight">
-                  <span className="text-[11px] font-bold text-brand-dark">MBA</span>
-                  <span className="text-[9px] text-brand-paragraph font-medium">Marketing</span>
+                  <span className="text-[11px] font-bold text-brand-dark">
+                    <AnimatedCounter target={3} duration={1200} />
+                  </span>
+                  <span className="text-[9px] text-brand-paragraph font-medium">Research Papers</span>
                 </div>
               </motion.div>
-            </div>
 
-            {/* Opportunities Card (Bento Style) */}
-            <div className="w-full max-w-[340px] bg-white/80 dark:bg-[#1A3636]/70 border border-[#40534C]/20 dark:border-[#D6BD98]/25 backdrop-blur-md p-5 rounded-[24px] shadow-sm flex flex-col text-left relative overflow-hidden group/opt hover:shadow-md transition-shadow">
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[11px] font-bold text-[#1A3636] dark:text-[#D6BD98] tracking-wider uppercase">Available For</span>
-                <span className="inline-flex items-center gap-1.5 text-[10px] font-bold text-emerald-700 dark:text-emerald-400">
-                  <span className="w-2 h-2 rounded-full bg-emerald-600 animate-pulse" />
-                  Opportunities
-                </span>
-              </div>
-              <h4 className="font-display font-extrabold text-brand-dark text-base mb-2 group-hover/opt:text-[#1A3636] dark:group-hover/opt:text-[#D6BD98] transition-colors">
-                Open to full-time roles & marketing collaborations.
-              </h4>
-              <p className="text-brand-paragraph text-xs font-medium mb-4 leading-relaxed">
-                Available to join immediately for data-driven, strategic B2B/B2C marketing or research positions.
-              </p>
-              <div className="flex items-center justify-between border-t border-[#40534C]/15 dark:border-[#D6BD98]/20 pt-3">
-                <a 
-                  href="#contact"
-                  className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1A3636] hover:text-[#40534C] dark:text-[#D6BD98] dark:hover:text-[#B38F6F] transition-colors"
-                >
-                  Let's Talk ➔
-                </a>
-                <span className="text-[10px] font-mono font-bold text-[#677D6A] dark:text-[#A8B8AE] uppercase tracking-wider">
-                  ⏱ Usually replies within 24 hrs
-                </span>
-              </div>
+              {/* Chip 4 (Bottom Right): MBA Marketing */}
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ repeat: Infinity, duration: 4.2, ease: "easeInOut" }}
+                className="absolute bottom-6 -right-2 sm:-right-6 bg-white/95 dark:bg-[#1A3636]/95 border border-[#40534C]/20 dark:border-[#D6BD98]/30 backdrop-blur-md py-1.5 px-3.5 rounded-2xl shadow-lg flex items-center gap-2 z-20 hover:scale-105 transition-transform"
+              >
+                <span className="text-sm">🎓</span>
+                <div className="flex flex-col text-left leading-tight">
+                  <span className="text-[11px] font-bold text-brand-dark">
+                    MBA Candidate
+                  </span>
+                  <span className="text-[9px] text-brand-paragraph font-medium">Marketing & Analytics</span>
+                </div>
+              </motion.div>
+
             </div>
           </motion.div>
+
         </motion.div>
       </div>
+
+      {/* Smooth Scroll Indicator at the bottom */}
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.8 }}
+        className="mt-6 flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 select-none z-10"
+      >
+        <a 
+          href="#impact" 
+          className="flex flex-col items-center gap-1 group text-[11px] font-mono font-medium tracking-wider uppercase hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors"
+        >
+          <span>Scroll to explore</span>
+          <motion.div
+            animate={{ y: [0, 4, 0] }}
+            transition={{ repeat: Infinity, duration: 1.8, ease: "easeInOut" }}
+          >
+            <ChevronDown className="w-4 h-4 text-current" />
+          </motion.div>
+        </a>
+      </motion.div>
     </section>
   );
 }

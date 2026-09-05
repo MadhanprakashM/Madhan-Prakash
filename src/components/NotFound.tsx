@@ -49,14 +49,7 @@ export default function NotFound({ onBackToHome }: NotFoundProps) {
 
           <a
             id="not-found-contact-btn"
-            href="#contact"
-            onClick={() => {
-              onBackToHome();
-              setTimeout(() => {
-                const contactSection = document.getElementById('contact');
-                if (contactSection) contactSection.scrollIntoView({ behavior: 'smooth' });
-              }, 100);
-            }}
+            href="mailto:classictamilofficial@gmail.com"
             className="flex-1 inline-flex items-center justify-center px-4 py-3 bg-white hover:bg-slate-50 text-slate-700 dark:bg-[#40534C]/40 dark:hover:bg-[#40534C]/60 dark:text-[#F2F1ED] border border-[#40534C]/20 dark:border-[#D6BD98]/20 font-bold rounded-xl text-xs transition-all shadow-xs focus:outline-none cursor-pointer"
           >
             <MessageSquare className="w-4 h-4 mr-2 text-[#D6BD98]" />

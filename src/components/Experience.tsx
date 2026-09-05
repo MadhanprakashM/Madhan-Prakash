@@ -217,14 +217,15 @@ export default function Experience() {
           variants={animateFadeUp}
         >
           <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/70 dark:bg-[#1A3636]/60 border border-[#40534C]/20 dark:border-[#D6BD98]/25 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-xs font-semibold uppercase tracking-[0.2em] shadow-2xs backdrop-blur-md">
-            <span>PROVING GROUND</span>
+            <Sparkles className="w-3.5 h-3.5 text-[#677D6A] dark:text-[#D6BD98]" />
+            <span>WORK & PRACTICAL EXPERIENCE</span>
           </div>
-          <h2 className="text-[clamp(2.2rem,4.5vw,3.6rem)] font-display font-bold text-brand-dark tracking-[-0.03em]">
-            Practical Experience
+          <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-display font-bold text-brand-dark tracking-tight">
+            Learning by Doing, Delivering Real Results
           </h2>
           <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
-          <p className="text-slate-700/85 dark:text-slate-300/85 text-[15px] sm:text-[17px] font-sans font-normal leading-relaxed max-w-[660px] mx-auto">
-            A comprehensive record of MBA internships, live client advertising budgets, content growth, and organizational leadership.
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base max-w-2xl mx-auto pt-1">
+            Internships, practical projects, and lead generation initiatives where marketing meets execution.
           </p>
         </motion.div>
 

@@ -106,14 +106,14 @@ export default function Certifications() {
         >
           <div className="inline-flex items-center space-x-1.5 px-3.5 py-1 bg-white/80 dark:bg-[#1A3636]/70 border border-[#40534C]/20 dark:border-[#D6BD98]/25 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
             <ShieldCheck className="w-3.5 h-3.5 text-[#677D6A] dark:text-[#D6BD98]" />
-            <span>VERIFIED CREDENTIALS & AWARDS ({certifications.length})</span>
+            <span>VERIFIED CREDENTIALS ({certifications.length})</span>
           </div>
-          <h2 className="text-[clamp(2.2rem,4.5vw,3.5rem)] font-display font-bold text-brand-dark tracking-[-0.03em]">
-            Certifications & Honors
+          <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-display font-bold text-brand-dark tracking-tight">
+            Certifications & Qualifications
           </h2>
           <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
-          <p className="text-slate-700/85 dark:text-slate-300/85 text-[15px] sm:text-[17px] font-sans font-normal leading-relaxed max-w-[700px] mx-auto">
-            Official accredited qualifications from Google, Coursera, AICTE ATAL Academy, Reliance Foundation, NISM, and Academic Paper Presentations.
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base max-w-2xl mx-auto pt-1">
+            Industry qualifications from Google, AICTE ATAL, HubSpot, SEMrush, and prestigious academic institutions.
           </p>
         </motion.div>
 

@@ -451,5 +451,29 @@ export const allCertifications: Certification[] = [
     verificationStatus: "verified",
     fileType: "image",
     skills: ["SEO Fundamentals", "Search Advertising", "Display Ads", "Web Analytics", "Email Marketing"]
+  },
+
+  // 24. AICTE ATAL Next-Gen Business Analytics
+  {
+    id: "cert-aicte-atal-analytics",
+    title: "Next-Gen Business Analytics: The AI and Data Science Revolution",
+    issuer: "AICTE Training and Learning (ATAL) Academy & VIMS",
+    date: "August 22, 2026",
+    year: 2026,
+    category: "academic",
+    categoryLabel: "AICTE ATAL Faculty & Student Development",
+    importance: 5,
+    featured: true,
+    description: "Completed AICTE Training And Learning (ATAL) Academy Faculty Development Program on Next-Gen Business Analytics: The AI and Data Science Revolution at Vivekananda Institute of Management Studies from 17/08/2026 to 22/08/2026.",
+    thumbnail: "Google ads certificate.webp",
+    certificateUrl: "Google ads certificate.webp",
+    link: "https://atalacademy.aicte-india.org/",
+    credentialUrl: "https://atalacademy.aicte-india.org/",
+    credentialId: "ATAL/2026/1786702150",
+    sourceFile: "ATAL_Analytics_Certificate.pdf",
+    status: "verified",
+    verificationStatus: "verified",
+    fileType: "image",
+    skills: ["Business Analytics", "AI Revolution", "Data Science", "Predictive Analytics", "Decision Modeling"]
   }
 ];

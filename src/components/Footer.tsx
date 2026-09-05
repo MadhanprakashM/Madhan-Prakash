@@ -21,7 +21,7 @@ export default function Footer() {
             <a href="#experience" className="hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors">Work Experience</a>
             <a href="#skills" className="hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors">Marketing Skills</a>
             <a href="#certifications" className="hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors">Certifications</a>
-            <a href="#achievements" className="hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors">Leadership & Stats</a>
+            <a href="#research" className="hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors">Research Papers</a>
             <a href="#testimonials" className="hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors">Endorsements</a>
             <a href="#contact" className="hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors">Contact</a>
           </nav>

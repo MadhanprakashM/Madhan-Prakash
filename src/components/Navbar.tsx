@@ -58,13 +58,13 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Brand', href: '#brand' },
-    { name: 'Academic', href: '#academic' },
+    { name: 'Pillars', href: '#brand' },
+    { name: 'MBA Journey', href: '#academic' },
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Certifications', href: '#certifications' },
-    { name: 'Achievements', href: '#achievements' },
-    { name: 'Testimonials', href: '#testimonials' },
+    { name: 'Research', href: '#research' },
+    { name: 'Contact', href: '#contact' },
   ];
 
   return (

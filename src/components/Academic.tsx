@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { motion, AnimatePresence, useReducedMotion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 import { 
   GraduationCap, 
   Award, 
@@ -13,12 +13,15 @@ import {
   Sparkles,
   Trophy,
   Search,
-  BookMarked
+  BookMarked,
+  Rocket,
+  Compass,
+  TrendingUp
 } from 'lucide-react';
 import { educationHistory } from '../data/portfolioData';
 import { TimelineSwitcher } from './InteractiveComponents';
 
-// Large static constant data moved outside of component for performance optimization
+// Static coursework data
 const academicCoursework: Record<string, string[]> = {
   edu1: [
     'Digital Marketing Strategy',
@@ -109,7 +112,7 @@ const academicAchievements: Record<string, { title: string; award: string }[]> =
   edu1: [
     {
       title: "Overall Event Coordinator",
-      award: "Recognized by VIMS administration for managing a major 400+ student festival."
+      award: "Recognized by VIMS administration for managing a major 400+ student festival (VIMSMART 2K26)."
     }
   ],
   edu2: [
@@ -140,7 +143,7 @@ const academicAchievements: Record<string, { title: string; award: string }[]> =
   ]
 };
 
-// Theme configuration for academic stages using the new palette
+// Theme configuration for academic stages
 const stageTheme: Record<string, { badge: string; accent: string; bg: string }> = {
   edu1: {
     badge: 'bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 text-[#1A3636] dark:text-[#D6BD98] border-[#1A3636]/20 dark:border-[#D6BD98]/30',
@@ -164,13 +167,38 @@ const stageTheme: Record<string, { badge: string; accent: string; bg: string }> 
   }
 };
 
+const mbaMilestones = [
+  {
+    year: '2024',
+    title: 'Joined MBA (Marketing)',
+    subtitle: 'New beginnings, bigger goals',
+    description: 'Transitioned from undergraduate business management to advanced marketing and analytics at Vivekananda Institute of Management Studies. Shifted focus toward strategic brand management, consumer psychology, and quantitative research.',
+    icon: <Rocket className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
+    tag: 'Foundation & Vision'
+  },
+  {
+    year: '2025',
+    title: 'Learning & Exploration',
+    subtitle: 'Gaining knowledge, building skills',
+    description: 'Deep-dived into Meta Ads, search engine optimization (SEO), Google Analytics 4, and Power BI dashboards. Published scientific papers on consumer behavior and represented institute in competitive marketing summits.',
+    icon: <Compass className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
+    tag: 'Capability Building'
+  },
+  {
+    year: '2026',
+    title: 'Current Journey',
+    subtitle: 'Applying learning to real-world impact',
+    description: 'Executing high-ROI live marketing campaigns (Vetikaaran), generating 300+ B2B leads (Bruhat Logistics), and leading large-scale intercollegiate operations (Overall Coordinator for VIMSMART 2K26).',
+    icon: <TrendingUp className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
+    tag: 'Active Leadership'
+  }
+];
+
 interface DetailPanelContentProps {
   edu: typeof educationHistory[0];
 }
 
-// Extracted reusable detail panel to avoid duplicate logic/rendering
 function DetailPanelContent({ edu }: DetailPanelContentProps) {
-  const theme = stageTheme[edu.id] || stageTheme.edu1;
   const projects = academicProjects[edu.id] || [];
   const research = academicResearch[edu.id] || [];
   const coursework = academicCoursework[edu.id] || [];
@@ -178,7 +206,7 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
 
   return (
     <div className="space-y-5 relative z-10 text-left">
-      {/* MODULE 1: Education Headers */}
+      {/* Education Headers */}
       <div className="space-y-2 border-b border-[#40534C]/15 dark:border-[#D6BD98]/20 pb-4">
         <div className="flex flex-wrap items-center gap-2">
           <div className="p-1.5 bg-[#1A3636]/5 dark:bg-[#D6BD98]/10 text-[#1A3636] dark:text-[#D6BD98] border border-[#1A3636]/10 dark:border-[#D6BD98]/20 rounded-lg">
@@ -198,7 +226,7 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
         </p>
       </div>
 
-      {/* MODULE 2: Key Highlights */}
+      {/* Key Highlights */}
       {edu.highlights && edu.highlights.length > 0 && (
         <div className="space-y-2">
           <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
@@ -216,7 +244,27 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
         </div>
       )}
 
-      {/* MODULE 3: Projects */}
+      {/* Coursework Modules */}
+      {coursework.length > 0 && (
+        <div className="space-y-2">
+          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
+            <BookOpen className="w-3.5 h-3.5 mr-1.5 text-[#1A3636] dark:text-[#D6BD98] shrink-0" />
+            Core Academic Coursework
+          </h4>
+          <div className="flex flex-wrap gap-1.5 pl-2">
+            {coursework.map((course, idx) => (
+              <span
+                key={idx}
+                className="px-2.5 py-1 bg-white/80 dark:bg-[#1A3636]/60 border border-[#40534C]/15 dark:border-[#D6BD98]/20 rounded-md text-[11px] font-medium text-slate-700 dark:text-slate-200"
+              >
+                {course}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* Projects */}
       {projects.length > 0 && (
         <div className="space-y-2">
           <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
@@ -239,7 +287,7 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
         </div>
       )}
 
-      {/* MODULE 4: Research */}
+      {/* Research */}
       {research.length > 0 && (
         <div className="space-y-2">
           <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
@@ -265,39 +313,18 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
         </div>
       )}
 
-      {/* MODULE 5: Skills Learned */}
-      {coursework.length > 0 && (
-        <div className="space-y-2">
-          <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
-            <BookOpen className="w-3.5 h-3.5 mr-1.5 text-[#40534C] dark:text-[#D6BD98] shrink-0" />
-            Skills Learned & Coursework
-          </h4>
-          <div className="flex flex-wrap gap-1.5 pl-2">
-            {coursework.map((course, idx) => (
-              <span
-                key={idx}
-                className="px-2.5 py-1 bg-white dark:bg-[#1A3636]/60 border border-[#40534C]/15 dark:border-[#D6BD98]/20 rounded-lg text-xs font-semibold text-brand-dark flex items-center space-x-1.5 shadow-3xs hover:border-[#1A3636]/30 dark:hover:border-[#D6BD98]/40 transition-all duration-200"
-              >
-                <span className={`w-1 h-1 rounded-full ${theme.accent} shrink-0`} />
-                <span>{course}</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* MODULE 6: Achievements */}
+      {/* Achievements */}
       {achievements.length > 0 && (
         <div className="space-y-2">
           <h4 className="text-xs font-bold uppercase tracking-widest text-brand-dark flex items-center border-l-2 border-[#1A3636] dark:border-[#D6BD98] pl-2">
-            <Trophy className="w-3.5 h-3.5 mr-1.5 text-[#B38F6F] shrink-0" />
-            Achievements & Recognitions
+            <Trophy className="w-3.5 h-3.5 mr-1.5 text-[#1A3636] dark:text-[#D6BD98] shrink-0" />
+            Key Campus Honors
           </h4>
-          <div className="space-y-2 pl-2">
+          <div className="space-y-1.5 pl-2">
             {achievements.map((ach, idx) => (
-              <div key={idx} className="flex items-start gap-2.5 p-2 bg-[#B38F6F]/10 dark:bg-[#B38F6F]/15 border border-[#B38F6F]/20 rounded-lg text-xs">
-                <Trophy className="w-4 h-4 text-[#B38F6F] shrink-0 mt-0.5" />
-                <div className="space-y-0.5">
+              <div key={idx} className="flex items-start text-xs text-brand-paragraph">
+                <Award className="w-3.5 h-3.5 text-[#1A3636] dark:text-[#D6BD98] mr-2 mt-0.5 shrink-0" />
+                <div>
                   <h5 className="font-bold text-brand-dark">{ach.title}</h5>
                   <p className="text-xs text-brand-paragraph leading-normal">{ach.award}</p>
                 </div>
@@ -314,102 +341,161 @@ export default function Academic() {
   const [activeEducation, setActiveEducation] = useState<typeof educationHistory[0]>(educationHistory[0]);
 
   return (
-    <section id="academic" className="py-8 sm:py-12 md:py-14 bg-transparent relative overflow-hidden">
-      {/* Editorial matrix grid overlays */}
+    <section id="academic" className="py-14 sm:py-20 bg-transparent relative overflow-hidden">
+      {/* Matrix background */}
       <div className="absolute inset-0 matrix-grid-pattern opacity-25 pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-80px" }}
         transition={{ duration: 0.5, ease: "easeOut" }}
         className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10"
       >
         
         {/* Section Header */}
-        <div className="max-w-3xl mx-auto text-center mb-5 md:mb-6 space-y-2 md:space-y-3">
-          <div className="inline-flex items-center space-x-1.5 px-3 py-1 bg-white/70 dark:bg-[#1A3636]/60 border border-[#40534C]/20 dark:border-[#D6BD98]/25 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
-            <Sparkles className="w-3 h-3 text-[#677D6A] dark:text-[#D6BD98]" />
-            <span>QUALIFICATIONS</span>
+        <div className="max-w-3xl mx-auto text-center mb-10 sm:mb-14 space-y-2">
+          <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/80 dark:bg-[#1A3636]/70 border border-[#40534C]/20 dark:border-[#D6BD98]/25 rounded-full text-[#1A3636] dark:text-[#D6BD98] text-xs font-semibold uppercase tracking-[0.24em] shadow-2xs backdrop-blur-md">
+            <Sparkles className="w-3.5 h-3.5 text-[#677D6A] dark:text-[#D6BD98]" />
+            <span>MY MBA JOURNEY</span>
           </div>
-          <h2 className="text-[clamp(2.5rem,5vw,4rem)] font-display font-bold text-brand-dark tracking-[-0.03em]">
-            Academic Profile
+          <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-display font-bold text-brand-dark tracking-tight">
+            Learning. Growing. Evolving.
           </h2>
           <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
-          <p className="text-slate-700/85 dark:text-slate-300 text-[16px] sm:text-[18px] font-sans font-normal leading-relaxed sm:leading-[1.9] max-w-[680px] mx-auto">
-            A comprehensive, structured showcase of my academic milestones, analytics coursework, and campus leadership.
+          <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base max-w-2xl mx-auto pt-1">
+            Tracking my progression from foundational management principles to applied digital campaigns, business analytics, and event leadership.
           </p>
         </div>
 
-        {/* Unified Timeline Switcher (Desktop, Tablet & Mobile Accordion) */}
-        <TimelineSwitcher
-          idPrefix="edu"
-          items={educationHistory}
-          activeId={activeEducation.id}
-          onChange={(id) => {
-            const found = educationHistory.find((edu) => edu.id === id);
-            if (found) {
-              setActiveEducation(found);
-            }
-          }}
-          getId={(edu) => edu.id}
-          getMobileTitle={(edu) => edu.degree}
-          getMobileSubtitle={(edu) => edu.institution}
-          getMobileIcon={() => <GraduationCap className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />}
-          getMobileHeaderRight={(edu) => {
-            const theme = stageTheme[edu.id] || stageTheme.edu1;
-            return (
-              <span className={`text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border shrink-0 ${theme.badge}`}>
-                {edu.period}
+        {/* 1. Visual MBA Milestones Timeline (3 Pillars) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+          {mbaMilestones.map((m, idx) => (
+            <div
+              key={m.year}
+              className="p-6 sm:p-7 rounded-[22px] bg-white/85 dark:bg-[#1A3636]/40 border border-[#40534C]/15 dark:border-[#D6BD98]/20 backdrop-blur-md shadow-md hover:border-[#1A3636]/40 dark:hover:border-[#D6BD98]/40 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group text-left relative overflow-hidden"
+            >
+              {/* Year Watermark */}
+              <span className="absolute -top-2 right-4 font-mono font-black text-5xl text-slate-200/40 dark:text-white/5 pointer-events-none select-none">
+                {m.year}
               </span>
-            );
-          }}
-          renderSelectorItem={(edu, isSelected) => {
-            const theme = stageTheme[edu.id] || stageTheme.edu1;
-            return (
-              <div className="p-4 w-full text-left flex flex-col justify-between h-full">
-                <div className="space-y-1.5 w-full text-left">
-                  <div className="flex items-center justify-between">
-                    <span className={`text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border ${
-                      isSelected ? theme.badge : 'bg-black/5 dark:bg-white/5 text-slate-500 dark:text-[#A8B8AE] border-[#40534C]/10 dark:border-[#D6BD98]/15'
-                    }`}>
-                      {edu.period}
-                    </span>
-                    <span className={`text-xs font-mono font-bold ${
-                      isSelected ? 'text-[#1A3636] dark:text-[#D6BD98]' : 'text-slate-400 dark:text-slate-500'
-                    }`}>
-                      {edu.grade}
-                    </span>
+
+              <div className="space-y-3.5 relative z-10">
+                <div className="flex items-center justify-between">
+                  <div className="w-10 h-10 rounded-xl bg-white dark:bg-[#0F1D1D] border border-[#40534C]/15 dark:border-[#D6BD98]/20 flex items-center justify-center shadow-2xs group-hover:scale-105 transition-transform duration-250">
+                    {m.icon}
                   </div>
-                  <h3 className="font-display font-bold text-sm sm:text-base tracking-tight text-brand-dark leading-snug group-hover:text-[#1A3636] dark:group-hover:text-[#D6BD98] transition-colors">
-                    {edu.degree}
+                  <span className="text-[10px] font-mono font-bold uppercase tracking-wider text-[#40534C] dark:text-[#D6BD98] bg-[#1A3636]/5 dark:bg-[#D6BD98]/10 px-2.5 py-0.5 rounded-md border border-[#1A3636]/10 dark:border-[#D6BD98]/20">
+                    {m.tag}
+                  </span>
+                </div>
+
+                <div className="space-y-1">
+                  <span className="text-xs font-mono font-extrabold text-[#1A3636] dark:text-[#D6BD98]">
+                    {m.year}
+                  </span>
+                  <h3 className="font-display font-bold text-lg text-brand-dark tracking-tight">
+                    {m.title}
                   </h3>
-                  <p className="text-xs text-brand-paragraph font-medium leading-normal flex items-center">
-                    <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400 shrink-0" />
-                    <span className="truncate">{edu.institution}</span>
+                  <p className="text-xs font-semibold text-slate-500 dark:text-[#A8B8AE]">
+                    {m.subtitle}
                   </p>
                 </div>
 
-                <span className={`text-[10px] font-bold pt-3 flex items-center transition-all ${
-                  isSelected ? 'text-[#1A3636] dark:text-[#D6BD98] translate-x-1' : 'text-slate-500'
-                }`}>
-                  <span>Explore Profile Deep Dive</span>
-                  <ChevronRight className="w-3.5 h-3.5 ml-0.5 shrink-0" />
+                <p className="text-xs text-slate-600 dark:text-slate-300 leading-relaxed font-normal">
+                  {m.description}
+                </p>
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-[#40534C]/10 dark:border-[#D6BD98]/15 flex items-center justify-between text-[11px] text-slate-400 dark:text-slate-400">
+                <span>Phase 0{idx + 1}</span>
+                <span className="font-bold text-[#1A3636] dark:text-[#D6BD98]">Milestone Achieved</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* 2. Formal Academic Qualifications & Credentials Deep Dive */}
+        <div className="space-y-6">
+          <div className="flex items-center justify-between border-b border-[#40534C]/15 dark:border-[#D6BD98]/20 pb-3">
+            <div>
+              <h3 className="font-display font-bold text-xl text-brand-dark tracking-tight">
+                Academic Degrees & Coursework
+              </h3>
+              <p className="text-xs text-slate-500 dark:text-slate-400">
+                Explore formal degree programs, university grades, research, and campus projects
+              </p>
+            </div>
+          </div>
+
+          <TimelineSwitcher
+            idPrefix="edu"
+            items={educationHistory}
+            activeId={activeEducation.id}
+            onChange={(id) => {
+              const found = educationHistory.find((edu) => edu.id === id);
+              if (found) {
+                setActiveEducation(found);
+              }
+            }}
+            getId={(edu) => edu.id}
+            getMobileTitle={(edu) => edu.degree}
+            getMobileSubtitle={(edu) => edu.institution}
+            getMobileIcon={() => <GraduationCap className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />}
+            getMobileHeaderRight={(edu) => {
+              const theme = stageTheme[edu.id] || stageTheme.edu1;
+              return (
+                <span className={`text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border shrink-0 ${theme.badge}`}>
+                  {edu.period}
                 </span>
-              </div>
-            );
-          }}
-          renderDetail={(edu) => {
-            const theme = stageTheme[edu.id] || stageTheme.edu1;
-            return (
-              <div className="relative w-full h-full">
-                {/* Soft Stage-specific background tint */}
-                <div className={`absolute -inset-8 bg-gradient-to-b ${theme.bg} opacity-[0.25] pointer-events-none`} />
-                <DetailPanelContent edu={edu} />
-              </div>
-            );
-          }}
-        />
+              );
+            }}
+            renderSelectorItem={(edu, isSelected) => {
+              const theme = stageTheme[edu.id] || stageTheme.edu1;
+              return (
+                <div className="p-4 w-full text-left flex flex-col justify-between h-full">
+                  <div className="space-y-1.5 w-full text-left">
+                    <div className="flex items-center justify-between">
+                      <span className={`text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border ${
+                        isSelected ? theme.badge : 'bg-black/5 dark:bg-white/5 text-slate-500 dark:text-[#A8B8AE] border-[#40534C]/10 dark:border-[#D6BD98]/15'
+                      }`}>
+                        {edu.period}
+                      </span>
+                      <span className={`text-xs font-mono font-bold ${
+                        isSelected ? 'text-[#1A3636] dark:text-[#D6BD98]' : 'text-slate-400 dark:text-slate-500'
+                      }`}>
+                        {edu.grade}
+                      </span>
+                    </div>
+                    <h4 className="font-display font-bold text-sm sm:text-base tracking-tight text-brand-dark leading-snug group-hover:text-[#1A3636] dark:group-hover:text-[#D6BD98] transition-colors">
+                      {edu.degree}
+                    </h4>
+                    <p className="text-xs text-brand-paragraph font-medium leading-normal flex items-center">
+                      <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400 shrink-0" />
+                      <span className="truncate">{edu.institution}</span>
+                    </p>
+                  </div>
+
+                  <span className={`text-[10px] font-bold pt-3 flex items-center transition-all ${
+                    isSelected ? 'text-[#1A3636] dark:text-[#D6BD98] translate-x-1' : 'text-slate-500'
+                  }`}>
+                    <span>View Curriculum & Research</span>
+                    <ChevronRight className="w-3.5 h-3.5 ml-0.5 shrink-0" />
+                  </span>
+                </div>
+              );
+            }}
+            renderDetail={(edu) => {
+              const theme = stageTheme[edu.id] || stageTheme.edu1;
+              return (
+                <div className="relative w-full h-full">
+                  <div className={`absolute -inset-8 bg-gradient-to-b ${theme.bg} opacity-[0.25] pointer-events-none`} />
+                  <DetailPanelContent edu={edu} />
+                </div>
+              );
+            }}
+          />
+        </div>
 
       </motion.div>
     </section>

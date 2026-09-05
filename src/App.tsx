@@ -1,19 +1,21 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import ImpactMetrics from './components/ImpactMetrics';
 import About from './components/About';
 import PersonalBrand from './components/PersonalBrand';
 import Academic from './components/Academic';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
-import Achievements from './components/Achievements';
+import ResearchPapers from './components/ResearchPapers';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
 import NotFound from './components/NotFound';
 import PremiumBackground from './components/PremiumBackground';
+import CustomCursor from './components/CustomCursor';
 
 const ResumePreviewModal = lazy(() => import('./components/ResumePreviewModal'));
 
@@ -55,27 +57,27 @@ export default function App() {
 
   // Set the correct page title and metadata
   useEffect(() => {
-    document.title = 'M. Madhan Prakash | MBA Portfolio & Featured Work';
+    document.title = 'M. Madhan Prakash | MBA Marketing & Analytics Portfolio';
   }, []);
 
-  // Set up a single unified Intersection Observer to track scroll positions efficiently
+  // Unified Intersection Observer to track scroll positions efficiently
   useEffect(() => {
     const sectionIds = [
       'home',
+      'impact',
       'about',
       'brand',
       'academic',
       'experience',
       'skills',
       'certifications',
-      'achievements',
+      'research',
       'testimonials',
       'contact',
     ];
 
     const observer = new IntersectionObserver(
       (entries) => {
-        // Find visible section with highest intersection ratio
         const visibleEntries = entries.filter((entry) => entry.isIntersecting);
         if (visibleEntries.length > 0) {
           visibleEntries.sort((a, b) => b.intersectionRatio - a.intersectionRatio);
@@ -114,7 +116,10 @@ export default function App() {
         />
       ) : (
         <div className="text-brand-dark min-h-screen relative font-sans antialiased selection:bg-brand-purple/15 selection:text-brand-dark overflow-x-hidden">
-          {/* Layered luxury animated cinematic background */}
+          {/* Subtle desktop interactive cursor */}
+          <CustomCursor />
+
+          {/* Layered luxury animated background */}
           <PremiumBackground />
           
           {/* Sticky responsive Navbar */}
@@ -131,31 +136,34 @@ export default function App() {
             {/* 1. Hero / Home Section */}
             <Hero onOpenResumeModal={() => setShowResumeModal(true)} />
 
-            {/* 2. About Me Section */}
+            {/* 2. Real Impact in Numbers Cards */}
+            <ImpactMetrics />
+
+            {/* 3. About Me Section */}
             <About />
 
-            {/* Personal Brand Section */}
+            {/* 4. Personal Brand / The Three Pillars */}
             <PersonalBrand />
 
-            {/* 3. Academic Profile Qualifications Section */}
+            {/* 5. Academic Profile & MBA Journey Timeline */}
             <Academic />
 
-            {/* 4. Career Milestones timeline */}
+            {/* 6. Work & Practical Experience Section */}
             <Experience />
 
-            {/* 5. Tool & Strategic Competencies Matrix */}
+            {/* 7. Technical & Professional Skills Matrix */}
             <Skills />
 
-            {/* 6. Academic & Vocational Credentials */}
+            {/* 8. Verified Credentials & Certifications */}
             <Certifications />
 
-            {/* 7. Research Publications & Leadership Stats */}
-            <Achievements />
+            {/* 9. Scientific Research Papers & Seminar Publications */}
+            <ResearchPapers />
 
-            {/* Testimonials Endorsements Section */}
+            {/* 10. Testimonials & Faculty Endorsements */}
             <Testimonials />
 
-            {/* 8. Let's Build Something Meaningful Contact Form */}
+            {/* 11. Direct Contact Channels & Social Links */}
             <Contact onOpenResume={() => setShowResumeModal(true)} />
 
           </main>
