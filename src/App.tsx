@@ -3,14 +3,12 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ImpactMetrics from './components/ImpactMetrics';
 import About from './components/About';
-import PersonalBrand from './components/PersonalBrand';
 import Academic from './components/Academic';
 import Experience from './components/Experience';
 import Skills from './components/Skills';
 import Certifications from './components/Certifications';
 import ResearchPapers from './components/ResearchPapers';
 import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ErrorBoundary from './components/ErrorBoundary';
 import NotFound from './components/NotFound';
@@ -66,7 +64,6 @@ export default function App() {
       'home',
       'impact',
       'about',
-      'brand',
       'academic',
       'experience',
       'skills',
@@ -142,10 +139,7 @@ export default function App() {
             {/* 3. About Me Section */}
             <About />
 
-            {/* 4. Personal Brand / The Three Pillars */}
-            <PersonalBrand />
-
-            {/* 5. Academic Profile & MBA Journey Timeline */}
+            {/* 4. Academic Profile & MBA Journey Timeline */}
             <Academic />
 
             {/* 6. Work & Practical Experience Section */}
@@ -163,13 +157,10 @@ export default function App() {
             {/* 10. Testimonials & Faculty Endorsements */}
             <Testimonials />
 
-            {/* 11. Direct Contact Channels & Social Links */}
-            <Contact onOpenResume={() => setShowResumeModal(true)} />
-
           </main>
 
-          {/* Elegant Recruiter Footer */}
-          <Footer />
+          {/* Clean, Compact Recruiter Footer / Contact */}
+          <Footer onOpenResume={() => setShowResumeModal(true)} />
 
           {/* Interactive Resume Sheet Modal */}
           {showResumeModal && (

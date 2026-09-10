@@ -125,7 +125,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 variants={itemVariants} 
                 className="block text-xs font-mono font-bold tracking-[0.22em] text-[#40534C] dark:text-[#D6BD98] uppercase"
               >
-                MBA MARKETING | ASPIRING MARKETER
+                MBA Candidate | Marketing & Business Analytics
               </motion.span>
               
               <motion.h1 
@@ -133,15 +133,12 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 variants={itemVariants}
                 className="text-4xl sm:text-6xl lg:text-[62px] font-display font-extrabold tracking-tight text-brand-dark leading-[1.08]"
               >
-                Madhan Prakash
+                M. Madhan Prakash
               </motion.h1>
 
               <motion.div variants={itemVariants} className="space-y-1 pt-1">
-                <p className="text-xl sm:text-2xl lg:text-3xl font-display font-bold text-[#1A3636] dark:text-[#D6BD98] tracking-tight">
-                  Turning Ideas into Impact
-                </p>
-                <p className="text-xs sm:text-sm font-mono font-semibold text-slate-500 dark:text-[#A8B8AE] tracking-wider uppercase">
-                  Marketing × Analytics × Business
+                <p className="text-base sm:text-lg lg:text-xl font-display font-bold text-[#1A3636] dark:text-[#D6BD98] tracking-tight">
+                  B2B Sales • Digital Marketing • Market Research • Business Analytics
                 </p>
               </motion.div>
             </div>
@@ -150,9 +147,9 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
             <motion.p 
               id="hero-tagline" 
               variants={itemVariants}
-              className="text-[16px] sm:text-[18px] text-slate-700/90 dark:text-slate-200/90 max-w-[620px] mx-auto lg:mx-0 font-normal leading-[1.8] text-balance"
+              className="text-[15px] sm:text-[17px] text-slate-700/90 dark:text-slate-200/90 max-w-[620px] mx-auto lg:mx-0 font-normal leading-[1.8] text-balance"
             >
-              I combine marketing creativity, data-driven insights, and business thinking to create meaningful impact. Passionate about building growth through digital campaigns, B2B pipelines, and measurable analytics.
+              Combining strategic marketing intuition, structured market research, and analytical problem-solving to build high-converting campaigns and viable commercial pipelines.
             </motion.p>
 
             {/* Strategic Highlight Pills */}

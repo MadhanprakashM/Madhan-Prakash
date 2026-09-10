@@ -58,7 +58,6 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
   const navItems = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Pillars', href: '#brand' },
     { name: 'MBA Journey', href: '#academic' },
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },

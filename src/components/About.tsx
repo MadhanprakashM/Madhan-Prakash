@@ -82,15 +82,15 @@ export default function About() {
           >
             <div className="space-y-4">
               <h3 className="text-xl sm:text-2xl font-display font-bold text-brand-dark leading-snug tracking-tight">
-                Bridging strategic marketing creativity with analytical rigor to drive tangible business growth.
+                Bridging marketing strategy, data intelligence, and execution to build viable commercial solutions.
               </h3>
               
               <p className="text-slate-700 dark:text-slate-200 text-base sm:text-[17px] font-sans font-normal leading-[1.8] text-balance">
-                I am Madhan Prakash, an MBA (Marketing & Business Analytics) student with an active focus on digital marketing, B2B lead pipelines, and business strategy. I enjoy understanding customer behavior, solving organizational coordination challenges, and converting raw marketing data into profitable actions.
+                I am an MBA candidate specializing in Marketing and Business Analytics, driven by how customer behavior, digital discovery, and market research intersect. My work focuses on designing high-impact digital campaigns, building structured B2B sales pipelines, and translating business data into actionable marketing initiatives.
               </p>
 
               <p className="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed">
-                Whether researching 500+ industrial enterprises, scaling Meta ad return-on-ad-spend under ₹10,000, or coordinating 80 volunteers for 400+ attendees at VIMSMART 2K26, I approach every challenge with disciplined execution and curiosity.
+                Beyond digital execution, I am deeply committed to academic research and campus leadership—leading inter-collegiate events, coordinating student immersion programs, and authoring research studies in consumer psychology and digital economics.
               </p>
             </div>
 

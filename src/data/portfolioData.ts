@@ -3,14 +3,14 @@ import { allCertifications } from './certificationsData';
 
 export const personalInfo = {
   name: 'M. Madhan Prakash',
-  title: 'MBA Candidate — Marketing & Business Analytics | B2B Sales & Digital Marketing',
+  title: 'MBA Candidate | Marketing & Business Analytics',
   subtitles: [
-    'B2B Sales & Market Research',
-    'Digital Marketing & Meta Ads',
-    'Business Analytics & Lead Generation',
-    'SEO & Social Media Strategy'
+    'B2B Sales',
+    'Digital Marketing',
+    'Market Research',
+    'Business Analytics'
   ],
-  tagline: 'MBA Candidate specializing in Marketing and Business Analytics with hands-on experience in B2B sales, digital marketing, lead generation, and market research. Researched 500+ companies, generated 300+ qualified B2B leads, and executed Meta Ads campaigns achieving 2.5M+ views and 150+ product sales.',
+  tagline: 'MBA Candidate specializing in Marketing & Business Analytics with hands-on experience in B2B sales pipelines, digital marketing campaigns, market research, and business analytics.',
   email: 'Madhanprakashoff@gmail.com',
   phone: '',
   linkedin: 'https://www.linkedin.com/in/madhanprakashofficial',
@@ -22,7 +22,7 @@ export const personalInfo = {
   location: 'Sivakasi, Tamil Nadu, India',
   address: 'Sivakasi, Tamil Nadu, India',
   avatarUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEij7PlnDYBCA7Au0BSXOvTk3u4IMytJyUPZpsmB3c9ax4q8P0W22SgT9Df9NSCaoz4CM4CuXh8HPV9mq1EtAt0LQB0px2VPSGg0Wmpum_e1bDlDc9sJC6uXi-1RlyzIqpk_7BDrnx03R4ATkoDa3cASXd7daqttVKziz3_gSXhIXDd6iDB1hOX4CQI5E2o',
-  aboutStory: 'MBA Candidate specializing in Marketing and Business Analytics with hands-on experience in B2B sales, digital marketing, lead generation, and market research. Researched 500+ companies across manufacturing sectors, generated 300+ qualified B2B leads using tools like Apollo AI, LinkedIn, and IndiaMART, and managed 4 Meta Ads campaigns that generated 2.5M+ views and 150+ product sales. Certified in Google Digital Marketing, Google Ads AI-Powered Performance, HubSpot, and SEMrush.',
+  aboutStory: 'MBA Candidate specializing in Marketing & Business Analytics with practical experience in B2B sales, digital marketing campaigns, market research, and data analytics. Focused on consumer behavior insights, high-conversion digital initiatives, and applying analytical tools to solve commercial challenges.',
   hobbies: ['Digital Content Creation', 'Campaign Strategy', 'Audience Analytics', 'Video Editing'],
   languages: ['Tamil (Native)', 'English (Professional Working Proficiency)'],
   // Contact Form Provider configuration ('web3forms' or 'googleforms')
@@ -54,35 +54,34 @@ export const skillGroups: SkillGroup[] = [
   {
     category: 'Analytics',
     skills: [
-      { name: 'Google Analytics (GA4)', rating: 5 },
       { name: 'Marketing Analytics', rating: 5 },
-      { name: 'SEMrush', rating: 4 },
-      { name: 'Power BI', rating: 4 }
+      { name: 'Excel', rating: 5 },
+      { name: 'Power BI', rating: 4 },
+      { name: 'Google Analytics 4', rating: 5 },
+      { name: 'Data Analysis', rating: 5 }
     ],
   },
   {
     category: 'Tools',
     skills: [
-      { name: 'Microsoft Excel', rating: 5 },
-      { name: 'Meta Ads Manager', rating: 5 },
-      { name: 'LinkedIn & Sales Nav', rating: 5 },
       { name: 'Apollo AI', rating: 5 },
+      { name: 'LinkedIn / Sales Navigator', rating: 5 },
+      { name: 'IndiaMART', rating: 5 },
       { name: 'Canva', rating: 5 },
       { name: 'CapCut', rating: 5 },
       { name: 'Adobe Photoshop', rating: 4 },
-      { name: 'Google Business Profile', rating: 4 },
       { name: 'HubSpot CRM', rating: 4 }
     ],
   },
   {
     category: 'Professional',
     skills: [
-      { name: 'Sales Pitching', rating: 5 },
-      { name: 'Leadership', rating: 5 },
       { name: 'Communication', rating: 5 },
       { name: 'Presentation', rating: 5 },
-      { name: 'Team Collaboration', rating: 5 },
-      { name: 'Problem Solving', rating: 5 }
+      { name: 'Leadership', rating: 5 },
+      { name: 'Team Coordination', rating: 5 },
+      { name: 'Problem Solving', rating: 5 },
+      { name: 'Sales Pitching', rating: 5 }
     ],
   }
 ];
@@ -96,40 +95,79 @@ export const experiences: Experience[] = [
     period: 'Jun 2026 - Jul 2026',
     type: 'internship',
     bullets: [
-      'Researched 500+ companies across manufacturing sectors to identify business opportunities.',
-      'Generated and verified 300+ qualified B2B leads using Excel, LinkedIn, IndiaMART, Apollo AI, and Google Maps.',
-      'Prepared sales presentations and market insights to support business development.'
+      'Researched 500+ manufacturing companies across industrial sectors.',
+      'Generated and verified 300+ qualified B2B leads using Apollo AI, LinkedIn, IndiaMART, Google Maps, and Excel.',
+      'Prepared sales presentations and structured market research to support client expansion.'
     ],
     tags: ['B2B Sales', 'Market Research', 'Lead Generation', 'Apollo AI', 'IndiaMART', 'LinkedIn', 'Google Maps']
   },
   {
     id: 'exp2',
-    role: 'Digital Marketing (Live Project)',
+    role: 'Digital Marketing Live Project',
     company: 'Vetikaaran',
     location: 'Coimbatore, Tamil Nadu, India',
     period: 'Dec 2025 - Feb 2026',
     type: 'live-project',
     bullets: [
-      'Managed 4 Meta Ads campaigns (₹10,000 budget), generating 2.5M+ views and 150+ product sales.',
-      'Created ad creatives, reels, videos, and copy while optimizing campaigns for the 20–30 age group audience.',
-      'Improved brand visibility and customer engagement through campaign optimization.'
+      'Managed 4 Meta Ads campaigns on a ₹10,000 budget, achieving 2.5M+ views and 150+ product sales.',
+      'Created ad creatives, reels, videos, and conversion copy tailored for the 20–30 age group.',
+      'Optimized audience targeting and ad spend to maximize campaign return.'
     ],
     tags: ['Meta Ads', 'Digital Marketing', 'Ad Creatives', 'Reels & Copywriting', 'Campaign Optimization']
   },
   {
+    id: 'exp_vip',
+    role: 'Student Coordinator',
+    company: 'VIP - VIMS Immersion Programme',
+    location: 'Vivekananda Institute of Management Studies, Coimbatore',
+    period: '2025 - Present',
+    type: 'leadership',
+    bullets: [
+      'Student-organized voluntary members programme at VIMS focused on student-led learning and knowledge sharing.',
+      'Coordinating students, programme activities, and supporting student-led sessions.',
+      'Delivered "Nike Fall & Rise Case Study" presentation examining Nike\'s business challenges, brand decline, strategic turnaround, and recovery lessons.',
+      'Delivered "Ikigai" presentation focused on purpose, passion, skills, career direction, and personal development.'
+    ],
+    tags: ['VIP', 'Student Coordinator', 'Nike Case Study', 'Ikigai Presentation', 'VIMS']
+  },
+  {
+    id: 'exp_yi',
+    role: 'Member',
+    company: 'Young Indians (YI)',
+    location: 'Coimbatore / Regional Chapter',
+    period: '2024 - Present',
+    type: 'leadership',
+    bullets: [
+      'Member of Young Indians since 2024, participating in a youth and professional development ecosystem focused on leadership, networking and community engagement.'
+    ],
+    tags: ['Young Indians', 'Member', 'Youth Leadership', 'Networking', 'Community Engagement']
+  },
+  {
+    id: 'exp5',
+    role: 'Overall Event Coordinator',
+    company: 'VIMSMART 2K26 Intercollege Festival',
+    location: 'VIMS, Coimbatore',
+    period: 'Feb 2026',
+    type: 'leadership',
+    bullets: [
+      'Led 80 volunteers across 17 teams to successfully organize VIMSMART 2K26 for 400+ participants from 20+ colleges.',
+      'Received the Best Event Manager Award for overall festival execution and operational planning.'
+    ],
+    tags: ['Leadership', 'Event Management', 'Best Event Manager Award', 'Team Coordination']
+  },
+  {
     id: 'exp_youtube',
-    role: 'YouTube Creator & Digital Video Producer',
+    role: 'YouTube Creator & Video Producer',
     company: 'Classic Tamil (YouTube Channel)',
     location: 'Sivakasi, TN / Remote',
     period: 'Jan 2021 - Present',
     type: 'work',
     bullets: [
-      'Built an organic sports gaming YouTube channel with 93.5K+ total views and 717+ subscribers across 48 videos.',
-      'Collaborated with two game development companies through YouTube for content promotion.',
-      'Created and edited 48 gameplay videos and tutorials using CapCut, designing custom thumbnails in Canva.',
+      'Built an organic sports gaming channel to 93.5K+ total views and 717+ subscribers across 48 videos.',
+      'Collaborated with two game development companies for video promotion and tutorials using CapCut and Canva.',
       'Analyzed channel statistics weekly to optimize viewer retention and search ranking.'
     ],
-    tags: ['YouTube SEO', 'Video Editing', 'Audience Analytics', 'CapCut', 'Canva', 'Content Strategy']
+    tags: ['YouTube SEO', 'Video Editing', 'Audience Analytics', 'CapCut', 'Canva']
   },
   {
     id: 'exp6',
@@ -140,24 +178,9 @@ export const experiences: Experience[] = [
     type: 'work',
     bullets: [
       'Edited 15+ financial educational videos and short reels to build the company’s social media presence.',
-      'Improved video pacing, added text overlays, and structured content to keep viewers engaged.',
-      'Contributed to drafting video scripts with clients based on audience financial questions.'
+      'Improved video pacing, text overlays, and script structuring to maximize retention.'
     ],
     tags: ['Video Editing', 'Content Optimization', 'CapCut', 'Financial Video']
-  },
-  {
-    id: 'exp5',
-    role: 'Overall Event Coordinator & Best Event Manager',
-    company: 'VIMSMART 2K26 Intercollege Festival',
-    location: 'VIMS, Coimbatore',
-    period: 'Feb 2026',
-    type: 'leadership',
-    bullets: [
-      'Led 80 volunteers across 17 teams to successfully organize VIMSMART 2K26 for 400+ participants from 20+ colleges.',
-      'Received the Best Event Manager Award for successfully executing VIMSMART 2K26.',
-      'Managed planning, sponsorship coordination, team communication, and overall event execution.'
-    ],
-    tags: ['Leadership', 'Event Management', 'Best Event Manager Award', 'Team Coordination', '80 Volunteers']
   },
   {
     id: 'exp_charavyuga',
@@ -167,25 +190,24 @@ export const experiences: Experience[] = [
     period: '2024 - 2025',
     type: 'leadership',
     bullets: [
-      'Organized and led the "Best Manager" event for the Charavyuga 2k24 and 2k25 management meets.',
-      'Created competition rounds, set evaluation criteria, and managed participant registrations.',
-      'Coordinated logistics with college student groups to keep event timing on schedule for 100+ active participants.'
+      'Organized and led the "Best Manager" event for the Charavyuga 2k24 and 2k25 inter-collegiate management meets.',
+      'Designed competition rounds, established evaluation criteria, and managed participants.'
     ],
-    tags: ['Event Organizing', 'Best Manager Event', 'Student Coordination', 'Event Planning']
+    tags: ['Event Organizing', 'Best Manager Event', 'Student Coordination']
   },
   {
     id: 'exp_intercollege_prize',
-    role: 'Inter-College Competition Champion',
+    role: 'Inter-College Competition Achievements',
     company: 'Ayya Nadar Janaki Ammal College & Regional Meets',
     location: 'Tamil Nadu',
-    period: '2024 - 2026',
+    period: '2024 - 2025',
     type: 'leadership',
     bullets: [
-      'Won First Prize – Best Product Idea Presentation in inter-college management competition.',
-      'Received the Best Team Award in the Vision 20 Leadership Development Programme.',
-      'Won 1st Prize in Adzap (Advertising pitch) event, creating and presenting an ad strategy on the spot.'
+      'Won First Prize in Best Product Idea Presentation in inter-college management competition.',
+      'Won 1st Prize in Adzap (Advertising pitch) event for on-the-spot ad campaign creation.',
+      'Received Best Team Award in the Vision 20 Leadership Development Programme.'
     ],
-    tags: ['First Prize Best Product Idea', 'Best Team Award Vision 20', 'Adzap 1st Prize', 'Pitching']
+    tags: ['First Prize Best Product Idea', 'Adzap 1st Prize', 'Vision 20 Best Team']
   },
   {
     id: 'exp_ryla',
@@ -195,11 +217,10 @@ export const experiences: Experience[] = [
     period: '2024',
     type: 'leadership',
     bullets: [
-      'Completed the RYLA – "Be an Entrepreneur" leadership program, strengthening leadership, teamwork, and entrepreneurial skills.',
-      'Conducted business case exercises and practiced startup creation under expert mentor guidance.',
-      'Collaborated with a group of 5 students to draft and pitch a startup concept to a panel of entrepreneurs.'
+      'Selected for the RYLA "Be an Entrepreneur" residential leadership program.',
+      'Collaborated in a team of 5 to develop and pitch a startup concept to an entrepreneur panel.'
     ],
-    tags: ['Entrepreneurship Training', 'RYLA Scholar', 'Be an Entrepreneur', 'Teamwork']
+    tags: ['Entrepreneurship Training', 'RYLA Scholar', 'Team Pitch']
   },
   {
     id: 'exp_nss_blood',
@@ -209,11 +230,10 @@ export const experiences: Experience[] = [
     period: '2021 - 2022',
     type: 'leadership',
     bullets: [
-      'Organized a blood donation camp in cooperation with regional medical services.',
-      'Managed promotional campaigns and led a team of student volunteers to collect 120+ units of blood.',
-      'Earned formal recognition and appreciation from school management for outstanding community service.'
+      'Organized a regional blood donation camp, mobilizing student volunteers and collecting 120+ units of blood.',
+      'Earned recognition from school management for outstanding community service.'
     ],
-    tags: ['Community Service', 'NSS Leadership', 'Event Coordination', 'Volunteer Management']
+    tags: ['Community Service', 'NSS Leadership', 'Volunteer Mobilization']
   }
 ];
 
@@ -369,44 +389,44 @@ export const educationHistory: Education[] = [
     degree: 'Master of Business Administration (MBA) - Marketing & Business Analytics',
     institution: 'Vivekananda Institute of Management Studies',
     period: '2025 – 2027',
-    grade: 'CGPA 7.83 (in progress)',
+    grade: 'Current Programme',
     highlights: [
-      'Specializing in Marketing and Business Analytics.',
-      'Received Best Event Manager Award for leading VIMSMART 2K26 with 80 volunteers for 400+ participants.',
-      'Active leadership roles in regional corporate connect programs and inter-college management meets.'
+      'Marketing & Business Analytics specialization.',
+      'VIMSMART 2K26 Overall Event Coordinator (Best Event Manager Award).',
+      'VIP (VIMS Immersion Programme) Student Coordinator.'
     ],
   },
   {
     id: 'edu2',
     degree: 'Bachelor of Business Administration (BBA)',
     institution: 'Ayya Nadar Janaki Ammal College',
-    period: '2022 - 2025',
+    period: '2022 – 2025',
     grade: '6.27 CGPA',
     highlights: [
-      'Studied core subjects: Marketing Management, Marketing Research, Quantitative Techniques, Statistics, Financial Accounting, and Cost Accounting.',
-      'Active organizing committee member for Charavyuga 2k24 & 2k25 "Best Manager" event.',
-      'Won First Prize in Best Product Idea Presentation & Adzap advertising pitch.'
+      'Studied core areas: Marketing Management, Marketing Research, Quantitative Techniques, Statistics, Financial Accounting, Cost Accounting.',
+      'Organized Best Manager event for Charavyuga 2k24 & 2k25 inter-collegiate management meets.',
+      'First Prize in Best Product Idea Presentation and Adzap advertising pitch.'
     ],
   },
   {
     id: 'edu3',
-    degree: 'Higher Secondary Certificate (H.S.C.)',
+    degree: 'Higher Secondary Certificate (HSC)',
     institution: 'S.H.N.V. Higher Secondary School',
     period: '2022',
     grade: '63.3%',
     highlights: [
-      'Commercial Stream: Commerce, Accountancy, Economics, History.',
-      'Organized NSS Blood Donation Camp collecting 120+ units of blood.'
+      'Commerce Stream: Commerce, Accountancy, Economics, History.',
+      'Led NSS Blood Donation Camp collecting 120+ units of blood.'
     ]
   },
   {
     id: 'edu4',
-    degree: 'Secondary School Leaving Certificate (S.S.L.C.)',
+    degree: 'Secondary School Leaving Certificate (SSLC)',
     institution: 'S.H.N.V. Secondary School',
     period: '2020',
     grade: '55%',
     highlights: [
-      'Junior Red Cross (JRC) active volunteer.'
+      'Junior Red Cross (JRC) active volunteer for civic hygiene and first aid.'
     ]
   },
 ];

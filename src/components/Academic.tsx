@@ -16,7 +16,8 @@ import {
   BookMarked,
   Rocket,
   Compass,
-  TrendingUp
+  TrendingUp,
+  Presentation
 } from 'lucide-react';
 import { educationHistory } from '../data/portfolioData';
 import { TimelineSwitcher } from './InteractiveComponents';
@@ -56,27 +57,42 @@ const academicCoursework: Record<string, string[]> = {
 const academicProjects: Record<string, { title: string; desc: string; icon: React.ReactNode }[]> = {
   edu1: [
     {
-      title: 'Vettikaaran Marketing Campaign',
-      desc: 'Ran targeted regional Meta ads campaigns and localized short-form videos to convert direct chat sales.',
+      title: 'VIMSMART 2K26 Intercollege Festival',
+      desc: 'Overall Event Coordinator leading 80 student volunteers across 17 teams for 400+ participants.',
+      icon: <Users className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
+    },
+    {
+      title: 'VIP - VIMS Immersion Programme',
+      desc: 'Student Coordinator for peer-learning sessions; delivered Nike Fall & Rise Case Study and Ikigai presentations.',
+      icon: <Presentation className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
+    },
+    {
+      title: 'Vetikaaran Digital Marketing Live Project',
+      desc: 'Managed 4 Meta Ads campaigns on a ₹10,000 budget, achieving 2.5M+ views and 150+ product sales.',
       icon: <ClipboardList className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
     },
     {
-      title: 'VIMSMART 2K26 Intercollege Festival',
-      desc: 'Organized and managed student teams, venue schedules, and regional college communication channels.',
-      icon: <Users className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
+      title: 'Bruhat Logistics B2B Lead Generation',
+      desc: 'Researched 500+ companies and generated 300+ verified B2B leads using Apollo AI, LinkedIn, and IndiaMART.',
+      icon: <TrendingUp className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
     }
   ],
   edu2: [
     {
       title: "Charavyuga Management Fest Leader (2k24 & 2k25)",
-      desc: "Coordinated rounds and judged criteria for the inter-collegiate 'Best Manager' competition.",
+      desc: "Organized and led the 'Best Manager' competition rounds and participant evaluation criteria.",
       icon: <Trophy className="w-4 h-4 text-[#B38F6F]" />
+    },
+    {
+      title: "Product Idea & Adzap Presentations",
+      desc: "Won 1st Prize in Best Product Idea Presentation and 1st Prize in Adzap advertising pitch.",
+      icon: <Award className="w-4 h-4 text-[#B38F6F]" />
     }
   ],
   edu3: [
     {
-      title: "NSS School Campaigns",
-      desc: "Organized public health awareness presentations and local cleanliness drives.",
+      title: "NSS Blood Donation Camp",
+      desc: "Led volunteer mobilization and operational planning collecting 120+ units of blood.",
       icon: <Heart className="w-4 h-4 text-[#710014]" />
     }
   ],
@@ -169,28 +185,28 @@ const stageTheme: Record<string, { badge: string; accent: string; bg: string }> 
 
 const mbaMilestones = [
   {
-    year: '2024',
-    title: 'Joined MBA (Marketing)',
-    subtitle: 'New beginnings, bigger goals',
-    description: 'Transitioned from undergraduate business management to advanced marketing and analytics at Vivekananda Institute of Management Studies. Shifted focus toward strategic brand management, consumer psychology, and quantitative research.',
-    icon: <Rocket className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
-    tag: 'Foundation & Vision'
-  },
-  {
     year: '2025',
-    title: 'Learning & Exploration',
-    subtitle: 'Gaining knowledge, building skills',
-    description: 'Deep-dived into Meta Ads, search engine optimization (SEO), Google Analytics 4, and Power BI dashboards. Published scientific papers on consumer behavior and represented institute in competitive marketing summits.',
-    icon: <Compass className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
-    tag: 'Capability Building'
+    title: 'MBA Foundation & VIP Leadership',
+    subtitle: 'Marketing & Business Analytics at VIMS',
+    description: 'Enrolled in the MBA programme at Vivekananda Institute of Management Studies. Served as Student Coordinator for the VIMS Immersion Programme (VIP), delivering presentations on the Nike Fall & Rise Case Study and the Ikigai life-purpose framework.',
+    icon: <Rocket className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
+    tag: 'Foundation & Peer Learning'
   },
   {
     year: '2026',
-    title: 'Current Journey',
-    subtitle: 'Applying learning to real-world impact',
-    description: 'Executing high-ROI live marketing campaigns (Vetikaaran), generating 300+ B2B leads (Bruhat Logistics), and leading large-scale intercollegiate operations (Overall Coordinator for VIMSMART 2K26).',
+    title: 'Applied Execution & Operations',
+    subtitle: 'Live campaigns, B2B pipelines & festival leadership',
+    description: 'Managed Meta Ads live campaigns for Vetikaaran, researched 500+ companies and generated 300+ B2B leads at Bruhat Logistics, and led 80 volunteers as Overall Coordinator for VIMSMART 2K26.',
     icon: <TrendingUp className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
-    tag: 'Active Leadership'
+    tag: 'Active Practice & Leadership'
+  },
+  {
+    year: '2027',
+    title: 'Advanced Analytics & Capstone',
+    subtitle: 'Strategic business readiness & industry launch',
+    description: 'Completing advanced coursework in marketing intelligence, predictive analytics, and corporate strategy to drive scalable commercial growth.',
+    icon: <Compass className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
+    tag: 'Strategic Impact'
   }
 ];
 
