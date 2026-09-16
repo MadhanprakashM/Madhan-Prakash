@@ -15,7 +15,7 @@ interface FooterProps {
 
 export default function Footer({ onOpenResume }: FooterProps) {
   const email = 'madhanprakashofficial@gmail.com';
-  const resumeUrl = 'https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing';
+  const resumeUrl = personalInfo.resumeUrl || 'https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk';
   const locationUrl = 'https://maps.google.com/?q=Tamil+Nadu,+India';
 
   const contactItems = [

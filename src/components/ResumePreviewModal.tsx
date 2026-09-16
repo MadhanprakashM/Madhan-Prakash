@@ -42,10 +42,20 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
           </div>
 
           <div className="flex items-center space-x-2">
+            <a
+              id="resume-modal-download-btn"
+              href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-3.5 py-2 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-white dark:text-[#1A3636] rounded-xl text-xs font-bold shadow-xs transition-colors focus:outline-none cursor-pointer"
+            >
+              <Download className="w-4 h-4 mr-1.5" />
+              Download PDF
+            </a>
             <button
               id="resume-modal-print-btn"
               onClick={handlePrint}
-              className="inline-flex items-center justify-center px-4 py-2 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-white dark:text-[#1A3636] rounded-xl text-xs font-bold shadow-xs transition-colors focus:outline-none cursor-pointer"
+              className="inline-flex items-center justify-center px-3.5 py-2 bg-white dark:bg-[#1A3636] border border-slate-300 dark:border-[#40534C] text-slate-700 dark:text-slate-200 hover:border-[#1A3636] dark:hover:border-[#D6BD98] rounded-xl text-xs font-bold shadow-xs transition-colors focus:outline-none cursor-pointer"
             >
               <Printer className="w-4 h-4 mr-1.5" />
               Print / Save PDF

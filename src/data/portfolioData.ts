@@ -19,6 +19,7 @@ export const personalInfo = {
   instagramUsername: 'madhanprakash_5',
   youtube: 'https://www.youtube.com/@classictamilofficial',
   youtubeUsername: 'classictamilofficial',
+  resumeUrl: 'https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk',
   location: 'Sivakasi, Tamil Nadu, India',
   address: 'Sivakasi, Tamil Nadu, India',
   avatarUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEij7PlnDYBCA7Au0BSXOvTk3u4IMytJyUPZpsmB3c9ax4q8P0W22SgT9Df9NSCaoz4CM4CuXh8HPV9mq1EtAt0LQB0px2VPSGg0Wmpum_e1bDlDc9sJC6uXi-1RlyzIqpk_7BDrnx03R4ATkoDa3cASXd7daqttVKziz3_gSXhIXDd6iDB1hOX4CQI5E2o',

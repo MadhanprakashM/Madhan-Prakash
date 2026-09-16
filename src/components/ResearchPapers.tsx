@@ -13,6 +13,7 @@ import {
   Search,
   Tag
 } from 'lucide-react';
+import { personalInfo } from '../data/portfolioData';
 
 interface ResearchPaper {
   id: string;
@@ -288,7 +289,7 @@ export default function ResearchPapers() {
           </div>
 
           <a
-            href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
+            href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-[#F2F1ED] dark:text-[#161616] text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-250 shadow-sm shrink-0 inline-flex items-center"

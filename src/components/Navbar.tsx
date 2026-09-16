@@ -176,7 +176,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
             {/* Resume Button */}
             <a
               id="nav-action-resume"
-              href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
+              href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-3 py-1.5 bg-white/70 dark:bg-[#1A3636]/60 border border-[#40534C]/25 dark:border-[#D6BD98]/30 text-brand-paragraph dark:text-[#F2F1ED] hover:text-[#1A3636] dark:hover:text-[#D6BD98] hover:border-[#1A3636]/40 dark:hover:border-[#D6BD98] hover:shadow-2xs rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer"
@@ -354,7 +354,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
 
               <a
                 id="mobile-nav-action-resume"
-                href="https://drive.google.com/file/d/1hKQAfnb-ZlASN2FDcwzqt2wyeOMAqoIZ/view?usp=sharing"
+                href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}
