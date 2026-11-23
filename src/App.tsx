@@ -55,7 +55,7 @@ export default function App() {
 
   // Set the correct page title and metadata
   useEffect(() => {
-    document.title = 'M. Madhan Prakash | MBA Marketing & Analytics Portfolio';
+    document.title = 'M. Madhan Prakash | MBA Marketing, Digital Marketing & Business Analytics';
   }, []);
 
   // Unified Intersection Observer to track scroll positions efficiently
