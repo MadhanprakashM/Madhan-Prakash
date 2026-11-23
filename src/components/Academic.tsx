@@ -57,6 +57,11 @@ const academicCoursework: Record<string, string[]> = {
 const academicProjects: Record<string, { title: string; desc: string; icon: React.ReactNode }[]> = {
   edu1: [
     {
+      title: 'PSG CAS IPL Auction Competition (2nd Prize)',
+      desc: 'Formulated player valuation models, salary purse management, and squad auction bidding strategy to secure 2nd Prize at PSG College of Arts and Science.',
+      icon: <Trophy className="w-4 h-4 text-amber-500" />
+    },
+    {
       title: 'VIMSMART 2K26 Intercollege Festival',
       desc: 'Overall Event Coordinator leading 80 student volunteers across 17 teams for 400+ participants.',
       icon: <Users className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />
@@ -127,6 +132,10 @@ const academicResearch: Record<string, { title: string; desc: string; pub: strin
 const academicAchievements: Record<string, { title: string; award: string }[]> = {
   edu1: [
     {
+      title: "IPL Auction Event – 2nd Prize Winner",
+      award: "Won 2nd Prize at PSG College of Arts and Science (PSG CAS) inter-collegiate meet for strategic auction bidding, valuation, and purse management."
+    },
+    {
       title: "Overall Event Coordinator",
       award: "Recognized by VIMS administration for managing a major 400+ student festival (VIMSMART 2K26)."
     }
@@ -195,8 +204,8 @@ const mbaMilestones = [
   {
     year: '2026',
     title: 'Applied Execution & Operations',
-    subtitle: 'Live campaigns, B2B pipelines & festival leadership',
-    description: 'Managed Meta Ads live campaigns for Vetikaaran, researched 500+ companies and generated 300+ B2B leads at Bruhat Logistics, and led 80 volunteers as Overall Coordinator for VIMSMART 2K26.',
+    subtitle: 'Live campaigns, B2B pipelines, IPL auction win & festival leadership',
+    description: 'Managed Meta Ads live campaigns for Vetikaaran, researched 500+ companies and generated 300+ B2B leads at Bruhat Logistics, won 2nd Prize in IPL Auction Event at PSG College of Arts and Science, and led 80 volunteers as Overall Coordinator for VIMSMART 2K26.',
     icon: <TrendingUp className="w-5 h-5 text-[#1A3636] dark:text-[#D6BD98]" />,
     tag: 'Active Practice & Leadership'
   },
@@ -250,12 +259,34 @@ function DetailPanelContent({ edu }: DetailPanelContentProps) {
             Key Highlights
           </h4>
           <div className="space-y-1.5 pl-2">
-            {edu.highlights.map((highlight, idx) => (
-              <div key={idx} className="flex items-start text-xs text-brand-paragraph leading-relaxed">
-                <span className="w-1.5 h-1.5 bg-[#677D6A] dark:bg-[#D6BD98] rounded-full mr-2 mt-1.5 shrink-0" />
-                <span className="font-normal text-balance">{highlight}</span>
-              </div>
-            ))}
+            {edu.highlights.map((highlight, idx) => {
+              const lower = highlight.toLowerCase();
+              const isIplAward = lower.includes('ipl auction');
+              const isOverallCoordinator = lower.includes('overall event coordinator');
+              return (
+                <div
+                  key={idx}
+                  className={`flex items-start text-xs leading-relaxed ${
+                    isIplAward
+                      ? 'p-2.5 rounded-xl bg-amber-500/10 border border-amber-500/25 text-amber-900 dark:text-amber-200 font-medium'
+                      : isOverallCoordinator
+                      ? 'p-2.5 rounded-xl bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 border border-[#1A3636]/25 dark:border-[#D6BD98]/35 text-[#1A3636] dark:text-[#D6BD98] font-semibold'
+                      : 'text-brand-paragraph'
+                  }`}
+                >
+                  {isIplAward ? (
+                    <Trophy className="w-3.5 h-3.5 text-amber-500 mr-2 mt-0.5 shrink-0" />
+                  ) : isOverallCoordinator ? (
+                    <Award className="w-3.5 h-3.5 text-[#1A3636] dark:text-[#D6BD98] mr-2 mt-0.5 shrink-0" />
+                  ) : (
+                    <span className="w-1.5 h-1.5 bg-[#677D6A] dark:bg-[#D6BD98] rounded-full mr-2 mt-1.5 shrink-0" />
+                  )}
+                  <span className={isIplAward || isOverallCoordinator ? 'font-semibold text-balance' : 'font-normal text-balance'}>
+                    {highlight}
+                  </span>
+                </div>
+              );
+            })}
           </div>
         </div>
       )}
@@ -456,14 +487,30 @@ export default function Academic() {
             }}
             getId={(edu) => edu.id}
             getMobileTitle={(edu) => edu.degree}
-            getMobileSubtitle={(edu) => edu.institution}
+            getMobileSubtitle={(edu) =>
+              edu.id === 'edu1'
+                ? `${edu.institution} • Overall Coordinator (VIMSMART 2K26) • 🏆 2nd Prize IPL Auction @ PSG CAS`
+                : edu.institution
+            }
             getMobileIcon={() => <GraduationCap className="w-4 h-4 text-[#1A3636] dark:text-[#D6BD98]" />}
             getMobileHeaderRight={(edu) => {
               const theme = stageTheme[edu.id] || stageTheme.edu1;
               return (
-                <span className={`text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border shrink-0 ${theme.badge}`}>
-                  {edu.period}
-                </span>
+                <div className="flex flex-wrap items-center justify-end gap-1 shrink-0 max-w-[160px] sm:max-w-none">
+                  {edu.id === 'edu1' && (
+                    <>
+                      <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 text-[#1A3636] dark:text-[#D6BD98] border border-[#1A3636]/25 dark:border-[#D6BD98]/35">
+                        Overall Coordinator
+                      </span>
+                      <span className="inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.5 rounded bg-amber-500/15 text-amber-700 dark:text-amber-300 border border-amber-500/30">
+                        🏆 2nd Prize IPL
+                      </span>
+                    </>
+                  )}
+                  <span className={`text-[10px] uppercase tracking-wider font-bold px-1.5 py-0.5 rounded border shrink-0 ${theme.badge}`}>
+                    {edu.period}
+                  </span>
+                </div>
               );
             }}
             renderSelectorItem={(edu, isSelected) => {
@@ -490,6 +537,18 @@ export default function Academic() {
                       <MapPin className="w-3.5 h-3.5 mr-1 text-slate-400 shrink-0" />
                       <span className="truncate">{edu.institution}</span>
                     </p>
+                    {edu.id === 'edu1' && (
+                      <div className="pt-1.5 flex flex-wrap items-center gap-1.5">
+                        <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#1A3636]/10 dark:bg-[#D6BD98]/15 text-[#1A3636] dark:text-[#D6BD98] border border-[#1A3636]/25 dark:border-[#D6BD98]/35">
+                          <Users className="w-3 h-3 shrink-0" />
+                          <span>Overall Coordinator • VIMSMART 2K26</span>
+                        </span>
+                        <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 border border-amber-500/25">
+                          <Trophy className="w-3 h-3 text-amber-500 shrink-0" />
+                          <span>Won 2nd Prize • IPL Auction @ PSG CAS</span>
+                        </span>
+                      </div>
+                    )}
                   </div>
 
                   <span className={`text-[10px] font-bold pt-3 flex items-center transition-all ${

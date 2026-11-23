@@ -69,6 +69,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
   return (
     <nav
       id="main-nav"
+      aria-label="Primary navigation"
       className={`fixed left-0 right-0 z-50 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 transition-all duration-500 ${
         isVisible ? 'top-5 translate-y-0' : '-top-28 -translate-y-full'
       }`}
@@ -93,7 +94,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
             {personalInfo.avatarUrl ? (
               <img
                 src={personalInfo.avatarUrl}
-                alt="M. Madhan Prakash - Digital Marketing & Analytics Portfolio"
+                alt="M. Madhan Prakash profile photo"
                 loading="eager"
                 decoding="async"
                 referrerPolicy="no-referrer"
@@ -152,6 +153,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
               whileTap={{ scale: 0.95 }}
               className="p-1.5 ml-1 rounded-xl text-brand-paragraph hover:text-[#1A3636] dark:hover:text-[#D6BD98] hover:bg-[#1A3636]/5 dark:hover:bg-[#D6BD98]/10 transition-all cursor-pointer relative overflow-hidden flex items-center justify-center min-w-[32px] min-h-[32px] focus:outline-none"
               title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              aria-label={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -176,9 +178,10 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
             {/* Resume Button */}
             <a
               id="nav-action-resume"
-              href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
+              href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1J1MOQDqzKJVOFbmTO-D7vPfFIcUtsaFc/view?usp=drivesdk"}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Open M. Madhan Prakash Resume PDF"
               className="inline-flex items-center justify-center px-3 py-1.5 bg-white/70 dark:bg-[#1A3636]/60 border border-[#40534C]/25 dark:border-[#D6BD98]/30 text-brand-paragraph dark:text-[#F2F1ED] hover:text-[#1A3636] dark:hover:text-[#D6BD98] hover:border-[#1A3636]/40 dark:hover:border-[#D6BD98] hover:shadow-2xs rounded-xl text-[11px] font-bold uppercase tracking-wider transition-all cursor-pointer"
             >
               <Download className="w-3 h-3 mr-1 text-[#1A3636] dark:text-[#D6BD98]" />
@@ -211,6 +214,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
               whileTap={{ scale: 0.95 }}
               className="p-2 rounded-xl text-brand-dark dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors focus:outline-none cursor-pointer overflow-hidden flex items-center justify-center min-w-[48px] min-h-[48px]"
               title={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
+              aria-label={darkMode ? "Switch to Light Mode" : "Switch to Dark Mode"}
             >
               <AnimatePresence mode="wait" initial={false}>
                 <motion.div
@@ -354,7 +358,7 @@ export default function Navbar({ onOpenResume, activeSection, darkMode, toggleDa
 
               <a
                 id="mobile-nav-action-resume"
-                href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
+                href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1J1MOQDqzKJVOFbmTO-D7vPfFIcUtsaFc/view?usp=drivesdk"}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setIsOpen(false)}

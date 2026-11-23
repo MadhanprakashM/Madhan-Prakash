@@ -279,9 +279,9 @@ export default function ResearchPapers() {
               <Award className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="font-display font-bold text-sm sm:text-base text-brand-dark">
+              <h3 className="font-display font-bold text-sm sm:text-base text-brand-dark">
                 Inter-College Paper Presentation Honors
-              </h4>
+              </h3>
               <p className="text-xs text-slate-500 dark:text-slate-400">
                 Presented research findings across 8+ regional institutes including SRCAS, Ayya Nadar Janaki Ammal College, and Don Bosco College.
               </p>
@@ -289,7 +289,7 @@ export default function ResearchPapers() {
           </div>
 
           <a
-            href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
+            href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1J1MOQDqzKJVOFbmTO-D7vPfFIcUtsaFc/view?usp=drivesdk"}
             target="_blank"
             rel="noopener noreferrer"
             className="px-5 py-2.5 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-[#F2F1ED] dark:text-[#161616] text-xs font-bold uppercase tracking-wider rounded-xl transition-all duration-250 shadow-sm shrink-0 inline-flex items-center"

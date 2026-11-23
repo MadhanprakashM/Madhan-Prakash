@@ -182,7 +182,7 @@ export default function Certifications() {
         {displayedCertifications.length === 0 ? (
           <div className="text-center py-16 px-4 rounded-2xl bg-white dark:bg-[#1A3636]/60 border border-[#40534C]/20 dark:border-[#D6BD98]/20">
             <Filter className="w-8 h-8 text-slate-400 mx-auto mb-3 opacity-60" />
-            <h4 className="text-base font-bold text-slate-800 dark:text-slate-200">No certificates match your query</h4>
+            <h3 className="text-base font-bold text-slate-800 dark:text-slate-200">No certificates match your query</h3>
             <p className="text-xs text-slate-500 mt-1 max-w-sm mx-auto">Try clearing your search term or selecting a different category filter.</p>
             <button
               type="button"

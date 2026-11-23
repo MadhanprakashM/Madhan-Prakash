@@ -80,6 +80,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
   return (
     <section
       id="home"
+      aria-labelledby="hero-title"
       className="relative min-h-[85vh] lg:min-h-[90vh] flex flex-col items-center justify-center pt-24 pb-12 lg:pt-28 lg:pb-16 overflow-hidden bg-transparent"
     >
       {/* Editorial matrix grid with subtle translation */}
@@ -274,7 +275,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
                 {personalInfo.avatarUrl ? (
                   <img
                     src={personalInfo.avatarUrl}
-                    alt="M. Madhan Prakash - MBA Digital Marketing & Business Analytics Specialist"
+                    alt="M. Madhan Prakash — MBA candidate in Marketing and Business Analytics at Vivekananda Institute of Management Studies, Coimbatore"
                     loading="eager"
                     fetchPriority="high"
                     decoding="async"
@@ -365,6 +366,7 @@ export default function Hero({ onOpenResumeModal }: HeroProps) {
       >
         <a 
           href="#impact" 
+          aria-label="Scroll to measurable marketing and analytics impact"
           className="flex flex-col items-center gap-1 group text-[11px] font-mono font-medium tracking-wider uppercase hover:text-[#1A3636] dark:hover:text-[#D6BD98] transition-colors"
         >
           <span>Scroll to explore</span>

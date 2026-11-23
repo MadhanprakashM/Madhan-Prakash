@@ -44,7 +44,7 @@ export default function About() {
   };
 
   return (
-    <section id="about" className="py-14 sm:py-20 bg-transparent relative overflow-hidden">
+    <section id="about" aria-labelledby="about-heading" className="py-14 sm:py-20 bg-transparent relative overflow-hidden">
       {/* Matrix background */}
       <div className="absolute inset-0 matrix-grid-pattern opacity-25 pointer-events-none" />
 
@@ -63,7 +63,7 @@ export default function About() {
             <span>GET TO KNOW ME</span>
           </div>
           
-          <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-display font-bold text-brand-dark tracking-tight">
+          <h2 id="about-heading" className="text-2xl sm:text-4xl lg:text-[42px] font-display font-bold text-brand-dark tracking-tight">
             More Than a Student, A Problem Solver
           </h2>
           <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
@@ -114,15 +114,23 @@ export default function About() {
               ))}
             </div>
 
-            {/* Languages & Core Strengths Bar */}
-            <div className="pt-4 border-t border-[#40534C]/15 dark:border-[#D6BD98]/20 flex flex-wrap items-center justify-between gap-4 text-xs font-medium">
+            {/* Languages, Institution & Core Strengths Bar */}
+            <div className="pt-4 border-t border-[#40534C]/15 dark:border-[#D6BD98]/20 flex flex-wrap items-center justify-between gap-x-6 gap-y-2.5 text-xs font-medium">
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-slate-400 dark:text-slate-400 uppercase font-bold">Institution:</span>
+                <span className="text-slate-700 dark:text-slate-200">Vivekananda Institute of Management Studies (VIMS), Coimbatore</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-mono text-slate-400 dark:text-slate-400 uppercase font-bold">Location:</span>
+                <span className="text-slate-700 dark:text-slate-200">Coimbatore &amp; Sivakasi, Tamil Nadu</span>
+              </div>
               <div className="flex items-center gap-2">
                 <span className="font-mono text-slate-400 dark:text-slate-400 uppercase font-bold">Languages:</span>
                 <span className="text-slate-700 dark:text-slate-200">Tamil (Native), English (Professional)</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-mono text-slate-400 dark:text-slate-400 uppercase font-bold">Focus:</span>
-                <span className="text-[#1A3636] dark:text-[#D6BD98] font-semibold">B2B Strategy & Analytics</span>
+                <span className="text-[#1A3636] dark:text-[#D6BD98] font-semibold">B2B Strategy &amp; Analytics</span>
               </div>
             </div>
           </motion.div>

@@ -44,7 +44,7 @@ export default function ResumePreviewModal({ onClose }: ResumePreviewModalProps)
           <div className="flex items-center space-x-2">
             <a
               id="resume-modal-download-btn"
-              href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk"}
+              href={personalInfo.resumeUrl || "https://drive.google.com/file/d/1J1MOQDqzKJVOFbmTO-D7vPfFIcUtsaFc/view?usp=drivesdk"}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-3.5 py-2 bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-white dark:text-[#1A3636] rounded-xl text-xs font-bold shadow-xs transition-colors focus:outline-none cursor-pointer"

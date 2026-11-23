@@ -63,9 +63,9 @@ export default function Testimonials() {
                     {test.avatarLetter}
                   </div>
                   <div className="flex flex-col min-w-0">
-                    <h4 className="font-display font-bold text-brand-dark text-sm sm:text-base">
+                    <h3 className="font-display font-bold text-brand-dark text-sm sm:text-base">
                       {test.name}
-                    </h4>
+                    </h3>
                     <p className="text-xs text-slate-500 dark:text-[#A8B8AE]">
                       {test.role} at <span className="font-semibold text-slate-700 dark:text-slate-300">{test.company}</span>
                     </p>

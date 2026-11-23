@@ -104,6 +104,7 @@ function CertificationCardComponent({
               onClick={handleCopyId}
               className="text-[#1A3636] dark:text-[#D6BD98] hover:underline flex items-center gap-1 text-[10px] font-bold cursor-pointer shrink-0 ml-1"
               title="Copy Credential ID"
+              aria-label={`Copy credential ID ${certification.credentialId}`}
             >
               {copiedId ? (
                 <span className="text-emerald-600 dark:text-emerald-400 flex items-center gap-0.5">
@@ -140,8 +141,8 @@ function CertificationCardComponent({
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center justify-center space-x-1 py-2 px-3 rounded-xl bg-[#1A3636] hover:bg-[#40534C] dark:bg-[#D6BD98] dark:hover:bg-[#B38F6F] text-white dark:text-[#1A3636] text-xs font-bold transition-all duration-200 cursor-pointer shadow-2xs shrink-0"
-              title="Verify credential on official portal"
-              aria-label="Verify credential on official portal"
+              title={`Verify ${certification.title} on official portal`}
+              aria-label={`Verify ${certification.title} on official issuer portal`}
             >
               <span>Verify</span>
               <ExternalLink className="w-3.5 h-3.5" />

@@ -121,6 +121,18 @@ const timelineMilestones = [
   },
   {
     year: '2026',
+    period: '2026',
+    role: 'IPL Auction Event – 2nd Prize',
+    company: 'PSG College of Arts and Science',
+    icon: Trophy,
+    unlockedSkill: 'Valuation & Auction Strategy',
+    description: 'Secured 2nd Prize in the IPL Auction event, demonstrating strategic bidding, player valuation analysis, and team budget optimization under constraints.',
+    type: 'leadership',
+    color: 'from-[#B38F6F] to-[#D6BD98]',
+    accentColor: 'text-[#B38F6F] bg-[#B38F6F]/10 border-[#B38F6F]/20 dark:border-[#B38F6F]/30'
+  },
+  {
+    year: '2026',
     period: 'Feb 2026',
     role: 'Overall Event Coordinator',
     company: 'VIMSMART 2K26 Intercollege Festival',
@@ -220,7 +232,7 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="py-10 sm:py-14 md:py-16 bg-transparent relative overflow-hidden">
+    <section id="experience" aria-labelledby="experience-heading" className="py-10 sm:py-14 md:py-16 bg-transparent relative overflow-hidden">
       {/* Background Matrix Grid Overlay */}
       <div className="absolute inset-0 matrix-grid-pattern opacity-30 pointer-events-none" />
 
@@ -244,7 +256,7 @@ export default function Experience() {
             <Sparkles className="w-3.5 h-3.5 text-[#677D6A] dark:text-[#D6BD98]" />
             <span>WORK & PRACTICAL EXPERIENCE</span>
           </div>
-          <h2 className="text-2xl sm:text-4xl lg:text-[42px] font-display font-bold text-brand-dark tracking-tight">
+          <h2 id="experience-heading" className="text-2xl sm:text-4xl lg:text-[42px] font-display font-bold text-brand-dark tracking-tight">
             Learning by Doing, Delivering Real Results
           </h2>
           <div className="w-12 h-1 bg-[#1A3636] dark:bg-[#D6BD98] mx-auto rounded-full" />
@@ -275,6 +287,7 @@ export default function Experience() {
                   !canScrollLeft ? 'opacity-35 cursor-not-allowed' : 'hover:bg-[#1A3636]/5 hover:border-[#1A3636]/30 dark:hover:bg-[#D6BD98]/10 active:scale-95'
                 }`}
                 title="Scroll Left"
+                aria-label="Scroll career milestones left"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -285,6 +298,7 @@ export default function Experience() {
                   !canScrollRight ? 'opacity-35 cursor-not-allowed' : 'hover:bg-[#1A3636]/5 hover:border-[#1A3636]/30 dark:hover:bg-[#D6BD98]/10 active:scale-95'
                 }`}
                 title="Scroll Right"
+                aria-label="Scroll career milestones right"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
