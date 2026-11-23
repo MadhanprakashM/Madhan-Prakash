@@ -249,6 +249,28 @@ export const allCertifications: Certification[] = [
     skills: ["Startup Ideation", "Business Model Pitch", "Financial Feasibility", "Go-To-Market Strategy", "Competitive Advantage"]
   },
 
+  // 11b. PSG College of Arts and Science - 2nd Prize in IPL Auction
+  {
+    id: "cert-psg-ipl-auction",
+    title: "2nd Prize – IPL Auction Event",
+    issuer: "PSG College of Arts and Science, Coimbatore",
+    date: "2025 - 2026",
+    year: 2026,
+    category: "achievement",
+    categoryLabel: "Inter-Collegiate 2nd Prize",
+    importance: 5,
+    featured: true,
+    description: "Secured 2nd Prize in the IPL Auction event at PSG College of Arts and Science, formulating player valuation models, dynamic budget bidding, and squad composition strategies.",
+    thumbnail: "IMG_20260827_182241.webp",
+    certificateUrl: "IMG_20260827_182241.webp",
+    credentialId: "PSGCAS-IPL-AUCTION-2ND",
+    sourceFile: "IMG_20260827_182241.webp",
+    status: "verified",
+    verificationStatus: "verified",
+    fileType: "image",
+    skills: ["Player Valuation", "Budget Optimization", "Strategic Bidding", "Analytical Decision Making", "Risk Management"]
+  },
+
   // 12. Rotary RYLA "Be an Entrepreneur" Best Business Plan Award
   {
     id: "cert-ryla-bizplan",

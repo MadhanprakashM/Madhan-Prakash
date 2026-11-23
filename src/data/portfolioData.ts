@@ -19,7 +19,7 @@ export const personalInfo = {
   instagramUsername: 'madhanprakash_5',
   youtube: 'https://www.youtube.com/@classictamilofficial',
   youtubeUsername: 'classictamilofficial',
-  resumeUrl: 'https://drive.google.com/file/d/1cnRRfx9nWhWlY8_wcOI5clfCPogQKVau/view?usp=drivesdk',
+  resumeUrl: 'https://drive.google.com/file/d/1J1MOQDqzKJVOFbmTO-D7vPfFIcUtsaFc/view?usp=drivesdk',
   location: 'Sivakasi, Tamil Nadu, India',
   address: 'Sivakasi, Tamil Nadu, India',
   avatarUrl: 'https://blogger.googleusercontent.com/img/a/AVvXsEij7PlnDYBCA7Au0BSXOvTk3u4IMytJyUPZpsmB3c9ax4q8P0W22SgT9Df9NSCaoz4CM4CuXh8HPV9mq1EtAt0LQB0px2VPSGg0Wmpum_e1bDlDc9sJC6uXi-1RlyzIqpk_7BDrnx03R4ATkoDa3cASXd7daqttVKziz3_gSXhIXDd6iDB1hOX4CQI5E2o',
@@ -199,16 +199,17 @@ export const experiences: Experience[] = [
   {
     id: 'exp_intercollege_prize',
     role: 'Inter-College Competition Achievements',
-    company: 'Ayya Nadar Janaki Ammal College & Regional Meets',
+    company: 'Ayya Nadar Janaki Ammal College, PSG CAS & Regional Meets',
     location: 'Tamil Nadu',
-    period: '2024 - 2025',
+    period: '2024 - 2026',
     type: 'leadership',
     bullets: [
+      'Won 2nd Prize in IPL Auction Event at PSG College of Arts and Science, demonstrating player valuation, dynamic budget bidding, and team strategy.',
       'Won First Prize in Best Product Idea Presentation in inter-college management competition.',
       'Won 1st Prize in Adzap (Advertising pitch) event for on-the-spot ad campaign creation.',
       'Received Best Team Award in the Vision 20 Leadership Development Programme.'
     ],
-    tags: ['First Prize Best Product Idea', 'Adzap 1st Prize', 'Vision 20 Best Team']
+    tags: ['IPL Auction 2nd Prize (PSG)', 'First Prize Best Product Idea', 'Adzap 1st Prize', 'Vision 20 Best Team']
   },
   {
     id: 'exp_ryla',
@@ -393,6 +394,7 @@ export const educationHistory: Education[] = [
     grade: 'Current Programme',
     highlights: [
       'Marketing & Business Analytics specialization.',
+      'Won 2nd Prize in IPL Auction Event at PSG College of Arts and Science.',
       'VIMSMART 2K26 Overall Event Coordinator (Best Event Manager Award).',
       'VIP (VIMS Immersion Programme) Student Coordinator.'
     ],
