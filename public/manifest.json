@@ -1,11 +1,11 @@
 {
-  "name": "Madhan Prakash",
+  "name": "M. Madhan Prakash",
   "short_name": "Madhan Prakash",
-  "description": "Digital Marketing & Business Analytics Portfolio of Madhan Prakash",
+  "description": "Portfolio of M. Madhan Prakash — MBA candidate specializing in Marketing and Business Analytics at Vivekananda Institute of Management Studies, Coimbatore.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#FAF9F6",
-  "theme_color": "#6D28D9",
+  "background_color": "#F2F1ED",
+  "theme_color": "#1A3636",
   "icons": [
     {
       "src": "/favicon-192x192.png",
